@@ -9,8 +9,8 @@
       href="index.php?page=3&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_compet'][$lang]?></li></a><a 
       href="index.php?page=5&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_cv'][$lang]?></li></a><a 
       href="index.php?page=4&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_contact'][$lang]?></li></a><a
-      href="<?=$url_fr?>"><li><img src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></li></a><a
-      href="<?=$url_en?>"><li><img src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></li></a>
+      href="<?=$url_fr?>"><li><img class="dark_shadow" src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></li></a><a
+      href="<?=$url_en?>"><li><img class="dark_shadow" src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></li></a>
       </ul>
     </section>
     <!-- Solution sale si pas de solution trouvée au pb actuel...
@@ -43,7 +43,7 @@
       <li><?=$langage_index['tweets'][$lang]?></li>
       </ul>
       <ul>
-        <li><a href='http://sudweb.fr' target="_blank"><img class="sudweb" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
+        <li><a href='http://sudweb.fr' target="_blank"><img class="dark_shadow" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
         <li><a href="http://www.stopacta.info/" target="_blank" ><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
       </ul>
     </div>
