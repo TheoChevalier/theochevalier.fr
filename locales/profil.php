@@ -15,7 +15,7 @@ $langage = array(
 			 <a class=\"lien\" target=\"_blank\" href=\"https://bugzilla.mozilla.org/buglist.cgi?query_format=advanced&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;bug_status=NEW&amp;bug_status=UNCONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;email1=theo.chevalier11%40gmail.com&amp;emailtype1=exact&amp;list_id=1890913\">
        participe</a> au développement du navigateur libre <a class=\"lien\" href=\"http://www.mozilla.org/firefox/\" target=\"_blank\" >
        Mozilla Firefox.</a> Vous pouvez d'ailleurs, vous aussi, 
-       <a class=\"lien\" href=\"index.php?page=6&article=2&lang=fr\">y participer</a>.</p>
+       <a class=\"lien\" href=\"index.php?page=6&amp;article=2&amp;lang=fr\">y participer</a>.</p>
        <p>Vous trouverez donc sur ce site des informations: personnelles, sur mes projets en cours,
        la communauté Mozilla, le Logiciel Libre, le développement, etc.<br/>
        Je crée des sites internet depuis maintenant plusieurs années et maitrise les principaux 
@@ -32,7 +32,7 @@ $langage = array(
 			  <a class=\"lien\" target=\"_blank\" href=\"https://bugzilla.mozilla.org/buglist.cgi?query_format=advanced&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;bug_status=NEW&amp;bug_status=UNCONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;email1=theo.chevalier11%40gmail.com&amp;emailtype1=exact&amp;list_id=1890913\">
         part development</a> of the open-source browser <a class=\"lien\" href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">
         Mozilla Firefox.</a> You too,
-        <a class=\"lien\" href=\"index.php?page=6&article=2&lang=en\">get involved!</a></p>
+        <a class=\"lien\" href=\"index.php?page=6&amp;article=2&amp;lang=en\">get involved!</a></p>
         <p>On this site, you will find information about me, my current projects,
         the Mozilla community, open-source softwares, development, etc.. <br/>
         I create websites for several years now, and mastering key

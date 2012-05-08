@@ -9,6 +9,7 @@
 *.vi
 *~
 *.sass-cache
+*.CssCrush
 
 # OS or Editor folders
 .DS_Store
@@ -45,5 +46,4 @@ includes/connexion.php
 fichiers/
 files/
 CssCrush/
-css/.CssCrush
 css/style.crush.css

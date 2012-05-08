@@ -1,16 +1,4 @@
 @font-face {
-    font-family: 'DaysRegular';
-    src: url('../fonts/Days-webfont.eot');
-    src: local('☺'),
-     url('../fonts/Days-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Days-webfont.woff') format('woff'),
-         url('../fonts/Days-webfont.ttf') format('truetype'),
-         url('../fonts/Days-webfont.svg#DaysRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
     font-family: 'WCROUGHTRADBtaRegular';
     src: url('../fonts/WC_RoughTrad-webfont.eot');
     src: local('☺'),
@@ -20,7 +8,6 @@
          url('../fonts/WC_RoughTrad-webfont.svg#WCROUGHTRADBtaRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 @font-face {
     font-family: 'OpenSansLight';
@@ -59,11 +46,11 @@ body { margin: 0; font-size: 13px; line-height: 1.231;
   font-family: "PT Serif", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", Arial, sans-serif;
   background-color:#599cc9;
   background: url(../img/bg.jpg);
-  background-image: -moz-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
-  background-image: -webkit-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
+  background-image: radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
   background-image: -o-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
   background-image: -ms-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
-  background-image: radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
+  background-image: -moz-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
+  background-image: -webkit-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
   background-attachment: fixed;
  }
  
@@ -88,10 +75,12 @@ body, button, input, select, textarea { font-family: OpenSansLight, sans-serif; 
 a { 
   text-decoration: none;
   color: #fff;
+  transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s; }
+}
 
 a:visited { color: #fff; }
 a:hover { color: #ccc; }
@@ -325,7 +314,6 @@ h2{font-size: 20px;}
   min-width: 768px;
   width: 100%;
   background-color: #3a74a6;
-  /*background-image: url('../img/blueprint_texture.jpg');*/
   background-image: radial-gradient(50% 100%, ellipse cover, rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
   background-image: -o-radial-gradient(50% 100%, ellipse cover, rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
   background-image: -ms-radial-gradient(50% 100%, ellipse cover, rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
@@ -616,8 +604,8 @@ h2{font-size: 20px;}
     padding-top: 5px;
   }
 }
-#menu ul{text-align: center;padding: 0;min-width:728px;}
-#menu ul li{
+.menu ul{text-align: center;padding: 0;min-width:728px;}
+.menu ul li{
   font-size: 18px;
   color:#fff;
   display: inline-block;
@@ -630,7 +618,7 @@ h2{font-size: 20px;}
   -moz-transition-duration: 0.1s;
   -webkit-transition-duration: 0.1s;
 }
-#menu ul li:hover{background-color: #fff;color:#333;}
+.menu ul li:hover{background-color: #fff;color:#333;}
 #main{
   max-width: 1880px;
   min-width: 728px;
@@ -848,6 +836,7 @@ article .art_date2{
 #resultats{color:#0074d8; margin-top:15px;margin-left: 190px;}
 #formulaire{margin-top:30px;}
 .art_text h2{margin-left: 70px;}
+
 /* Style CV */
 #cv .cv_titre{
   text-align: center;
@@ -939,24 +928,6 @@ input:focus, textarea:focus, select:focus {outline:none;border-color:#666;color:
 #form_contact input, #form_contact textarea{background:#fff;}
 .submit_contact{background-color: rgba(0,0,0,.3);}
 .clear{clear: both;}
-/*
-footer{
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  min-width: 400px;
-  bottom: 0;
-  padding-top: 70px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-shadow: 1px 0px 0px #666;
-  background-image: -moz-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4)0%,rgba(255,255,255,0) 55%);
-  background-image: -ms-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background-image: radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background: #333;
-}*/
 footer{
   min-width: 100%;
   width: 100%;
@@ -973,7 +944,7 @@ footer{
   -webkit-box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
   border-top: 1px solid #777;
 }
-footer #menu li {
+footer .menu li {
   font-size: 17px;
   margin: 0 10px;
   background: none;
@@ -981,15 +952,6 @@ footer #menu li {
 footer .dark_shadow {
   box-shadow: 0 0 10px rgba(0,0,0,.4);
 }
-/*
-footer table{
-  width: 70%;
-  margin: auto;
-  border: 1px solid #555;
-}
-footer table td{
-  border: 1px solid #000;
-}*/
 #footer {
   display: table;
   width: 85%;
@@ -1025,12 +987,14 @@ footer table td{
   color: #333;
 }
 #firefox {
+  max-width: 1000px;
+  margin: auto;
   padding-bottom: 20px;
   background-image: radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
-  background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4)0%,rgba(255,255,255,0) 55%);
-  background-image: -ms-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background-image: -moz-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
-  background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
+  background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
+  background-image: -ms-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
+  background-image: -moz-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
+  background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
 }
 #firefox img:first-child {
   margin-top: 15px;
@@ -1100,8 +1064,8 @@ body{
 .conteneur_liens_sociaux img{width:25px;}
 .lien_social{width:25px;}
 /*Menu*/
-#menu ul{text-align: normal; margin:0;width:100%;min-width: 300px;max-width:728px;}
-#menu ul li{
+.menu ul{text-align: normal; margin:0;width:100%;min-width: 300px;max-width:728px;}
+.menu ul li{
   padding: 5px;
   padding-left:15px;
   margin: 1px;
@@ -1158,13 +1122,13 @@ footer{max-width:728px;min-width:300px;}
 }
 #main{max-width:320px;}
 .titre_site{padding-top:0;max-width:320px;line-height:45px;font-size:45px;}
-.sous_titre_site, .header_degrade, .container header, .conteneur_liens_sociaux, #menu ul, footer{max-width:320px;}
+.sous_titre_site, .header_degrade, .container header, .conteneur_liens_sociaux, .menu ul, footer{max-width:320px;}
 .sous_titre_site img{display:block;margin: 0 auto;}
 .conteneur_liens_sociaux{width:70%;}
 video{max-width: 280px;}
 /*Menu*/
-#menu ul{width:320px;}
-#menu ul li{
+.menu ul{width:320px;}
+.menu ul li{
   display: block;
   font-weight: bold;
   margin: 0;

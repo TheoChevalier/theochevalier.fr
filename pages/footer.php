@@ -1,7 +1,7 @@
 
  </div>
   <footer>
-    <section id="menu">
+    <section class="menu">
       <ul>
       <a href="index.php?lang=<?=$lang?>"><li><?=$langage_index['menu_accueil'][$lang]?></li></a><a 
       href="index.php?page=6&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_articles'][$lang]?></li></a><a 
@@ -13,13 +13,6 @@
       href="<?=$url_en?>"><li><img class="dark_shadow" src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></li></a>
       </ul>
     </section>
-    <!-- Solution sale si pas de solution trouvée au pb actuel...
-    <table>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </table>-->
     <div id="footer">
       <ul>
         <?=$langage_index['blogs'][$lang]?>
@@ -29,7 +22,7 @@
         <?php 
         $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC");
         while($art = mysql_fetch_array($requete_art))
-          echo '<li><a href="index.php?page=6&article='.$art['art_id'].'&lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
+          echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
         ?>
       </ul>
       <ul>
@@ -47,11 +40,6 @@
         <li><a href="http://www.stopacta.info/" target="_blank" ><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
       </ul>
     </div>
-    <!--
-    <div class="stop-acta">
-      <a class="sudweb" href='http://sudweb.fr' target="_blank"><img src="img/sudweb_120.png" alt='Sud Web' /></a>
-      <a href="http://www.stopacta.info/" target="_blank" ><img src="img/stop-acta.png" alt="STOP ACTA!" /></a>
-    </div>-->
     <div id="firefox">
     Design &amp; code by Théo Chevalier - 2011-<?php
     $date_footer = getdate();

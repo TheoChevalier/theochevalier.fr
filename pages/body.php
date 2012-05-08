@@ -15,9 +15,10 @@
   <div id="container">
     <header>
   <div class="header_degrade">
-    <a href="https://github.com/TheoChevalier/theochevalier.fr" target="_blank">
-      <img id="github" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub">
-    </a>
+    <img id="github" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" usemap="#map" />
+    <map name="map">
+      <area shape="poly" coords="134,0,0,134,0,0" href="https://github.com/TheoChevalier/theochevalier.fr" target="_blank" />
+    </map>
     <div class="choix_langue">
     <?php
       $uri = $_SERVER['REQUEST_URI'];
@@ -62,7 +63,7 @@
   </div>
     </header>
     <div id="main" role="main">
-    <section id="menu">
+    <section class="menu">
     <ul>
     <a href="index.php?lang=<?=$lang?>"><li><?=$langage_index['menu_accueil'][$lang]?></li></a><a 
     href="index.php?page=6&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_articles'][$lang]?></li></a><a 

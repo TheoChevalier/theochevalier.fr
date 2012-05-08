@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $page_titre="Curriculum Vitae";
 include("pages/header.php");
 include("pages/body.php");
