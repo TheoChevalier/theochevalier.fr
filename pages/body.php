@@ -19,7 +19,7 @@
     <map name="map">
       <area shape="poly" coords="134,0,0,134,0,0" href="https://github.com/TheoChevalier/theochevalier.fr" target="_blank" alt="Fork me on GitHub" />
     </map>
-    <div class="choix_langue">
+    <div id="choix_langue">
     <?php
       $uri = $_SERVER['REQUEST_URI'];
       if(preg_match("/lang=/i", $uri)) {
@@ -46,19 +46,19 @@
         }
       }
     ?>
-      <a href="<?=$url_fr?>" class="lang"><img src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></a>
-      <a href="<?=$url_en?>" class="lang"><img src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></a>
+      <a href="<?=$url_fr?>" class="lang"><div class="fr"></div></a>
+      <a href="<?=$url_en?>" class="lang"><div class="en"></div></a>
     </div>
     <div class="titre_site">Théo Chevalier</div>
-    <div class="sous_titre_site"><img src="img/etoile.png" alt="*" /><?=$langage_index['ss_titre1'][$lang]?><img src="img/etoile.png" alt="*" /><?=$langage_index['ss_titre2'][$lang]?><img src="img/etoile.png" alt="*" /></div>
+    <div class="sous_titre_site"><div class="star"></div><?=$langage_index['ss_titre1'][$lang]?><div class="star"></div><?=$langage_index['ss_titre2'][$lang]?><div class="star"></div></div>
   </div>
   <div class="separateur_header">
     <div class="conteneur_liens_sociaux">
-      <div class="lien_social"><a href="index.php?page=4&amp;lang=<?=$lang?>"><img src="img/email.png" alt="E-mail" /></a></div>
-      <div class="lien_social"><a href="http://www.facebook.com/theo.chevalier" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a></div>
-      <div class="lien_social"><a href="http://twitter.com/#!/T_Chevalier" target="_blank"><img src="img/twitter.png" alt="Twitter" /></a></div>
-      <div class="lien_social"><a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" target="_blank"><img src="img/linkedin.png" alt="Linkedin" /></a></div>
-      <div class="lien_social"><a href="https://mozillians.org/tchevalier" target="_blank"><img src="img/mozilla.png" alt="mozillians.org" /></a></div>
+      <a href="index.php?page=4&amp;lang=<?=$lang?>" target="_blank" id="contact"></a>
+      <a href="http://www.facebook.com/theo.chevalier" target="_blank" id="facebook"></a>
+      <a href="http://twitter.com/#!/t_chevalier" target="_blank" id="twitter"></a>
+      <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" target="_blank"  id="linkedin"></a>
+      <a href="https://mozillians.org/tchevalier" target="_blank" id="mozillans"></a>
     </div>
   </div>
     </header>

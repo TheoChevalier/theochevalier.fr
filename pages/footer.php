@@ -9,8 +9,8 @@
         <li><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
         <li><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
         <li><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
-        <li><a href="<?=$url_fr?>"><img class="dark_shadow" src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></a></li>
-        <li><a href="<?=$url_en?>"><img class="dark_shadow" src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></a></li>
+        <li><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
+        <li><a href="<?=$url_en?>" class="lang_footer"><div class="en"></div></a></li>
       </ul>
     </section>
     <div id="footer">
