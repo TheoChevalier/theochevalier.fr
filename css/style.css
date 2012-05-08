@@ -605,7 +605,10 @@ h2{font-size: 20px;}
   }
 }
 .menu ul{text-align: center;padding: 0;min-width:728px;}
-.menu ul li{
+.menu ul li {
+  display: inline-block;
+}
+.menu ul li a{
   font-size: 18px;
   color:#fff;
   display: inline-block;
@@ -618,7 +621,7 @@ h2{font-size: 20px;}
   -moz-transition-duration: 0.1s;
   -webkit-transition-duration: 0.1s;
 }
-.menu ul li:hover{background-color: #fff;color:#333;}
+.menu ul li a:hover{background-color: #fff;color:#333;}
 #main{
   max-width: 1880px;
   min-width: 728px;

@@ -3,14 +3,14 @@
   <footer>
     <section class="menu">
       <ul>
-      <a href="index.php?lang=<?=$lang?>"><li><?=$langage_index['menu_accueil'][$lang]?></li></a><a 
-      href="index.php?page=6&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_articles'][$lang]?></li></a><a 
-      href="index.php?page=2&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_projet'][$lang]?></li></a><a 
-      href="index.php?page=3&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_compet'][$lang]?></li></a><a 
-      href="index.php?page=5&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_cv'][$lang]?></li></a><a 
-      href="index.php?page=4&amp;lang=<?=$lang?>"><li><?=$langage_index['menu_contact'][$lang]?></li></a><a
-      href="<?=$url_fr?>"><li><img class="dark_shadow" src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></li></a><a
-      href="<?=$url_en?>"><li><img class="dark_shadow" src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></li></a>
+        <li><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
+        <li><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
+        <li><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
+        <li><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
+        <li><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
+        <li><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        <li><a href="<?=$url_fr?>"><img class="dark_shadow" src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></a></li>
+        <li><a href="<?=$url_en?>"><img class="dark_shadow" src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></a></li>
       </ul>
     </section>
     <div id="footer">
