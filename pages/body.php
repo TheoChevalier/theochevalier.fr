@@ -15,6 +15,7 @@
   <div id="container">
     <header>
   <div class="header_degrade">
+  <a href="https://github.com/TheoChevalier" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div class="choix_langue">
     <?php
       $uri = $_SERVER['REQUEST_URI'];
@@ -25,12 +26,12 @@
       else {
         switch($uri)
         {
-          case RELPATH."/index.php":
+          case "/index.php":
             $url_fr = $uri.'?lang=fr';
             $url_en = $uri.'?lang=en';
           break;
           
-          case RELPATH."/":
+          case "/":
             $url_fr = $uri.'index.php?lang=fr';
             $url_en = $uri.'index.php?lang=en';
           break;
@@ -42,9 +43,8 @@
         }
       }
     ?>
-    
-        <a href="<?=$url_en?>"><button><img src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></button></a>
-        <a href="<?=$url_fr?>"><button><img src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></button></a>
+      <a href="<?=$url_fr?>"><button><img src="img/ico/flag_fr.png" alt="Français" title="Définir la langue en français" /></button></a>
+      <a href="<?=$url_en?>"><button><img src="img/ico/flag_en.png" alt="English" title="Set langage to English" /></button></a>
     </div>
     <div class="titre_site">Théo Chevalier</div>
     <div class="sous_titre_site"><img src="img/etoile.png" alt="*" /><?=$langage_index['ss_titre1'][$lang]?><img src="img/etoile.png" alt="*" /><?=$langage_index['ss_titre2'][$lang]?><img src="img/etoile.png" alt="*" /></div>

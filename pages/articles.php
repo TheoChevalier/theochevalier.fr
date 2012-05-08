@@ -4,12 +4,12 @@ include("locales/articles.php");
 if(isset($_GET['article'])&& !empty($_GET['article']))
 {
   $art_id = mysql_real_escape_string($_GET['article']);
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date FROM tc_articles WHERE art_id = '.$art_id);
+  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update FROM tc_articles WHERE art_id = '.$art_id);
   $art = mysql_fetch_array($requete_art);
   //On prépare les variables pour les afficher dans le header
   $page_titre = utf8_encode($art['titre_'.$lang]);
   $page_img = "articles/".$art['art_img'];
-  $page_desc = utf8_encode(strip_tags(substr($art['texte_'.$lang], 0, 200)))." ...";
+  $page_desc = utf8_encode(strip_tags(substr($art['texte_'.$lang], 0, 400)))." ...";
   $page_keywords = utf8_encode($art['keywords']);
   //On inclue le header et le menu
   include("pages/header.php");
@@ -19,6 +19,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link"><img src="img/ico/arrow_left.png" alt="<" align="top" /> <?=$langage['titre'][$lang]?></div></a>
   <article class="art_all">
     <h1 class="art_titre art_titre_article"><?=utf8_encode($art['titre_'.$lang])?></h1>
+    <?php if($art['date'] != $art['date_update']) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update'], $lang).'.</span>'; ?>
     <div class="art_text">
       <div class="art_img art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <?php echo utf8_encode($art['texte_'.$lang]); ?>
@@ -32,7 +33,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         </div>
       </div>
-      <div class="art_date2"><?=$langage['date'][$lang]?> <?php echo utf8_encode(formater_date($art['date'])); ?></div>
+      <div class="art_date2"><?=$langage['date'][$lang]?> <?php echo utf8_encode(date_heure($art['date'], $lang)); ?></div>
       <div class="clear"></div>
     <div class="com_sep"></div>
     <?php
@@ -51,42 +52,43 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       }
     }
     ?>
-    <div id="com_js"></div>
+    
     <script src="js/libs/canvasloader.min.js"></script>
     <script type="text/javascript">
     function creerRequete() {
-    try {
-    requete = new XMLHttpRequest();
-    } catch (microsoft) {
-    try {
-    requete = new ActiveXObject('Msxml2.XMLHTTP');
-    } catch(autremicrosoft) {
-    try {
-    requete = new ActiveXObject('Microsoft.XMLHTTP');
-    } catch(echec) {
-    requete = null;
+      try {
+        requete = new XMLHttpRequest();
+      } catch (microsoft) {
+        try {
+          requete = new ActiveXObject('Msxml2.XMLHTTP');
+        } catch(autremicrosoft) {
+          try {
+            requete = new ActiveXObject('Microsoft.XMLHTTP');
+          } catch(echec) {
+            requete = null;
+          }
+        }
+      }
+      if(requete == null) {
+      alert('<?=$langage['xhr_fail'][$lang]?>');
+      }
     }
-    }
-    }
-    if(requete == null) {
-    alert('<?=$langage['xhr_fail'][$lang]?>');
-    }
-    }
-    function envoi_ajax()
-    {
+    
+    var count_message = <?=$i?>;
+    function envoi_ajax() {
       creerRequete();
-      var nom = document.formulaire.nom.value;
-      var email = document.formulaire.email.value;
-      var site = document.formulaire.site.value;
-      var message = document.formulaire.message.value;
-      var follow = document.formulaire.follow;
+      var form = document.formulaire;
+      var nom = form.nom.value;
+      var email = form.email.value;
+      var site = form.site.value;
+      var message = form.message.value;
+      var follow = form.follow;
       if(follow.checked)
         var follow = follow.value;
       else
         var follow = "no-follow";
       var article = <?=$_GET['article']?>;
       var lang = '<?=$lang?>';
-      var count_message =  <?=$i?>;
       var url = 'includes/com.php';
       requete.open('POST', url, true);
       requete.onreadystatechange = function() {
@@ -96,12 +98,11 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           var com = document.getElementById('com_js');
           var message = document.getElementById('resultats');
           if (tmp[0] != "") {
-            document.formulaire.nom.value = "";
-            document.formulaire.email.value = "";
-            document.formulaire.site.value = "";
-            document.formulaire.site.style.color = '#aaa';
-            document.formulaire.message.value = "";
-            com.innerHTML = tmp[0];
+            form.reset();
+            var div = document.createElement('div');
+            div.innerHTML = tmp[0];
+            com.parentNode.insertBefore(div, com);
+            count_message++;
           }
           if (tmp[1] != "") {
             message.style.display = 'block';
@@ -115,6 +116,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       requete.send(data);
     }
     </script>
+    <div id="com_js"></div>
     <h2><?=$langage['form_titre'][$lang]?></h2>
       <form name="formulaire" id="formulaire" action="" method="" onsubmit="return false;">
       <div><label for="nom"><span class="requis">(*)</span> <?=$langage['nom'][$lang]?></label> <input type="text" name="nom" id="nom" placeholder="<?=$langage['pl_nom'][$lang]?>" required="" /></div>
@@ -139,6 +141,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     </div>
     <span class="requis"><?=$langage['requis'][$lang]?></span>
   </article>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link art_link_bot"><img src="img/ico/arrow_left.png" alt="<" align="top" /> <?=$langage['titre'][$lang]?></div></a>
 <?php
 }
 //Sinon on affiche tous les articles
@@ -147,7 +150,7 @@ else
   //On prépare les variables pour les afficher dans le header
   $page_titre = "Blog";
   $page_img = "articles/default.jpg";
-  $page_desc = "Ceci est mon blog. J'y publie des articles liés à mon expérience au sein de la communauté Mozilla, au développement, à Firefox ...";
+  $page_desc = $langage['page_desc'][$lang];
   $page_keywords = "blog, articles, news, developement, Mozilla, Firefox,";
   //On inclue le header et le menu
   include("pages/header.php");
@@ -191,7 +194,7 @@ else
         <?php echo utf8_encode($art['titre_'.$lang]); ?>
       </span>
     </div>
-    <div class="art_date"><?=$langage['date'][$lang]?> <?php echo utf8_encode(formater_date($art['date'])); ?></div>
+    <div class="art_date"><?=$langage['date'][$lang]?> <?php echo utf8_encode(date_heure($art['date'], $lang)); ?></div>
     <div class="clear"></div>
     </div>
   </article>

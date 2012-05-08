@@ -32,5 +32,26 @@ $langage_index = array(
 'menu_contact' => array(
   'fr' => "Contact",
   'en' => "Contact"),
+
+// Footer
+
+'blogs' => array(
+'fr' => '<li>Blogs/sites recommandés</li>
+         <li><a href="http://www.mozfr.org" target="_blank">Communauté Mozilla francophone</a></li>
+         <li><a href="http://planete.mozfr.org" target="_blank">Actualité Mozilla francophone</a></li>
+         <li><a href="http://planet.mozilla.org" target="_blank">Actualité Mozilla</a></li>
+         <li><a href="http://bonjourmozilla.fr/" target="_blank">Bonjour Mozilla!</a></li>
+         <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>
+         ',
+'en' => '<li>Recommended blogs/sites</li>
+         <li><a href="http://planet.mozilla.org" target="_blank">Mozilla community news</a></li>
+         <li><a href="http://bonjourmozilla.fr/" target="_blank">Bonjour Mozilla!</a></li>
+         <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>'),
+'articles' => array(
+'fr' => 'Mes derniers articles',
+'en' => 'My last posts'),
+'tweets' => array(
+'fr' => 'Mes derniers tweets (Bientôt)',
+'en' => 'My last tweets (Soon)'),
 );
  ?>

@@ -15,8 +15,10 @@ include("pages/body.php");
     <option value="fr">Français</option>
     <option value="en">Anglais</option>
   </select>
+  
   <input type="hidden" name="mot_de_passe" value="<?php if(isset($_POST['mot_de_passe'])) echo $_POST['mot_de_passe']; ?>" />
  </form>
+ <?=date(DATE_ATOM, time())?>
  </div>
  </article>
 <?php

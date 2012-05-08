@@ -32,6 +32,7 @@ if(isset($_GET['page']) && !empty($_GET['page']))
 else{
   $page = '';
 }
+
 switch($page)
 {
   case'2':
@@ -62,7 +63,10 @@ switch($page)
     include("pages/admin.php");
   break;
   default;
-    include("pages/profil.php");
+    if(is_file("includes/".$page.".php"))
+      include("includes/".$page.".php");
+    else
+      include("pages/profil.php");
   break;
 }
   include("pages/footer.php");

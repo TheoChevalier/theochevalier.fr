@@ -581,6 +581,7 @@ h1{margin: 3px;font-size: 25px;}
   color:#333;
 }
 .art_link:hover{background-color:#333;color:#fff;}
+.art_link_bot{ margin-top: 4px;}
 .art_all{background-color: #fff; padding: 20px 5%; margin-top: 4px;}
 .art_img img{
   width: 50px;
@@ -625,6 +626,9 @@ article .art_date2{
   font-size: 12px;
   text-align: right;
   margin: 30px 70px 0 0;
+}
+#update {
+  color: #4c76a4;
 }
 #partage{margin: 0 70px;}
 #partage div{float:left;}
@@ -755,7 +759,7 @@ input, textarea, select {
   line-height:1em;
   margin:0;
 }
-input[type="checkbox"] {width:20px;min-width:20px;margin-left:135px;margin-right:35px;}
+input[type="checkbox"] {width:20px;min-width:20px;margin-left:135px;margin-right:35px; border: none;}
 #labelBox{width:auto;float: none;display:inline-block;text-align:left;margin-left:0;}
 select{width:312px;}
 textarea, .area{overflow:auto; height:150px; width:400px;}
@@ -776,6 +780,7 @@ input:focus, textarea:focus, select:focus {outline:none;border-color:#666;color:
 #form_contact input, #form_contact textarea{background:#fff;}
 .submit_contact{background-color: rgba(0,0,0,.3);}
 .clear{clear: both;}
+/*
 footer{
   margin-left: auto;
   margin-right: auto;
@@ -791,9 +796,85 @@ footer{
   background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4)0%,rgba(255,255,255,0) 55%);
   background-image: -ms-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
   background-image: radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
+  background: #333;
+}*/
+footer{
+  min-width: 100%;
+  width: 100%;
+  bottom: 0;
+  margin-top: 60px;
+  text-align: center;
+  color:#fff;
+  background-color: #333;
+  background-image:url(../img/noise.png);
+  -o-box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
+  -ms-box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
+  -moz-box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
+  -webkit-box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
+  box-shadow: 0px -5px 5px rgba(0, 0, 0,.3);
+  border-top: 1px solid #777;
 }
-.ff_mobile{ display: none;}
-.sudweb{box-shadow: 0 0 10px rgba(0,0,0,.5); margin-right: 40px;}
+footer #menu li {
+  font-size: 17px;
+  margin: 0 10px;
+  background: none;
+}
+/*
+footer table{
+  width: 70%;
+  margin: auto;
+  border: 1px solid #555;
+}
+footer table td{
+  border: 1px solid #000;
+}*/
+#footer {
+  display: table;
+  width: 85%;
+  max-width: 1880px;
+  min-width: 728px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+#footer ul {
+  display: table-cell;
+  height: 100%;
+  width: 21%;
+  max-width: 21%;
+  padding: 20px 2%;
+  list-style-type: none;
+  line-height: 16px;
+  color: #cdcdcd;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+#footer ul:last-child {border-right: none;}
+
+#footer ul li {
+  display: block;
+  width: 100%;
+}
+#footer a{
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+#footer a:hover{
+  background: #fff;
+  color: #333;
+}
+#firefox {
+  padding-bottom: 20px;
+  background-image: -moz-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
+  background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
+  background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4)0%,rgba(255,255,255,0) 55%);
+  background-image: -ms-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 55%);
+  background-image: radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 75%);
+}
+#firefox img:first-child {
+  margin-top: 15px;
+}
+#firefox .ff_mobile{ display: none;}
+#firefox .sudweb{box-shadow: 0 0 20px rgba(255,255,255,.3);}
 
 
 /* ==|== non-semantic helper classes ========================================
@@ -885,9 +966,24 @@ input, textarea, select{width:280px;}
 #resultats{margin-left:0;}
 .submit{margin-left:0;}
 /*Footer*/
-.ff_mobile{display:block;}
-.ff_desktop{display:none;}
+#firefox .ff_mobile{display:block;}
+#firefox .ff_desktop{display:none;}
 footer{max-width:728px;min-width:300px;}
+#footer {
+  width: 100%;
+  max-width: 728px;
+  min-width: 300px;
+}
+#footer ul {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0;
+  list-style-type: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+#footer ul:last-child {border-right: none;}
 }
 
 @media only screen and (max-width : 320px) {

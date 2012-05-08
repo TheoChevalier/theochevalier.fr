@@ -33,7 +33,7 @@ $langage = array(
 	'fr' => "Systèmes d'exploitation",
 	'en' => "Operating Systems"),
 'os' => array(
-	'fr' => "Je suis à l'aise sous Windows XP/Vista/Seven/8, ainsi que sous GNU Linux Ubuntu/Debian 5",
-	'en' => "Advanced configuration capacity on Windows XP / Vista / Seven at all levels, from the installation, network creation through system maintenance."),
+	'fr' => "Je suis à l'aise sous Windows, ainsi que sous GNU/Linux Ubuntu/Debian 5.",
+	'en' => "I'm comfortable with Windows and GNU/Linux Ubuntu/Debian 5.")
 );
  ?>

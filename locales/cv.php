@@ -41,10 +41,10 @@ $langage = array(
   'fr' => "Compétences",
   'en' => "Skills"),
 'comp' => array(
-  'fr' => "• Langages pratiqués couramment: <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span> (.NET & WinRT)
+  'fr' => "• Langages pratiqués couramment: <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
       <br />• Langages pratiqués occasionnellement: XML/XUL, C, Assembleur x86, W langage
       <br />• Design, ergonomie, accessibilité, référencement",
-  'en' => "• Languages ​​commonly practiced <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span> (.NET & WinRT)
+  'en' => "• Languages ​​commonly practiced <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
       <br />• Languages ​​occasionally practiced: XML/XUL, C, Assembler x86, W langage
       <br />• Design, ergonomy, accessibility, SEO"),
 'formation_titre' => array(
@@ -64,12 +64,15 @@ $langage = array(
   'en' => "Software / Operating Systems"),
 'os' => array(
   'fr' => "Développement: Notepad++, Visual Studio 2010/2011, WAMP
-      <br />Gestion de version: Mercurial (hg), GIT
+      <br />Outils: Mercurial (hg), GIT, Bugzilla
       <br />Graphisme/Vidéo : The GIMP, Balsamiq Mockups, Adobe Suite, InkScape, Sony Vegas Pro
       <br />Autres: VirtualBox, Suite Office 2010
-      <br />• Windows XP / Vista / Seven / 8, Linux Ubuntu, Debian",
-  'en' => "• Notepad++, VS 2010/2011, WAMP, The GIMP, Adobe Suite, Inkscape, Sony Vegas Pro, VirtualBox, Office Suite 2010, Balsamiq Mockups
-      <br />• Windows XP / Vista / Seven / 8, Ubuntu Linux, Debian"),
+      <br />OS: Windows, GNU/Linux",
+  'en' => "Development: Notepad++, Visual Studio 2010/2011, WAMP
+      <br />Tools: Mercurial (hg), GIT, Bugzilla
+      <br />Graphism/Video : The GIMP, Balsamiq Mockups, Adobe Suite, InkScape, Sony Vegas Pro
+      <br />Other: VirtualBox, Suite Office 2010
+      <br />OS: Windows, GNU/Linux"),
 'divers_titre' => array(
   'fr' => "Divers",
   'en' => "Various"),
