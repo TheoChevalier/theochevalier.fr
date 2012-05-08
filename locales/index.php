@@ -49,9 +49,9 @@ $langage_index = array(
          <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>'),
 'articles' => array(
 'fr' => 'Mes derniers articles',
-'en' => 'My last posts'),
+'en' => 'My latest posts'),
 'tweets' => array(
 'fr' => 'Mes derniers tweets (Bientôt)',
-'en' => 'My last tweets (Soon)'),
+'en' => 'My latest tweets (Soon)'),
 );
  ?>
