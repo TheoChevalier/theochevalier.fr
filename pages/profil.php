@@ -1,4 +1,4 @@
-﻿<?php include("pages/header.php");
+<?php include("pages/header.php");
 include("pages/body.php");
 include("locales/profil.php"); ?>
 	<article id="profil">

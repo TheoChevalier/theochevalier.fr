@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $page_titre="Projets";
 include("pages/header.php");
 include("pages/body.php");

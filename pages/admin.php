@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 if(isset($_POST['mot_de_passe']) && $_POST['mot_de_passe'] == "updateflux")
 {
 if(isset($_POST['rss']) && $_POST['rss'] != "")

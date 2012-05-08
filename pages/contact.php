@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $page_titre = "Contact";
 $page_desc = "Vous pouvez me contacter sur cette page.";
 include("pages/header.php");
