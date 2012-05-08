@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <?xml-stylesheet type="text/xsl" href="rss.xslt" ?>
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <atom:link href="http://localhost/theochevalier/rss.xml" rel="self" type="application/rss+xml" />
+      <title>Théo Chevalier</title>
+      <link>http://localhost/theochevalier</link>
+      <description>Site de Théo Chevalier</description>
+      <managingEditor>contact@theochevalier.fr (Théo Chevalier)</managingEditor>
+      <image>
+      <title>Théo Chevalier</title>
+      <url>http://localhost/theochevalier/img/logo.jpg</url>
+      <link>http://localhost/theochevalier</link>
+      </image>
+    
+      <item>
+      <title>Firefox Sync</title>
+      <link>http://localhost/theochevalier/index.php?page=6&amp;article=1&amp;lang=en</link>
+      <guid isPermaLink="false">mozilla_news_2</guid>
+      <description><![CDATA[
+      <p><img src="http://localhost/theochevalier/img/articles/firefox_sync_logo.jpg" alt="" align="middle" />
+      <p> Did you know that you can save all your bookmarks, passwords, history, open tabs, themes, settings, and soon even <a href="https://addons.mozilla.org/" target="_blank">add-ons</a> in Firefox? This feature was first developed as an add-on, and then been implemented in Firefox 4.</p>
+
+<p> Firefo</p>
+      ]]></description>
+      <pubDate>2011-12-26</pubDate>
+      </item>
+    
+      <item>
+      <title>Participez au projet Firefox</title>
+      <link>http://localhost/theochevalier/index.php?page=6&amp;article=2&amp;lang=en</link>
+      <guid isPermaLink="false">mozilla_news_1</guid>
+      <description><![CDATA[
+      <p><img src="http://localhost/theochevalier/img/articles/firefox.jpg" alt="" align="middle" />
+      <p>Comme vous le savez peut-être, Firefox est un logiciel open-source développé par la fondation à but non-lucratif Mozilla. Mozilla est une communauté mondiale de contributeurs qui travaillent ensemble pour rendre le Web ouvert, public, et accesible à tous. Vous pouvez donc vous aussi partici</p>
+      ]]></description>
+      <pubDate>2011-12-26</pubDate>
+      </item>
+    </channel>
+  </rss>
