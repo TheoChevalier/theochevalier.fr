@@ -301,7 +301,7 @@ td { vertical-align: top; }
 }
 .star {
   display: inline-block;
-  background: url(../img/sprites.png) -110px -40px no-repeat;
+  background: url(../img/sprites.png) -103px -40px no-repeat;
   width: 22px;
   height: 22px;
   border: 1px solid #fff;
@@ -844,6 +844,12 @@ article .art_date2{
 .requis{font-style:italic;color:#0074d8;font-size:13px;}
 #canvasloader-container{display: none;margin-left: 200px;}
 #resultats{color:#0074d8; margin-top:15px;margin-left: 190px;}
+#com_ok {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background: url(../img/sprites.png) -80px -40px no-repeat;
+}
 #formulaire{margin-top:30px;}
 .art_text h2{margin-left: 70px;}
 

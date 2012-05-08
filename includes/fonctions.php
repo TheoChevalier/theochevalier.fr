@@ -39,11 +39,11 @@ function date_heure($timestamp_bdd, $lang)
   else $date = strftime( "%d %B %Y, &agrave; %Hh%M" , $timestamp_bdd);
   return $date;
 }
-function add_com($i,$id,$hash,$site,$nom,$date,$message,$lang)
+function add_com($i,$id,$mail,$site,$nom,$date,$message,$lang)
 {
 echo '<div class="com_msg" id="c'.$id.'">
   <div class="gravatar">
-  <img src="http://www.gravatar.com/avatar/'.$hash.'?d=mm"/>
+  <img src="http://www.gravatar.com/avatar/'.md5($mail).'?d=mm"/>
   </div>
   <div class="com_right">';
  if($site != "http://" && $site != NULL)

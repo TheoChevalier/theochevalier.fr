@@ -29,7 +29,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
         <div>
-          <a name="fb_share" type="button" share_url="<?php echo ROOTPATH.$_SERVER['REQUEST_URI'].'&amp;lang='.$lang; ?>">Partager</a>
+          <a name="fb_share" type="button" share_url="<?php echo ROOTPATH.str_replace('&', '&amp;', $_SERVER['REQUEST_URI']).'&amp;lang='.$lang; ?>">Partager</a>
           <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         </div>
       </div>
@@ -48,7 +48,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       while($com = mysql_fetch_array($com_requete))
       {
         $i++;
-        echo add_com($i,$com['com_id'],$com['com_hash'],$com['com_site'],$com['com_nom'],$com['com_date'],$com['com_msg'],$lang);
+        echo add_com($i,$com['com_id'],$com['com_mail'],$com['com_site'],$com['com_nom'],$com['com_date'],$com['com_msg'],$lang);
       }
     }
     ?>
@@ -118,7 +118,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     </script>
     <div id="com_js"></div>
     <h2><?=$langage['form_titre'][$lang]?></h2>
-      <form name="formulaire" id="formulaire" action="" method="" onsubmit="return false;">
+      <form name="formulaire" id="formulaire" action="self" method="post" onsubmit="return false;">
       <div><label for="nom"><span class="requis">(*)</span> <?=$langage['nom'][$lang]?></label> <input type="text" name="nom" id="nom" placeholder="<?=$langage['pl_nom'][$lang]?>" required="" /></div>
       <div><label for="email"><span class="requis">(*)</span> <?=$langage['email'][$lang]?></label> <input type="text" name="email" id="email"  placeholder="<?=$langage['pl_email'][$lang]?>" required="" /></div>
       <div><label for="site"><?=$langage['site'][$lang]?></label> <input type="url" id="site" name="site" placeholder="<?=$langage['pl_site'][$lang]?>" /></div>

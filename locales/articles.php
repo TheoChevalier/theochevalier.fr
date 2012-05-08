@@ -91,8 +91,8 @@ $langage = array(
   'fr' => "Ceci est un email automatique, merci de ne pas y répondre.",
   'en' => "This is an automatic email, thank you for not answering."),
 'com_ok' => array(
-  'fr' => "<img src='img/ico/check.png' alt='OK' /> Votre message a été enregistré.",
-  'en' => "<img src='img/ico/check.png' alt='OK' /> Your message has been posted."),
+  'fr' => "<div id='com_ok'></div> Votre message a été enregistré.",
+  'en' => "<div id='com_ok'></div> Your message has been posted."),
 'com_champs' => array(
   'fr' => "Les champs ne sont pas remplis correctement.",
   'en' => "Fields aren't properly filled."),

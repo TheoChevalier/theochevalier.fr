@@ -19,7 +19,7 @@
         </map>
         <div id="choix_langue">
         <?php
-          $uri = $_SERVER['REQUEST_URI'];
+          $uri = str_replace('&', '&amp;', $_SERVER['REQUEST_URI']);
           if(preg_match("/lang=/i", $uri)) {
             $url_fr = str_replace('lang=en', 'lang=fr', $uri);
             $url_en = str_replace('lang=fr', 'lang=en', $uri);

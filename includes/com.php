@@ -7,6 +7,14 @@ $i=0;
 $i_msg=0;
 $separateur='%☺%';
 $lang = mysql_real_escape_string(utf8_decode($_POST['lang']));
+if($lang == 'fr'){
+  setlocale(LC_TIME, 'fr_FR');
+  date_default_timezone_set('Europe/Paris');
+}else
+{
+  setlocale(LC_TIME, 'en_US');
+  date_default_timezone_set('America/Los_Angeles');
+}
 if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POST['email'] !="" && isset($_POST['message']) && $_POST['message'] !="")
 {
   if(!preg_match("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]{2,}[.][a-zA-Z]{2,4}$^", $_POST['email']))
@@ -40,7 +48,6 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
   if($i == 0)
   {
     $mail = strtolower(mysql_real_escape_string(utf8_decode($_POST['email'])));
-    $hash = md5($mail);
     $nom = mysql_real_escape_string(utf8_decode($_POST['nom']));
     $message = stripslashes(nl2br(htmlspecialchars(utf8_decode($_POST['message']))));
     $follow = mysql_real_escape_string(utf8_decode($_POST['follow']));
@@ -48,8 +55,8 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     $art = intval($_POST['article']);
     $site = mysql_real_escape_string(utf8_decode($_POST['site']));
     $count_message = intval($_POST['count_message']);
-    mysql_query('INSERT INTO tc_com(com_mail, com_hash, com_nom, com_msg, com_art, com_date, com_lang)
-    VALUES("'.$mail.'", "'.$hash.'", "'.$nom.'", "'.$message.'", "'.$art.'", "'.$time.'", "'.$lang.'")');
+    mysql_query('INSERT INTO tc_com(com_mail, com_nom, com_msg, com_art, com_date, com_lang)
+    VALUES("'.$mail.'", "'.$nom.'", "'.$message.'", "'.$art.'", "'.$time.'", "'.$lang.'")');
     $id = mysql_insert_id();
     if ($follow == "follow")
       $follow_bool = '1';
@@ -92,7 +99,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
           $headers  = 'MIME-Version: 1.0' . $passage_ligne;
           $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
           $headers .= 'From: "theochevalier.fr" <no-reply@theochevalier.fr>' . $passage_ligne;
-          //mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
+          mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
         }
       }
     }
@@ -109,11 +116,11 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     $headers  = 'MIME-Version: 1.0' . $passage_ligne;
     $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
     $headers .= 'From: "Théo Chevalier" <no-reply@theochevalier.fr>' . $passage_ligne;
-    //mail('contact@theochevalier.fr', '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
+    mail('contact@theochevalier.fr', '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
     $i_msg++;
     $msg[$i_msg] = $langage['com_ok'][$lang];
     $count_message++;
-    echo addslashes(html_entity_decode(add_com($count_message,$id,$hash,$site,$nom,$time,$message,$lang)));
+    echo addslashes(html_entity_decode(add_com($count_message,$id,$mail,$site,$nom,$time,$message,$lang)));
   }
 }
 else
