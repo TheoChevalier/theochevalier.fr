@@ -1,5 +1,13 @@
 <?php
 include("connexion.php");
+//Gestion du nom de domaine
+define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
+
+function connexionbdd()
+{
+  mysql_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE);
+  mysql_select_db(NOM_BD);
+}
 function formater_date($date_bdd)
 {
   $date_annee = substr($date_bdd, 0, 4);
