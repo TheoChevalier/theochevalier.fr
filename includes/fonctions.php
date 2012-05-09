@@ -35,8 +35,8 @@ function age($naiss) {
 }
 function date_heure($timestamp_bdd, $lang)
 {
-  if($lang == "en") $date = strftime( "%B, %d %Y, at %I:%M %p" , $timestamp_bdd);
-  else $date = strftime( "%d %B %Y, &agrave; %Hh%M" , $timestamp_bdd);
+  if($lang == "en") $date = strftime("%B, %d %Y, at %I:%M %p" , $timestamp_bdd);
+  else $date = strftime("%d %B %Y, &agrave; %Hh%M" , $timestamp_bdd);
   return $date;
 }
 function add_com($i,$id,$mail,$site,$nom,$date,$message,$lang)

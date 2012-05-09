@@ -18,7 +18,7 @@
         <?=$langage_index['blogs'][$lang]?>
       </ul>
       <ul>
-        <li><?=$langage_index['articles'][$lang]?></li>
+        <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
         <?php 
         $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC");
         while($art = mysql_fetch_array($requete_art))
@@ -33,11 +33,12 @@
       echo fread($xml, filesize("pages/twitter.xml"));*/
       
       ?>
-      <li><?=$langage_index['tweets'][$lang]?></li>
+      <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
       </ul>
       <ul>
-        <li><a href='http://sudweb.fr' target="_blank"><img class="dark_shadow" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
-        <li><a href="http://www.stopacta.info/" target="_blank" ><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
+        <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
+        <li><a href='http://sudweb.fr' target="_blank" class="footer_img"><img class="dark_shadow" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
+        <li><a href="http://www.stopacta.info/" target="_blank" class="footer_img"><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
       </ul>
     </div>
     <div id="firefox">
