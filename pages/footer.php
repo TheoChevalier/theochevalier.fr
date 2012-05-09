@@ -14,7 +14,7 @@
       </ul>
     </section>
     <div id="footer">
-      <ul>
+      <ul id="sites">
         <?=$langage_index['blogs'][$lang]?>
       </ul>
       <ul>

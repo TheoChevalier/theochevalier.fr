@@ -37,17 +37,18 @@ $langage_index = array(
 
 'blogs' => array(
 'fr' => '<li class="footer_title">Blogs/sites recommandés</li>
-         <li><a href="http://www.mozfr.org" target="_blank">Communauté Mozilla francophone</a></li>
-         <li><a href="http://planete.mozfr.org" target="_blank">Actualité Mozilla francophone</a></li>
-         <li><a href="http://planet.mozilla.org" target="_blank">Actualité Mozilla</a></li>
-         <li><a href="http://bonjourmozilla.fr/" target="_blank">Bonjour Mozilla!</a></li>
-         <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>
-         <li><a href="http://jeremie.patonnier.net/" target="_blank">Jérémie Patonnier</a></li>
+         <li><a href="http://www.mozfr.org" target="_blank"><div id="mozfr"></div><div>Communauté Mozilla francophone</div></a></li>
+         <li><a href="http://planete.mozfr.org" target="_blank"><div id="planete"></div><div>Actualité Mozilla francophone</div></a></li>
+         <li><a href="http://planet.mozilla.org" target="_blank"><div id="planet"></div><div>Actualité Mozilla</div></a></li>
+         <li><a href="http://bonjourmozilla.fr/" target="_blank"><div id="bonjour"></div><div>Bonjour Mozilla!</div></a></li>
+         <li><a href="https://developer.mozilla.org" target="_blank"><div id="mdn"></div><div>Mozilla developer Network</div></a></li>
+         <li><a href="http://jeremie.patonnier.net/" target="_blank"><div id="jpatonnier"></div><div>Jérémie Patonnier</div></a></li>
+         <li><a href="http://www.glazman.org/weblog/" target="_blank"><div id="glazou"></div><div>Daniel Glazman</div></a></li>
          ',
 'en' => '<li class="footer_title">Recommended blogs/sites</li>
-         <li><a href="http://planet.mozilla.org" target="_blank">Mozilla community news</a></li>
-         <li><a href="http://bonjourmozilla.fr/" target="_blank">Bonjour Mozilla!</a></li>
-         <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>'),
+         <li><a href="http://planet.mozilla.org" target="_blank"><div id="planet"></div><div>Mozilla community news</div></a></li>
+         <li><a href="http://bonjourmozilla.fr/" target="_blank"><div id="bonjour"></div><div>Bonjour Mozilla!</div></a></li>
+         <li><a href="https://developer.mozilla.org" target="_blank"><div id="mdn"></div><div>Mozilla developer Network</div></a></li>'),
 'articles' => array(
 'fr' => 'Mes derniers articles',
 'en' => 'My latest posts'),

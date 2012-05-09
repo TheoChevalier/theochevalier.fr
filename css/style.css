@@ -981,6 +981,9 @@ footer .menu ul li a:hover, #footer li a:hover, .tweet:hover{
 footer .menu ul li a:hover, #footer li a:hover {
   color:#ddd;
 }
+
+/* Tweets */
+
 .tweet {
   padding: 10px;
   text-align: left;
@@ -997,6 +1000,49 @@ footer .menu ul li a:hover, #footer li a:hover {
 .tweet_date a {
   color: #aaa;
   font-size: 11px;
+}
+#jpatonnier, #mdn, #bonjour, #planete, #planet, #mozfr, #glazou {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  float: left;
+  background: url(../img/favicon_sprites.png) no-repeat;
+}
+#sites div:first-child {
+  opacity: 0;
+  transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+#sites div:nth-child(2) {
+ margin-left: 20px;
+}
+#sites a:hover div {
+ opacity: 1;
+}
+/* Sprites favicons */
+#jpatonnier {
+  background-position: -16px -16px;
+}
+#mdn {
+  background-position: 0 -16px;
+}
+#bonjour {
+  background-position: 0 0;
+}
+#planete {
+  background-position: -16px 0;
+}
+#planet {
+  background-position: 0 -16px;
+}
+#mozfr {
+  background-position: -16px 0;
+}
+#glazou {
+  background-position: -32px -16px;
 }
 /*
 footer .menu ul li a:active, #footer a:active {
