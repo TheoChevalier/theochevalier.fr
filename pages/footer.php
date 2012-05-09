@@ -14,9 +14,6 @@
       </ul>
     </section>
     <div id="footer">
-      <ul id="sites">
-        <?=$langage_index['blogs'][$lang]?>
-      </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
         <?php 
@@ -24,6 +21,9 @@
         while($art = mysql_fetch_array($requete_art))
           echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
         ?>
+      </ul>
+      <ul id="sites">
+        <?=$langage_index['blogs'][$lang]?>
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
@@ -36,7 +36,7 @@
       /* Nom d'utilisateur sur Twitter */
       $user = "t_chevalier";
       /* Nombre de message à afficher */
-      $count = 10;
+      $count = 8;
       /* Format de la date à afficher */
       $date_format = 'd M Y, H\hi';
       $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
