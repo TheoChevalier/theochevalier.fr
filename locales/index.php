@@ -42,6 +42,7 @@ $langage_index = array(
          <li><a href="http://planet.mozilla.org" target="_blank">Actualité Mozilla</a></li>
          <li><a href="http://bonjourmozilla.fr/" target="_blank">Bonjour Mozilla!</a></li>
          <li><a href="https://developer.mozilla.org" target="_blank">Mozilla developer Network</a></li>
+         <li><a href="http://jeremie.patonnier.net/" target="_blank">Jérémie Patonnier</a></li>
          ',
 'en' => '<li class="footer_title">Recommended blogs/sites</li>
          <li><a href="http://planet.mozilla.org" target="_blank">Mozilla community news</a></li>
@@ -51,7 +52,10 @@ $langage_index = array(
 'fr' => 'Mes derniers articles',
 'en' => 'My latest posts'),
 'tweets' => array(
-'fr' => 'Mes derniers tweets (Bientôt)',
-'en' => 'My latest tweets (Soon)'),
+'fr' => 'Mes derniers tweets',
+'en' => 'My latest tweets'),
+'pub' => array(
+'fr' => '&nbsp;',
+'en' => '&nbsp;'),
 );
  ?>

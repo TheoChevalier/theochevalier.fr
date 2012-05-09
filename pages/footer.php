@@ -20,23 +20,37 @@
       <ul>
         <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
         <?php 
-        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC");
+        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC LIMIT 10");
         while($art = mysql_fetch_array($requete_art))
           echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
         ?>
       </ul>
       <ul>
+        <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
       <?php
+      
       /*$xml = fopen("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier" , 'r');
       file_put_contents("pages/twitter.xml", $xml);
       
       echo fread($xml, filesize("pages/twitter.xml"));*/
-      
+      /* Nom d'utilisateur sur Twitter */
+      $user = "t_chevalier";
+      /* Nombre de message à afficher */
+      $count = 10;
+      /* Format de la date à afficher */
+      $date_format = 'd M Y, H\hi';
+      $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
+      $oXML = simplexml_load_file( $url );
+      foreach( $oXML->status as $oStatus ) {
+        $datetime = date_create($oStatus->created_at);
+        $date = date_format($datetime, $date_format)."\n";
+        echo '<div class="tweet">'.parse($oStatus->text);
+        echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div>';
+      }
       ?>
-      <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
       </ul>
       <ul>
-        <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
+        <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
         <li><a href='http://sudweb.fr' target="_blank" class="footer_img"><img class="dark_shadow" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
         <li><a href="http://www.stopacta.info/" target="_blank" class="footer_img"><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
       </ul>
