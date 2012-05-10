@@ -1106,6 +1106,7 @@ footer .dark_shadow {
 }
 
 #firefox {
+  text-shadow: 1px 1px 0 rgba(0,0,0,.4);
   max-width: 1000px;
   margin: auto;
   padding-bottom: 20px;
@@ -1252,16 +1253,17 @@ footer{max-width:728px;min-width:300px;}
 .conteneur_liens_sociaux{width:70%;}
 video{max-width: 280px;}
 /*Menu*/
-.menu ul{width:320px;
-  padding:0!important;
-  margin:0;
+footer .menu ul li {
+  padding: 0;
+  margin: 0;
 }
-.menu ul li a{
+.menu ul li a {
   display: block;
-  font-weight: bold;
   margin: 0;
   margin-bottom:1px;
   width:300px;
+  padding: 10px 0;
+  max-width: 300px;
 }
 .art_all{padding: 5px;}
 #main .texte{padding: 20px 10px;}

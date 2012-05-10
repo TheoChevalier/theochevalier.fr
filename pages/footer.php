@@ -17,7 +17,7 @@
       <ul>
         <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
         <?php 
-        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC LIMIT 10");
+        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", art_img, date_update FROM tc_articles ORDER BY date_update DESC LIMIT 7");
         while($art = mysql_fetch_array($requete_art))
           echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
         ?>
@@ -28,11 +28,6 @@
       <ul>
         <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
       <?php
-      
-      /*$xml = fopen("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier" , 'r');
-      file_put_contents("pages/twitter.xml", $xml);
-      
-      echo fread($xml, filesize("pages/twitter.xml"));*/
       /* Nom d'utilisateur sur Twitter */
       $user = "t_chevalier";
       /* Nombre de message à afficher */
