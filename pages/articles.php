@@ -16,7 +16,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   include("pages/body.php");
   //Et on affiche l'article
  ?>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link"><img src="img/ico/arrow_left.png" alt="<" align="top" /> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
   <article class="art_all">
     <h1 class="art_titre art_titre_article"><?=utf8_encode($art['titre_'.$lang])?></h1>
     <?php if($art['date'] != $art['date_update']) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update'], $lang).'.</span>'; ?>
@@ -141,7 +141,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     </div>
     <span class="requis"><?=$langage['requis'][$lang]?></span>
   </article>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link art_link_bot"><img src="img/ico/arrow_left.png" alt="<" align="top" /> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link art_link_bot"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
 <?php
 }
 //Sinon on affiche tous les articles

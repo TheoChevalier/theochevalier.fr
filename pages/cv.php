@@ -39,7 +39,7 @@ include("locales/cv.php"); ?>
 		</div>
 		<a href="cv_theo_chevalier_<?=$lang?>.pdf" target="_blank">
 		<div class="pdf">
-			<div class="logo_h2"><img src="img/ico/pdf.png" alt="" /></div><?=$langage['telecharger'][$lang]?>
+			<div class="logo_h2" id="pdf"></div><?=$langage['telecharger'][$lang]?>
 		</div>
 		</a>
 	</article>

@@ -8,25 +8,25 @@ include("locales/competences.php"); ?>
 		</div>
 		<div class="cadre_titre"></div>
 		<div class="texte">
-			<div class="logo_h2"><img src="img/ico/script.png" alt="" /></div><h2><?=$langage['langages_titre'][$lang]?></h2>
+			<div class="logo_h2" id="script"></div><h2><?=$langage['langages_titre'][$lang]?></h2>
 			<div class="marge_logo_h2">
 				<?=$langage['langages'][$lang]?>
 			</div>
-			<div class="logo_h2"><img src="img/ico/graphisme.png" alt="" /></div><h2><?=$langage['graphisme_titre'][$lang]?></h2>
+			<div class="logo_h2"  id="graphisme"></div><h2><?=$langage['graphisme_titre'][$lang]?></h2>
 			<div class="marge_logo_h2">
 				<?=$langage['graphisme'][$lang]?>
 			</div>
 			
-			<div class="logo_h2"><img src="img/ico/ampoule.png" alt="" /></div><h2><?=$langage['creativite_titre'][$lang]?></h2>
+			<div class="logo_h2" id="ampoule"></div><h2><?=$langage['creativite_titre'][$lang]?></h2>
 			<div class="marge_logo_h2">
 				<?=$langage['creativite'][$lang]?>
 			</div>
 			
-			<div class="logo_h2"><img src="img/ico/video.png" alt="" /></div><h2><?=$langage['video_titre'][$lang]?></h2>
+			<div class="logo_h2" id="video"></div><h2><?=$langage['video_titre'][$lang]?></h2>
 			<div class="marge_logo_h2">
 				<?=$langage['video'][$lang]?>
 			</div>
-			<div class="logo_h2"><img src="img/ico/os.png" alt="" /></div><h2><?=$langage['os_titre'][$lang]?></h2>
+			<div class="logo_h2" id="os"></div><h2><?=$langage['os_titre'][$lang]?></h2>
 			<div class="marge_logo_h2">
 				<?=$langage['os'][$lang]?>
 			</div>

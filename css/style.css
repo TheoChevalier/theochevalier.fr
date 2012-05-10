@@ -647,8 +647,32 @@ td { vertical-align: top; }
   -webkit-transition:opacity .2s linear;
 }
 #main .texte .image a img:hover{opacity: 0.75;}
-.logo_h2{height: 40px;float: left;}
-
+.logo_h2{
+  height: 40px;
+  width: 40px;
+  background: url(../img/ico/icones_sprites.png) no-repeat;
+  float: left;}
+#script {
+  background-position: -80px 0;
+}
+#graphisme {
+  background-position: 0 -40px;
+}
+#ampoule {
+  background-position: -40px -40px;
+}
+#video {
+  background-position: -80px -40px;
+}
+#os {
+  background-position: 0 -80px;
+}
+#info {
+  background-position: -40px 0;
+}
+#loupe {
+  background-position: 0 0;
+}
 #competences .texte h2{
   margin-top: -5px;
   margin-left: 60px;
@@ -734,6 +758,13 @@ h1{margin: 3px;font-size: 25px;}
   display: inline-block;
   background-color:#fff;
   color:#333;
+}
+.arrow_back {
+  background: url(../img/ico/icones_sprites.png) -61px -80px no-repeat;
+  height: 29px;
+  width: 21px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .art_link:hover{background-color:#333;color:#fff;}
 .art_link_bot{ margin-top: 4px;}
@@ -874,13 +905,14 @@ article .art_date2{
   background-color: rgba(0,0,0,.3);
 }
 .pdf:hover{background-color:#333;}
-.logo_h2{
+#pdf{
   margin-right: 20px;
   padding:0;
-
-  height: 29px;
+  height: 28px;
+  width: 21px;
+  background-position: -40px -80px;
 }
-.pdf:hover .logo_h2{
+.pdf:hover #pdf{
   box-shadow: 0px 0px 6px 1px #fff;
   background-color: rgba(255,255,255, .5);
 }
