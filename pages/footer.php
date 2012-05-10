@@ -43,7 +43,7 @@
         echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div>'."\n";
       }
       ?>
-      <li><a href="" target="_blank">lire la suite ...</a></li>
+      <li><a href="https://twitter.com/#!/t_chevalier" target="_blank">lire la suite ...</a></li>
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
