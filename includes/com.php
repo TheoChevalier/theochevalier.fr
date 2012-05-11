@@ -99,7 +99,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
           $headers  = 'MIME-Version: 1.0' . $passage_ligne;
           $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
           $headers .= 'From: "theochevalier.fr" <no-reply@theochevalier.fr>' . $passage_ligne;
-          //mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
+          mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers) or die ('Email server unreachable.');
         }
       }
     }
@@ -116,7 +116,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     $headers  = 'MIME-Version: 1.0' . $passage_ligne;
     $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
     $headers .= 'From: "Théo Chevalier" <no-reply@theochevalier.fr>' . $passage_ligne;
-    //mail('contact@theochevalier.fr', '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
+    mail(EMAIL, '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers) or die ('Email server unreachable.');
     $i_msg++;
     $msg[$i_msg] = $langage['com_ok'][$lang];
     $count_message++;
