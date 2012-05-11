@@ -2,22 +2,55 @@
   <feed xmlns="http://www.w3.org/2005/Atom">
    <title>Théo Chevalier</title>
    <subtitle>Site personnel de Théo Chevalier</subtitle>
-   <link href="http://localhost/theochevalier/fr_rss.xml" rel="self" type="application/atom+xml"/>
-   <updated>2012-05-06T00:14:35+02:00</updated>
+   <link href="http://theochevalier/fr_rss.xml" rel="self" type="application/atom+xml"/>
+   <updated>2012-05-11T20:35:49+02:00</updated>
    <author>
      <name>Théo Chevalier</name>
      <email>contact@theochevalier.fr</email>
    </author>
-   <id>http://theochevalier.fr/fr_rss.xml</id>
+   <id>http://theochevalierfr_rss.xml</id>
     
       <entry>
         <author>
-          <name>Theo Chevalier</name>
+          <name>Théo Chevalier/name>
+        </author>
+        <title>Ma première contribution à Firefox</title>
+        <link href="http://theochevalier/index.php?page=6&article=4&lang=fr" />
+        <id>http://theochevalier/index.php?page=6&article=4&lang=fr</id>
+        <summary type="html"><![CDATA[<img src="http://theochevalier/img/articles/firefox.jpg" alt="" /><p>Aujourd'hui, je me sens l'âme d'un super-héro (Rien que ça!), en effet, ma première grosse modification dans Firefox vient tout juste de rejoindre le canal Nightly. Dès aujourd'hui, si vous utilisez Firefox Nightly et que vous créez un nouveau profil utilisateur, ou si vous n'avez pas explicitement refusé l'activation de la Télémétrie sur votre profil actuel, vous enverrez à Mozilla des informations de performances, qui nous sont extrêment utiles. Vous verrez alors apparaître un bandeau (une seule fois) lorsque vous lancerez Nightly, vous informant que désormais vous envoyez ces informations. Je n'ai pas développé ce bandeau, mais j'ai en revanche ajouté un second message avertissant de cet envoi automatique dans la boite de dialogue "à propos de Nightly". Il y est présent depuis plusieurs semaines déjà.</p>
+<p><img src="img/articles_big/about_firefox.jpg" alt="About Firefox" /></p>
+
+Un avertissement à également été mis en place sur le site de téléchargement des versions Nightly et Aurora de Firefox.
+
+<p>Cet envoi par défaut est uniquement présent dans Nightly pour l'instant, mais le 5 Juin 2012, ce sera au tour du canal Aurora d'en bénéficier. Les version Bêta et finales de Firefox continueront de demander à l'utilisateur s'il souhaite activer la télémétrie ou non, et elle restera desactivée par défaut.
+</p>
+
+<p>Cela reste une modeste contribution comparée à de nombreuses autres, mais elle permet d'augmenter le volume de données de performances reçues, ce qui aura un impact à plusieurs niveaux:
+
+<br/><br/>- Le taux précis d'adoption/d'utilisation d'une fonctionnalité permet de connaître l'impact qu'aura un patch, et ainsi de pouvoir juger de son utilité, de définir une priorité entre les patchs. Un patch concernant une fonctionalité utilisée par une majorité d'utilisateurs sera à traiter en priorité, mais d'autres éléments sont à prendre en compte.
+
+<br/><br/>- Il sera plus facile de découvrir les ralentissements dans Firefox, et donc de les corriger. Même chose pour les fuites de mémoire (Programme memshrink), ainsi que la réactivité globale du logiciel, incluant le temps de démarrage (Programme Snappy)
+
+
+<br/><br/>- Les incompatibilités matérielles peuvent être également décellées plus tôt dans le processus de développement. En éffet, l'écosystème de configurations d'ordinateurs est tel que Mozilla ne peut pas tout tester, et il faut donc une masse importante de données pour trouver les configurations incompatibles.</p>
+
+<h3>Comment j'en suis arrivé là</h3>
+
+<p>J'ai réellement commencé à m'impliquer dans le développement de Firefox en Novembre 2011, lorsque je réussis à compiler Firefox sur ma propre machine pour la première fois. J'avais l"idée en tête depuis plusieurs mois, mais ne n'arrivais pas à compiler, à cause d'une mauvaise version de Visual Studio. Une fois le problème reglé, je décidais de trouver un bug à ma portée sur Bugzilla, en parcourant la liste des bug tuteurés. Je suis alors tombé sur le <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=701182">bug 701182 - Additional descriptive text for Help > About $PRODUCTNAME in Aurora and Nightly</a>, il paraissaît à ma portée, et puis, je trouvais ça cool d'avoir à modifier la boîte de dialogue que j'avais ouvert des centaines de fois par le passé :)</p>
+
+<p>J'ai d'abord tatônné, puis ai rapidement eu recours à <a href="http://mxr.mozilla.org/">MXR</a>, qui permet d'effectuer des recherches sur l'ensemble du code source.J'ai localisé les fichiers gérant la boite de dialogue puis effectué mes modifications, généré un patch, et l'ai attaché au bug. J'ai ensuite demandé une relecture du patch, et me suis rapidement apperçu que le code devait respecter des conventions assez strictes, et qu'il devait être le plus optimisé possible, ce qui paraît logique. Des modifications ont dû être apportées, mais finalement ce fût plutôt rapide, et j'ai obtenu mon premier "r+". </p>]]></summary>
+        <published>2012-05-06T05:11:48+02:00</published>
+        <updated>2012-05-06T05:11:48+02:00</updated>
+      </entry>
+    
+      <entry>
+        <author>
+          <name>Théo Chevalier/name>
         </author>
         <title>L'activation par défaut de la télémétrie dans Firefox Nightly et Aurora</title>
-        <link href="http://localhost/theochevalier/index.php?page=6&article=3&lang=fr" />
-        <id>http://localhost/theochevalier/index.php?page=6&article=3&lang=fr</id>
-        <summary type="html"><![CDATA[<img src="http://localhost/theochevalier/img/articles/telemetry.jpg" alt="" />Je vais vous parler d'une fonctionnalité de Firefox sur laquelle je travaille, et qui peut paraitre pour certains banale, ou sans grand intérêt, mais qui en réalité est incroyablement utile: l'envoi de données de performances, également appelée télémétrie.
+        <link href="http://theochevalier/index.php?page=6&article=3&lang=fr" />
+        <id>http://theochevalier/index.php?page=6&article=3&lang=fr</id>
+        <summary type="html"><![CDATA[<img src="http://theochevalier/img/articles/telemetry.jpg" alt="" />Je vais vous parler d'une fonctionnalité de Firefox sur laquelle je travaille, et qui peut paraitre pour certains banale, ou sans grand intérêt, mais qui en réalité est incroyablement utile: l'envoi de données de performances, également appelée télémétrie.
 
 Tout d'abord, comme cette fonctionnalité est plutôt méconnue et n'est pas réellement visible pour l'utilisateur: la télémétrie, qu'est-ce que c'est ?
 Si l'on se réfère à Wikipédia, <blockquote>« La télémétrie est une technologie qui permet la mesure à distance et la journalisation d'informations d'intérêt vers le concepteur du système ou un opérateur. »</blockquote>
@@ -52,12 +85,12 @@ Et dans le cas de Firefox cela se traduit par l'envoi de données concernant les
     
       <entry>
         <author>
-          <name>Theo Chevalier</name>
+          <name>Théo Chevalier/name>
         </author>
         <title>Participez au projet Firefox</title>
-        <link href="http://localhost/theochevalier/index.php?page=6&article=2&lang=fr" />
-        <id>http://localhost/theochevalier/index.php?page=6&article=2&lang=fr</id>
-        <summary type="html"><![CDATA[<img src="http://localhost/theochevalier/img/articles/firefox.jpg" alt="" /><p>Firefox est un logiciel open-source développé par la fondation à but non-lucratif Mozilla: une communauté mondiale de contributeurs. Mozilla défend l'Internet libre et ouvert, où l'utilisateur est maître de ses données, de ce qu'il fait et de ses choix. Firefox est un des nombreux projets que Mozilla a créé pour y parvenir, et son développement est à l'image de ce but. Vous pouvez donc vous aussi participer, et c'est le but de cet article: vous montrer qu'il est facile de se rendre utile, sans forcément posséder de compétences techniques.</p>
+        <link href="http://theochevalier/index.php?page=6&article=2&lang=fr" />
+        <id>http://theochevalier/index.php?page=6&article=2&lang=fr</id>
+        <summary type="html"><![CDATA[<img src="http://theochevalier/img/articles/firefox.jpg" alt="" /><p>Firefox est un logiciel open-source développé par la fondation à but non-lucratif Mozilla: une communauté mondiale de contributeurs. Mozilla défend l'Internet libre et ouvert, où l'utilisateur est maître de ses données, de ce qu'il fait et de ses choix. Firefox est un des nombreux projets que Mozilla a créé pour y parvenir, et son développement est à l'image de ce but. Vous pouvez donc vous aussi participer, et c'est le but de cet article: vous montrer qu'il est facile de se rendre utile, sans forcément posséder de compétences techniques.</p>
 
 <p>
 Que vous ne connaissiez rien à la programmation n'est pas important, il existe de nombreuses alternatives pour vous rendre utile auprès des millions d'utilisateurs. Voici une liste non-exhaustive d'implications possibles:
@@ -100,12 +133,12 @@ Maintenant que tout est coordonné, vous allez pouvoir développer et attacher d
     
       <entry>
         <author>
-          <name>Theo Chevalier</name>
+          <name>Théo Chevalier/name>
         </author>
         <title>La synchronisation des données de Firefox</title>
-        <link href="http://localhost/theochevalier/index.php?page=6&article=1&lang=fr" />
-        <id>http://localhost/theochevalier/index.php?page=6&article=1&lang=fr</id>
-        <summary type="html"><![CDATA[<img src="http://localhost/theochevalier/img/articles/firefox_sync_logo.jpg" alt="" /><p>Saviez-vous qu'il vous est possible de sauvegarder tous vos favoris, mots de passe, historique, onglets ouverts, thèmes, paramètres, et bientôt même add-ons (<a href="https://addons.mozilla.org/" target="_blank">Modules complémentaires</a>) dans Firefox? Cette fonctionalité a d'abord été développée sous la forme d'un add-on, puis à été implémentée dans Firefox 4.</p>
+        <link href="http://theochevalier/index.php?page=6&article=1&lang=fr" />
+        <id>http://theochevalier/index.php?page=6&article=1&lang=fr</id>
+        <summary type="html"><![CDATA[<img src="http://theochevalier/img/articles/firefox_sync_logo.jpg" alt="" /><p>Saviez-vous qu'il vous est possible de sauvegarder tous vos favoris, mots de passe, historique, onglets ouverts, thèmes, paramètres, et bientôt même add-ons (<a href="https://addons.mozilla.org/" target="_blank">Modules complémentaires</a>) dans Firefox? Cette fonctionalité a d'abord été développée sous la forme d'un add-on, puis à été implémentée dans Firefox 4.</p>
 
 <p>Firefox Sync peut vous être utile à plusieurs niveaux, tout d'abord si vous êtes adepte du surf mobile, vous trouverez intéressant d'avoir en permanence toutes vos données qui vous suivent sur votre PC portable ou votre smartphone, d'autant plus que sur mobile, taper des mots de passe peut s'avérer fastidieux.<br/>Firefox Sync vous permet également de ne plus perdre vos données. J'ai souvent rencontré le cas où des amis avaient éffacé leur profil Firefox par mégarde et souhaitaient retrouver leurs marques-pages, mots de passe... et je trouvais dommage qu'ils ne connaissent pas Sync et tout son potentiel. Et c'est le but de cet article: vous faire connaître cette fonction qui reste transparente au quotidien, mais qui peut vous sauver la vie. Firefox Sync vous garanti de ne jamais perdre vos données, et cela même si votre ordinateur est inaccessible, vous pourrez rentrer votre clé de synchronisation et rapatrier l'ensemble des données sur n'importe quel appareil (à condition d'avoir synchronisé votre profil avec un second appareil pour en récupérer la clé, ou d'avoir stocké cette clé dans un endroit différent. L'imprimer peut être une bonne solution.).<br/>
 Aussi, vous n'êtes pas obligé de synchroniser toutes vos données, vous pouvez choisir quoi synchroniser entre tous vos appareils et quoi garder uniquement sur votre ordinateur! Tout est paramétrable à tout moment dans l'onglet Sync des options de Firefox.</p>
@@ -124,37 +157,4 @@ Une fois que vous avez créé votre compte Sync sur votre ordinateur, vous pouve
 <p>La fonctionnalité de synchronisation des Add-ons est déjà présente dans <a href="http://www.mozilla.org/firefox/channel/" target="_blank">Firefox Beta</a>, et sera disponible pour tous le 13 Mars 2012 dans Firefox 11. Essayez-le et vous ne pourrez plus vous en passer!</p>]]></summary>
         <published>2012-01-07T20:00:00+01:00</published>
         <updated>2012-01-07T20:00:00+01:00</updated>
-      </entry>
-    
-      <entry>
-        <author>
-          <name>Theo Chevalier</name>
-        </author>
-        <title>Ma première contribution à Firefox</title>
-        <link href="http://localhost/theochevalier/index.php?page=6&article=4&lang=fr" />
-        <id>http://localhost/theochevalier/index.php?page=6&article=4&lang=fr</id>
-        <summary type="html"><![CDATA[<img src="http://localhost/theochevalier/img/articles/firefox.jpg" alt="" /><p>Aujourd'hui, je me sens l'âme d'un super-héro (Rien que ça!), en effet, ma première grosse modification dans Firefox vient tout juste de rejoindre le canal Nightly. Dès aujourd'hui, si vous utilisez Firefox Nightly et que vous créez un nouveau profil utilisateur, ou si vous n'avez pas explicitement refusé l'activation de la Télémétrie sur votre profil actuel, vous enverrez à Mozilla des informations de performances, qui nous sont extrêment utiles. Vous verrez alors apparaître un bandeau (une seule fois) lorsque vous lancerez Nightly, vous informant que désormais vous envoyez ces informations. Je n'ai pas développé ce bandeau, mais j'ai en revanche ajouté un second message avertissant de cet envoi automatique dans la boite de dialogue "à propos de Nightly". Il y est présent depuis plusieurs semaines déjà.</p>
-<p><img src="img/articles_big/about_firefox.jpg" alt="About Firefox" /></p>
-
-Un avertissement à également été mis en place sur le site de téléchargement des versions Nightly et Aurora de Firefox.
-
-<p>Cet envoi par défaut est uniquement présent dans Nightly pour l'instant, mais le 5 Juin 2012, ce sera au tour du canal Aurora d'en bénéficier. Les version Bêta et finales de Firefox continueront de demander à l'utilisateur s'il souhaite activer la télémétrie ou non, et elle restera desactivée par défaut.
-</p>
-
-<p>Cela reste une modeste contribution comparée à de nombreuses autres, mais elle permet d'augmenter le volume de données de performances reçues, ce qui aura un impact à plusieurs niveaux:
-
-<br/><br/>- Le taux précis d'adoption/d'utilisation d'une fonctionnalité permet de connaître l'impact qu'aura un patch, et ainsi de pouvoir juger de son utilité, de définir une priorité entre les patchs. Un patch concernant une fonctionalité utilisée par une majorité d'utilisateurs sera à traiter en priorité, mais d'autres éléments sont à prendre en compte.
-
-<br/><br/>- Il sera plus facile de découvrir les ralentissements dans Firefox, et donc de les corriger. Même chose pour les fuites de mémoire (Programme memshrink), ainsi que la réactivité globale du logiciel, incluant le temps de démarrage (Programme Snappy)
-
-
-<br/><br/>- Les incompatibilités matérielles peuvent être également décellées plus tôt dans le processus de développement. En éffet, l'écosystème de configurations d'ordinateurs est tel que Mozilla ne peut pas tout tester, et il faut donc une masse importante de données pour trouver les configurations incompatibles.</p>
-
-<h3>Comment j'en suis arrivé là</h3>
-
-<p>J'ai réellement commencé à m'impliquer dans le développement de Firefox en Novembre 2011, lorsque je réussis à compiler Firefox sur ma propre machine pour la première fois. J'avais l"idée en tête depuis plusieurs mois, mais ne n'arrivais pas à compiler, à cause d'une mauvaise version de Visual Studio. Une fois le problème reglé, je décidais de trouver un bug à ma portée sur Bugzilla, en parcourant la liste des bug tuteurés. Je suis alors tombé sur le <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=701182">bug 701182 - Additional descriptive text for Help > About $PRODUCTNAME in Aurora and Nightly</a>, il paraissaît à ma portée, et puis, je trouvais ça cool d'avoir à modifier la boîte de dialogue que j'avais ouvert des centaines de fois par le passé :)</p>
-
-<p>J'ai d'abord tatônné, puis ai rapidement eu recours à <a href="http://mxr.mozilla.org/">MXR</a>, qui permet d'effectuer des recherches sur l'ensemble du code source.J'ai localisé les fichiers gérant la boite de dialogue puis effectué mes modifications, généré un patch, et l'ai attaché au bug. J'ai ensuite demandé une relecture du patch, et me suis rapidement apperçu que le code devait respecter des conventions assez strictes, et qu'il devait être le plus optimisé possible, ce qui paraît logique. Des modifications ont dû être apportées, mais finalement ce fût plutôt rapide, et j'ai obtenu mon premier "r+". </p>]]></summary>
-        <published>1970-01-01T01:00:00+01:00</published>
-        <updated>1970-01-01T01:00:00+01:00</updated>
       </entry></feed>

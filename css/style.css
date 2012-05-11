@@ -514,14 +514,12 @@ td { vertical-align: top; }
 @-ms-keyframes ligne {
   from,20%{
     border-color: #ffffff;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   }
   from {width:0px;}
   20%{width: 1px;}
   to {
     width: 100%;
     border-color: #81b0d8;
-    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.4);
   }
 }
 @-moz-keyframes ligne {
@@ -1072,17 +1070,16 @@ footer .menu li {
 footer .menu ul li a {
   background: none;
 }
-footer .menu ul li a:hover, #footer li a:hover, .tweet:hover{
+footer .menu ul li a:hover, #footer li > a:hover, .tweet:hover{
   background: rgba(255,255,255,.07);
   border-radius: 2px;
-
   box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
-  -o-box-shadow: inset 0px 0px 3px rgba(0,0,0,.8);
-  -ms-box-shadow: inset 0px 0px 3px rgba(0,0,0,.8);
-  -moz-box-shadow: inset 0px 0px -3px rgba(0,0,0,.8);
-  -webkit-box-shadow: inset 0px 0px 3px rgba(0,0,0,.8);
+  -o-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
+  -ms-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
+  -moz-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
+  -webkit-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
 }
-footer .menu ul li a:hover, #footer li a:hover {
+footer .menu ul li a:hover, #footer li > a:hover {
   color:#ddd;
 }
 

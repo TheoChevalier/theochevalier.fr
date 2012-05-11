@@ -45,5 +45,7 @@ logs/
 includes/connexion.php
 fichiers/
 files/
-CssCrush/
+css-crush/
 css/style.crush.css
+fr_rss.xml
+en_rss.xml

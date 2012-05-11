@@ -19,7 +19,7 @@
   <![endif]-->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <?php
-  require_once 'CssCrush/CssCrush.php';
+  require_once 'css-crush/CssCrush.php';
   /*$options = array(
     'debug' => true);*/
   $global_css = CssCrush::file('/css/style.css'); 
