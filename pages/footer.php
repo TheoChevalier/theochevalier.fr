@@ -28,6 +28,7 @@
       <ul>
         <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
       <?php
+      
       /* Nom d'utilisateur sur Twitter */
       $user = "t_chevalier";
       /* Nombre de message à afficher */
@@ -43,7 +44,7 @@
         echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div>'."\n";
       }
       ?>
-      <li><a href="https://twitter.com/#!/t_chevalier" target="_blank">lire la suite ...</a></li>
+      <li><a href="https://twitter.com/#!/t_chevalier" target="_blank"><?=$langage_index['tweeter'][$lang]?></a></li>
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
