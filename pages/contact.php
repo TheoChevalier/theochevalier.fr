@@ -7,7 +7,7 @@ include("locales/contact.php");
 if(isset($_POST["nom"]) && !empty($_POST["nom"]) && isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["message"]) && !empty($_POST["message"]))
 {
 $passage_ligne = "\n";
-$to = 'contact@theochevalier.fr';
+$to = EMAIL;
 $subject = 'Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).' à partir de www.theochevalier.fr' . $passage_ligne;
 $mail = '<html>
 <head>

@@ -67,9 +67,9 @@ function update_rss($lang)
    <updated>'.date(DATE_ATOM, time()).'</updated>
    <author>
      <name>Théo Chevalier</name>
-     <email>contact@theochevalier.fr</email>
+     <email>'.EMAIL.'</email>
    </author>
-   <id>http://theochevalier.fr/'.$lang.'_rss.xml</id>';
+   <id>'ROOTPATH.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
   $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update, texte_".$lang.", art_img, categorie FROM tc_articles
   WHERE categorie = 'mozilla' ORDER BY date DESC" ) or die("Impossible d'afficher le flux RSS.");
