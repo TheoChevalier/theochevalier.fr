@@ -40,8 +40,8 @@
       foreach( $oXML->status as $oStatus ) {
         $datetime = date_create($oStatus->created_at);
         $date = date_format($datetime, $date_format);
-        echo '<div class="tweet">'.parse($oStatus->text);
-        echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div>'."\n";
+        echo '<ol class="tweet">'.parse($oStatus->text);
+        echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></ol>'."\n";
       }
       ?>
       <li><a href="https://twitter.com/#!/t_chevalier" target="_blank"><?=$langage_index['tweeter'][$lang]?></a></li>

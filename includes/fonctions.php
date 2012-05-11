@@ -1,8 +1,5 @@
 <?php
 include("connexion.php");
-//Gestion du nom de domaine
-define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
-
 function connexionbdd()
 {
   mysql_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE);
@@ -61,15 +58,15 @@ function update_rss($lang)
 {
   $debut_fichier ='<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-   <title>Théo Chevalier</title>
-   <subtitle>Site personnel de Théo Chevalier</subtitle>
+   <title>'.NAME.'</title>
+   <subtitle>Site personnel de '.NAME.'</subtitle>
    <link href="'.ROOTPATH.'/'.$lang.'_rss.xml" rel="self" type="application/atom+xml"/>
    <updated>'.date(DATE_ATOM, time()).'</updated>
    <author>
-     <name>Théo Chevalier</name>
+     <name>'.NAME.'</name>
      <email>'.EMAIL.'</email>
    </author>
-   <id>'ROOTPATH.$lang.'_rss.xml</id>';
+   <id>'.ROOTPATH.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
   $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update, texte_".$lang.", art_img, categorie FROM tc_articles
   WHERE categorie = 'mozilla' ORDER BY date DESC" ) or die("Impossible d'afficher le flux RSS.");
@@ -84,7 +81,7 @@ function update_rss($lang)
     
       <entry>
         <author>
-          <name>Théo Chevalier</name>
+          <name>'.NAME.'/name>
         </author>
         <title>'.$titre.'</title>
         <link href="'.$lien.'" />

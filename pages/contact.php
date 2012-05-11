@@ -8,7 +8,7 @@ if(isset($_POST["nom"]) && !empty($_POST["nom"]) && isset($_POST["email"]) && !e
 {
 $passage_ligne = "\n";
 $to = EMAIL;
-$subject = 'Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).' à partir de www.theochevalier.fr' . $passage_ligne;
+$subject = 'Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).' à partir de '.WEB_SERVER . $passage_ligne;
 $mail = '<html>
 <head>
 <title>Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).'</title>
@@ -24,8 +24,8 @@ $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
 $headers .= 'From: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
 $headers .= 'Reply-To: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
 
-mail($to, $subject, $mail, $headers);
-$resultat = $langage['message_ok'][$lang];;
+mail($to, $subject, $mail, $headers) or die ("Email server unreachable.");
+$resultat = $langage['message_ok'][$lang];
 }
 else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
 {
