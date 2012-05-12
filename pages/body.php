@@ -13,7 +13,7 @@
   <div id="container">
     <header>
       <div class="header_degrade">
-        <img id="github" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" usemap="#map" />
+        <img id="github" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" usemap="#map" width="149" height="149"/>
         <map name="map">
           <area shape="poly" coords="134,0,0,134,0,0" href="https://github.com/TheoChevalier/theochevalier.fr" target="_blank" alt="Fork me on GitHub" />
         </map>
@@ -48,7 +48,7 @@
           <a href="<?=$url_en?>" class="lang"><div class="en"></div></a>
         </div>
         <span class="titre_site roll"><span data-title="<?=NAME?>"><a class="unstyled_link" href="<?=ROOTPATH?>"><?=NAME?></a></span></span>
-        <div class="sous_titre_site"><div class="star"></div><?=$langage_index['ss_titre1'][$lang]?><div class="star"></div><?=$langage_index['ss_titre2'][$lang]?><div class="star"></div></div>
+        <div class="sous_titre_site"><div class="star">*</div><?=$langage_index['ss_titre1'][$lang]?><div class="star">*</div><?=$langage_index['ss_titre2'][$lang]?><div class="star">*</div></div>
       </div>
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
@@ -63,11 +63,11 @@
     <div id="main" role="main">
     <section class="menu">
     <ul>
-      <li><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
-      <li><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
-      <li><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
-      <li><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
-      <li><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
-      <li><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
+      <li class="header_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
     </ul>
   </section>

@@ -3,14 +3,14 @@
   <footer>
     <section class="menu">
       <ul>
-        <li><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
-        <li><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
-        <li><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
-        <li><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
-        <li><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
-        <li><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
-        <li><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
-        <li><a href="<?=$url_en?>" class="lang_footer"><div class="en"></div></a></li>
+        <li class="footer_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
+        <li class="footer_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
+        <li class="footer_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
+        <li class="footer_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
+        <li class="footer_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
+        <li class="footer_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        <li class="footer_menu"><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
+        <li class="footer_menu"><a href="<?=$url_en?>" class="lang_footer"><div class="en"></div></a></li>
       </ul>
     </section>
     <div id="footer">
@@ -36,6 +36,7 @@
       /* Format de la date à afficher */
       $date_format = 'd M Y, H\hi';
       $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
+      //$url = 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier';
       $oXML = simplexml_load_file( $url );
       foreach( $oXML->status as $oStatus ) {
         $datetime = date_create($oStatus->created_at);
@@ -48,8 +49,8 @@
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
-        <li><a href='http://sudweb.fr' target="_blank" class="footer_img"><img class="dark_shadow" src="img/sudweb_120.png" alt='Sud Web' /></a></li>
-        <li><a href="http://www.stopacta.info/" target="_blank" class="footer_img"><img src="img/stop-acta.png" alt="STOP ACTA!" /></a></li>
+        <li><a href='http://sudweb.fr' target="_blank" class="footer_img"><img class="dark_shadow" src="img/sudweb_120.png" alt="Sud Web" width="120" height="120" /></a></li>
+        <li><a href="http://www.stopacta.info/" target="_blank" class="footer_img"><img src="img/stop-acta.png" alt="STOP ACTA!" width="120" height="98" /></a></li>
       </ul>
     </div>
     <div id="firefox">
@@ -57,8 +58,8 @@
     $date_footer = getdate();
     $annee = $date_footer['year'];
     echo $annee; ?><br/>
-     <a class="ff_desktop" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_<?=$lang?>.png" alt='Firefox Download Button' /></a>
-     <a class="ff_mobile" href="https://affiliates.mozilla.org/link/banner/1287/1/91"><img src="img/firefox_mobile_en.png" alt="Firefox Mobile Download Button" /></a>
+     <a class="ff_desktop" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_<?=$lang?>.png" alt='Firefox Download Button' width="468" height="60"/></a>
+     <a class="ff_mobile" href="https://affiliates.mozilla.org/link/banner/1287/1/91"><img src="img/firefox_mobile_en.png" alt="Firefox Mobile Download Button" width="125" height="125"/></a>
     </div>
   </footer>
 </div> <!--! end of #container -->

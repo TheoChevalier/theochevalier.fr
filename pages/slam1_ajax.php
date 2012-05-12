@@ -1,11 +1,7 @@
 <?php
 set_time_limit(0);
 include("../includes/image.php");
-$bd_nom_serveur='localhost';
-$bd_login='root';
-$bd_mot_de_passe='';
-$bd_nom_bd='oiseaux';
-$service = mysqli_connect($bd_nom_serveur, $bd_login, $bd_mot_de_passe, $bd_nom_bd);
+$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
 //Si on reçoit le code requete 1, on nous demande de retourner les familles
 if(isset($_POST['requete']) && $_POST['requete'] == 1)
 {

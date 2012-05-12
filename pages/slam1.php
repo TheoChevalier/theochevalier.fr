@@ -2,12 +2,7 @@
 $page_titre ="TP PHP - BDD oiseaux";
 include("pages/header.php");
 include("pages/body.php");
-$bd_nom_serveur='localhost';
-$bd_login='root';
-$bd_mot_de_passe='';
-$bd_nom_bd='oiseaux';
-
-$service = mysqli_connect($bd_nom_serveur, $bd_login, $bd_mot_de_passe, $bd_nom_bd);
+$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
 
 ?>
 <style>

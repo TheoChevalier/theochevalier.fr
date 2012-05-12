@@ -22,9 +22,7 @@
   require_once 'css-crush/CssCrush.php';
   /*$options = array(
     'debug' => true);*/
-  $global_css = CssCrush::file('/css/style.css'); 
-  $normalize_css = CssCrush::file('/css/normalize.css'); ?>
+  $global_css = CssCrush::file('/css/style.css'); ?>
     <link rel="stylesheet" type="text/css" href="<?=$global_css?>" />
   <!--[if lte IE 8]><link rel="stylesheet" href="css/iestyle.css" /><![endif]-->
-  <link rel="stylesheet" href="<?=$normalize_css?>" />
 </head>
