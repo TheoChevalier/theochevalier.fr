@@ -4,7 +4,7 @@ $page_titre ="TP 2 PHP - Import d'images";
 include("pages/header.php");
 include("pages/body.php");
 include("includes/image.php");
-$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
+$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
 $requete = mysqli_prepare($service, "SELECT nom_latin, ppe_famille.nom_famille, ordre, image FROM ppe_especes, ppe_famille WHERE ppe_especes.nom_famille = ppe_famille.nom_famille");
 mysqli_stmt_execute($requete);
 mysqli_stmt_bind_result($requete, $nla, $nfam, $ord, $bool);
@@ -57,7 +57,7 @@ while(mysqli_stmt_fetch($requete)) {
 			$image->resize_to($x, $y);
 			$image->save_as($chemin_ext);
 			//On a enregistré l'image, on sauvegarde son extention, ce qui signifira aussi que cet oiseau possède une image
-			$service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
+			$service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
 			$update = mysqli_prepare($service_u, "UPDATE ppe_especes SET image = ? WHERE nom_famille = ? AND nom_latin = ?;");
 			mysqli_stmt_bind_param($update, 'sss', image_type_to_extension($type[2], false), $nfam, $nla);
 			mysqli_stmt_execute($update);

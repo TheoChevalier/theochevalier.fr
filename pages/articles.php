@@ -16,12 +16,12 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   include("pages/body.php");
   //Et on affiche l'article
  ?>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
   <article class="art_all">
     <h1 class="art_titre art_titre_article"><?=utf8_encode($art['titre_'.$lang])?></h1>
     <?php if($art['date'] != $art['date_update']) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update'], $lang).'.</span>'; ?>
     <div class="art_text">
-      <div class="art_img art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
+      <div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <?php echo utf8_encode($art['texte_'.$lang]); ?>
       <div id="partage">
         <div>
@@ -141,7 +141,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     </div>
     <span class="requis"><?=$langage['requis'][$lang]?></span>
   </article>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>#pages"><div class="art_link art_link_bot"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link art_link_bot"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
 <?php
 }
 //Sinon on affiche tous les articles
@@ -156,7 +156,7 @@ else
   include("pages/header.php");
   include("pages/body.php");
   //On définit le nombre d'articles par page
-  $nombreDeMessagesParPage = 10;
+  $nombreDeMessagesParPage = 3;
   //on commence par récupérer le nombre total d'articles
   $retour = mysql_query('SELECT COUNT(*) AS nb_articles FROM tc_articles');
   $donnees = mysql_fetch_array($retour);
@@ -171,7 +171,7 @@ else
   //On affiche les liens de pages, en affichant spécialement la page actuelle
   for($i = 1 ; $i <= $nombreDePages ; $i++)
   {
-    echo '<a href="index.php?page=6&amp;p='.$i.'#pages">';
+    echo '<a href="index.php?page=6&amp;p='.$i.'" onClick="menu();">';
     echo '<div class=';
     if($page == $i) echo '"page_actuelle">'; else echo '"page">';
     echo $i.'</div></a>';
@@ -186,14 +186,13 @@ else
   //On affiche les articles
   while($art = mysql_fetch_array($requete_art))
   { ?>
-  <a href="index.php?page=6&amp;article=<?=$art['art_id']?>&amp;lang=<?=$lang?>">
+  <a href="index.php?page=6&amp;article=<?=$art['art_id']?>&amp;lang=<?=$lang?>" onClick="menu();">
   <article>
   <div class="article">
-    <div class="art_img"><img src="img/articles/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" />
-      <span class="art_titre">
+    <div class="art_img"><img src="img/articles/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
+      <div class="art_titre">
         <?php echo utf8_encode($art['titre_'.$lang]); ?>
-      </span>
-    </div>
+      </div>
     <div class="art_date"><?=$langage['date'][$lang]?> <?php echo utf8_encode(date_heure($art['date'], $lang)); ?></div>
     <div class="clear"></div>
     </div>

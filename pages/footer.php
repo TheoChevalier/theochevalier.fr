@@ -32,7 +32,7 @@
       /* Nom d'utilisateur sur Twitter */
       $user = "t_chevalier";
       /* Nombre de message à afficher */
-      $count = 8;
+      $count = 4;
       /* Format de la date à afficher */
       $date_format = 'd M Y, H\hi';
       $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;

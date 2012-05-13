@@ -1,5 +1,6 @@
 .menu{left: 0px;}
 .close{display: none;}
-#main .texte, .titre, .cadre_titre, #menu ul li{background:none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000,endColorstr=#40000000);}
+/*#main .texte, .titre, .cadre_titre, #menu ul li{background:none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000,endColorstr=#40000000);}*/
 .image{background-color:#2f536a!important;}
 .art_all a{color:#333!important;font-size:20px;}
+#footer{background: #333;}

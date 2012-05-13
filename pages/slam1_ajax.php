@@ -1,7 +1,8 @@
 <?php
 set_time_limit(0);
 include("../includes/image.php");
-$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
+include("../includes/fonctions.php");
+$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
 //Si on reçoit le code requete 1, on nous demande de retourner les familles
 if(isset($_POST['requete']) && $_POST['requete'] == 1)
 {
@@ -93,7 +94,7 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
         //On a enregistré l'image, on sauvegarde son extention, ce qui signifira aussi que cet oiseau possède une image
         $bool = image_type_to_extension($type[2], false);
         //On ouvre une nouvelle connexion pour sauvegarder l'extention
-        $service_u = mysqli_connect($bd_nom_serveur, $bd_login, $bd_mot_de_passe, $bd_nom_bd);
+        $service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
         $update = mysqli_prepare($service_u, "UPDATE ppe_especes SET image = ? WHERE nom_famille = ? AND nom_latin = ?;");
         mysqli_stmt_bind_param($update, 'sss', $bool, $nfam, $nla);
         mysqli_stmt_execute($update);

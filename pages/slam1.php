@@ -2,20 +2,21 @@
 $page_titre ="TP PHP - BDD oiseaux";
 include("pages/header.php");
 include("pages/body.php");
-$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
+$service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
 
 ?>
 <style>
-td, th{padding: 10px;border:1px solid #fff;}
-table{margin-left:auto;margin-right:auto;border:1px solid #fff;}
+td, th{padding: 10px;border:1px solid #333;}
+table{margin-left:auto;margin-right:auto;border:1px solid #333;}
 #loading{display:none;margin-left:220px;text-align:left;}
 #canvasloader-container{display:inline-block;text-align:left;}
-#results > div{ margin: 0; max-width: 300px;background-color:#fff; color: #000;margin-left: 1px;text-shadow: none;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s; }
-.result_focus, #results > div:hover{background-color:rgba(0,0,0,.4)!important; color: #fff!important;}
+#results > div{ margin: 0; background-color:#fff; color: #000;text-shadow: none;border: none;padding: 0 5px;
+  -moz-transition-duration: .1s;
+  -webkit-transition-duration: .1s;
+  -o-transition-duration: .1s;
+  transition-duration: .1s; }
+.result_focus, #results > div:hover{background-color:#333!important; color: #fff!important;}
+#results {box-shadow: 0 0 3px #333;max-width: 300px;cursor:pointer;margin-left: 1px;}
 input, input:focus, select, select:focus, textarea {background-color:#fff;}
 input[type="text"]{width: 290px;}
 
@@ -181,7 +182,7 @@ else{
     mysqli_close($service);
     if($nb > 0)
     {
-      $service = mysqli_connect($bd_nom_serveur, $bd_login, $bd_mot_de_passe, $bd_nom_bd);
+      $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
       $requete_2 = mysqli_prepare($service, "SELECT *
       FROM ppe_especes WHERE nom_francais = ?;");
       mysqli_stmt_bind_param($requete_2, 's', $nom_fr);
@@ -189,7 +190,7 @@ else{
       mysqli_stmt_bind_result($requete_2, $nln, $nfr, $nfm, $img);
       mysqli_stmt_fetch($requete_2);
       mysqli_close($service);
-      $service = mysqli_connect($bd_nom_serveur, $bd_login, $bd_mot_de_passe, $bd_nom_bd);
+      $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
       $requete_ordre = mysqli_prepare($service, "SELECT ordre
       FROM ppe_famille WHERE nom_famille = ?;");
       mysqli_stmt_bind_param($requete_ordre, 's', $nfm);
@@ -308,7 +309,7 @@ else{
 <div id="loading"><div id="canvasloader-container"></div><span>Chargement en cours ...</span></div>
 <script type="text/javascript">
 var cl = new CanvasLoader('canvasloader-container');
-cl.setColor('#ffffff'); // default is '#0099ff'
+cl.setColor('#333333'); // default is '#0099ff'
 cl.setDiameter(25); // default is 40
 cl.setDensity(50); // default is 40
 cl.setRange(1); // default is 1.3

@@ -9,6 +9,15 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+    
+    function menu() {
+      var menu = document.getElementById('menu').querySelector('ul');
+      menu.classList.add('menu_active');
+      menu.setAttribute('style','margin-top: -55px;');
+      var header = document.querySelector('header');
+      header.classList.add('header_close');
+      header.setAttribute('style','opacity: 0;');
+    }
   </script>
   <div id="container">
     <header>
@@ -61,13 +70,13 @@
       </div>
     </header>
     <div id="main" role="main">
-    <section class="menu">
-    <ul>
-      <li class="header_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
-      <li class="header_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
-      <li class="header_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
-      <li class="header_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
-      <li class="header_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
-      <li class="header_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
-    </ul>
-  </section>
+    <section class="menu" id="menu">
+      <ul onClick="menu();">
+        <li class="header_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li><li
+        class="header_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li><li
+        class="header_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
+        class="header_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li><li
+        class="header_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li><li
+        class="header_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+      </ul>
+    </section>
