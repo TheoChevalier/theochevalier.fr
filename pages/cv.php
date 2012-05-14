@@ -18,7 +18,7 @@ include("locales/cv.php"); ?>
 			</div>
 			
 			<h2><?=$langage['comp_titre'][$lang]?></h2>
-			<div class="marge_logo_h2">
+			<div class="marge_logo_h2" id="skills_level">
 				<?=$langage['comp'][$lang]?>
 			</div>
 			

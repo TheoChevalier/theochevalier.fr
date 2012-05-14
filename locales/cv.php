@@ -41,12 +41,52 @@ $langage = array(
   'fr' => "Compétences",
   'en' => "Skills"),
 'comp' => array(
-  'fr' => "<div class='load'><div class='load_div2'></div><div class='load_div1'></div></div>• Langages pratiqués couramment: <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
-      <br />• Langages pratiqués occasionnellement: XML/XUL, C, Assembleur x86, W langage
-      <br />• Design, ergonomie, accessibilité, référencement",
-  'en' => "• Languages ​​commonly practiced <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
-      <br />• Languages ​​occasionally practiced: XML/XUL, C, Assembler x86, W langage
-      <br />• Design, ergonomy, accessibility, SEO"),
+  'fr' => '<ul>
+            <li class="skills_subtitle">Web</li>
+            <li>HTML 5 / CSS 3 <span class="level4"></span></li>
+            <li>PHP <span class="level3"></span></li>
+            <li>JavaScript / DOM <span class="level2"></span></li>
+            <li>SQL <span class="level3"></span></li>
+            <li>XML/XUL <span class="level2"></span></li>
+          </ul>
+          <ul>
+            <li class="skills_subtitle">Logiciel</li>
+            <li>C# <span class="level2"></span></li>
+            <li>C <span class="level1"></span></li>
+            <li>Assembleur x86 <span class="level1"></span></li>
+            <li>W langage <span class="level1"></span></li></li>
+          </ul>
+          <ul>
+            <li>Français <span class="level4"></span></li>
+            <li>Anglais <span class="level3"></span></li>
+            <li>Espagnol <span class="level2"></span></li>
+            <li>Design <span class="level2"></span></li>
+            <li>Ergonomie <span class="level2"></span></li>
+            <li>Accessibilité <span class="level2"></span></li>
+          </ul>',
+  'en' => '<ul>
+            <li class="skills_subtitle">Web</li>
+            <li>HTML 5 / CSS 3 <span class="level4"></span></li>
+            <li>PHP <span class="level3"></span></li>
+            <li>JavaScript / DOM <span class="level3"></span></li>
+            <li>SQL <span class="level3"></span></li>
+            <li>XML/XUL <span class="level2"></span></li>
+          </ul>
+          <ul>
+            <li class="skills_subtitle">Sofware</li>
+            <li>C# <span class="level2"></span></li>
+            <li>C <span class="level1"></span></li>
+            <li>Assembler x86 <span class="level1"></span></li>
+            <li>W langage <span class="level1"></span></li></li>
+          </ul>
+          <ul>
+            <li>French <span class="level4"></span></li>
+            <li>English <span class="level3"></span></li>
+            <li>Spanish <span class="level2"></span></li>
+            <li>Design <span class="level2"></span></li>
+            <li>Ergonomy <span class="level2"></span></li>
+            <li>Accessibility <span class="level2"></span></li>
+          </ul>'),
 'formation_titre' => array(
   'fr' => "Formation",
   'en' => "Studies"),

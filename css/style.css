@@ -987,30 +987,65 @@ h2{font-size: 20px;}
 .art_text h2{margin-left: 70px;}
 
 /* Style CV */
-.load {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
+#skills_level {
+  display: table;
+  margin: auto;
+}
+#skills_level ul {
+  display: table-cell;
+  width: 33%;
+  padding: 0;
+  padding-left: 10px;
+  list-style-type: none;
+  border-right: 1px solid #ccc;
+  min-width: 240px;
+}
+#skills_level ul:last-child{
+  border-right: none;
+}
+#skills_level ul li {
+  display: block;
+  margin: 10px 0;
+}
+/*
+#skills_level span:hover {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+}*/
+.skills_subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+.level1, .level2, .level3, .level4 {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #0074d8;
+  box-shadow: 0 0 4px rgba(0,0,0,.3);
+  float: right;
+  margin-top: 5px;
+  margin-right: 30%;
   border-radius: 50%;
-  background: #000;
-  overflow: hidden;
+  ransform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
 }
 
-.load_div1 {
-  width: 50%;
-  height: 50%;
-  ransform:rotate(20deg);
-  -o-transform:rotate(20deg);
-  -ms-transform:rotate(20deg);
-  -moz-transform:rotate(20deg);
-  -webkit-transform:rotate(20deg);
-  background: #fff;
-  border: 1px solid #fff;
+.level1 {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
 }
-.load_div2 {
-  height: 50%;
-  width: 50%;
-  background: #fff;
+
+.level2 {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.level3 {
+  border-left-color: transparent;
 }
 .pdf{
   padding: 7px 17px 7px ;
@@ -1366,7 +1401,7 @@ footer{max-width:728px;min-width:300px;}
   max-width: 728px;
   min-width: 300px;
 }
-#footer ul {
+#footer ul, #skills_level ul {
   display: block;
   width: 100%;
   max-width: 100%;
