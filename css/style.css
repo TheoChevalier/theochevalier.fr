@@ -675,6 +675,7 @@ td { vertical-align: top; }
 }
 .header_menu a {
   background: #3a74a6;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
   color: #fff;
   margin: 0;
 }
@@ -883,6 +884,7 @@ h2{font-size: 20px;}
 }
 .art_titre{
   display: inline-block;
+  max-width: 80%;
   font-size: 25px;
   text-shadow: 1px 1px 1px #999;
   margin:0;
@@ -901,6 +903,7 @@ h2{font-size: 20px;}
 }
 .art_titre_article{
   display: block;
+  max-width: 100%;
 }
 .art_date{
   color: #999;
@@ -984,6 +987,31 @@ h2{font-size: 20px;}
 .art_text h2{margin-left: 70px;}
 
 /* Style CV */
+.load {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #000;
+  overflow: hidden;
+}
+
+.load_div1 {
+  width: 50%;
+  height: 50%;
+  ransform:rotate(20deg);
+  -o-transform:rotate(20deg);
+  -ms-transform:rotate(20deg);
+  -moz-transform:rotate(20deg);
+  -webkit-transform:rotate(20deg);
+  background: #fff;
+  border: 1px solid #fff;
+}
+.load_div2 {
+  height: 50%;
+  width: 50%;
+  background: #fff;
+}
 .pdf{
   padding: 7px 17px 7px ;
   padding-top: 7px;
@@ -1331,6 +1359,7 @@ footer{max-width:728px;min-width:300px;}
   max-width: 728px;
   min-width: 300px;
 }
+#sites div:first-child {opacity: 1;}
 .menu ul {
   padding: 10px 0;
   margin:0;

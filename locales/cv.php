@@ -41,7 +41,7 @@ $langage = array(
   'fr' => "Compétences",
   'en' => "Skills"),
 'comp' => array(
-  'fr' => "• Langages pratiqués couramment: <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
+  'fr' => "<div class='load'><div class='load_div2'></div><div class='load_div1'></div></div>• Langages pratiqués couramment: <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>
       <br />• Langages pratiqués occasionnellement: XML/XUL, C, Assembleur x86, W langage
       <br />• Design, ergonomie, accessibilité, référencement",
   'en' => "• Languages ​​commonly practiced <span class=\"b\">HTML 5, CSS 3, JavaScript, PHP 5, SQL, POO C#</span>

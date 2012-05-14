@@ -27,14 +27,14 @@ $langage = array(
   'en'=> "and I'm studying computer science at Carcassonne, France. </ p>
         <p>I'm passionate about new technologies, and especially new Web technologies,
         my interests can range from new web programming standards
-        (e.g. HTML5, CSS3 ...), to web browsers. I am also a member of the
-        Mozilla community, actively supports the open Internet, and
+        (e.g. HTML5, CSS3 ...), to web browsers. I am also member of the
+        Mozilla community, actively supports the Open Web, and
 			  <a class=\"lien\" target=\"_blank\" href=\"https://bugzilla.mozilla.org/buglist.cgi?query_format=advanced&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;bug_status=NEW&amp;bug_status=UNCONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;email1=theo.chevalier11%40gmail.com&amp;emailtype1=exact&amp;list_id=1890913\">
         part development</a> of the open-source browser <a class=\"lien\" href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">
         Mozilla Firefox.</a> You too,
         <a class=\"lien\" href=\"index.php?page=6&amp;article=2&amp;lang=en\" onClick='menu();'>get involved!</a></p>
-        <p>On this site, you will find information about me, my current projects,
-        the Mozilla community, open-source softwares, development, etc.. <br/>
+        <p>On this site you will find information about me, my current projects,
+        the Mozilla community, open-source softwares, development, etc.<br/>
         I create websites for several years now, and mastering key
         programming languages ​​of today's web (HTML, CSS, PHP, SQL, JavaScript ...).
         I also have some experience in the integration within the Content Management Systems
