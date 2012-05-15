@@ -156,7 +156,7 @@ else
   include("pages/header.php");
   include("pages/body.php");
   //On définit le nombre d'articles par page
-  $nombreDeMessagesParPage = 3;
+  $nombreDeMessagesParPage = 4;
   //on commence par récupérer le nombre total d'articles
   $retour = mysql_query('SELECT COUNT(*) AS nb_articles FROM tc_articles');
   $donnees = mysql_fetch_array($retour);

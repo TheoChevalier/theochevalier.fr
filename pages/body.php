@@ -53,8 +53,8 @@
             }
           }
         ?>
-          <a href="<?=$url_fr?>" class="lang"><div class="fr"></div></a>
-          <a href="<?=$url_en?>" class="lang"><div class="en"></div></a>
+          <a href="<?=$url_fr?>" class="lang" onClick="menu();"><div class="fr"></div></a>
+          <a href="<?=$url_en?>" class="lang" onClick="menu();"><div class="en"></div></a>
         </div>
         <span class="titre_site roll"><span data-title="<?=NAME?>"><a class="unstyled_link" href="<?=ROOTPATH?>" onClick="menu();"><?=NAME?></a></span></span>
         <div class="sous_titre_site"><div class="star">*</div><?=$langage_index['ss_titre1'][$lang]?><div class="star">*</div><?=$langage_index['ss_titre2'][$lang]?><div class="star">*</div></div>
@@ -75,7 +75,6 @@
         <li class="header_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li><li
         class="header_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li><li
         class="header_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
-        class="header_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li><li
         class="header_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li><li
         class="header_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
       </ul>

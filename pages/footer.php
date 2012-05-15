@@ -6,7 +6,6 @@
         <li class="footer_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
-        <li class="footer_menu"><a href="index.php?page=3&amp;lang=<?=$lang?>"><?=$langage_index['menu_compet'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
         <li class="footer_menu"><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
@@ -37,12 +36,14 @@
       $date_format = 'd M Y, H\hi';
       $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
       //$url = 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier';
-      $oXML = simplexml_load_file( $url );
-      foreach( $oXML->status as $oStatus ) {
-        $datetime = date_create($oStatus->created_at);
-        $date = date_format($datetime, $date_format);
-        echo '<li><div class="tweet">'.parse($oStatus->text);
-        echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div></li>'."\n";
+      if ($oXML = simplexml_load_file( $url ))
+      {
+        foreach( $oXML->status as $oStatus ) {
+          $datetime = date_create($oStatus->created_at);
+          $date = date_format($datetime, $date_format);
+          echo '<li><div class="tweet">'.parse($oStatus->text);
+          echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div></li>'."\n";
+        }
       }
       ?>
       <li><a href="https://twitter.com/#!/t_chevalier" target="_blank"><?=$langage_index['tweeter'][$lang]?></a></li>

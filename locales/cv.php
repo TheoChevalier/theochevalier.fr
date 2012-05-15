@@ -4,20 +4,29 @@ $langage = array(
   'fr' => "Curriculum Vitae",
   'en' => "My resume"),
 'coord' => array(
-  'fr' => "<span class=\"b\">Théo Chevalier</span>
+  'fr' => '<div id="cv_infos">
+      <span class="b">Théo Chevalier</span>
       <br />2 rue des lauriers
       <br />11600 Fraïsse-Cabardès
-      <br /><span class=\"i\">Tel:</span> 06.77.31.45.99
-      <br /><span class=\"i\">Mail:</span> <a href=\"mailto:contact@theochevalier.fr\">contact@theochevalier.fr</a>
-      <br /><span class=\"i\">Site:</span> <a href=\"http://www.theochevalier.fr\" target=\"_blank\">www.theochevalier.fr</a>
-      <br />21 ans, permis B",
-  'en' => "Théo Chevalier
+      <br />21 ans, permis B
+      </div>
+      <div id="cv_contact">
+        <br /><span class="i">Tel:</span> 06.77.31.45.99
+        <br /><span class="i">Email:</span> <a href="mailto:contact@theochevalier.fr">contact@theochevalier.fr</a>
+        <br /><span class="i">Site:</span> <a href="http://www.theochevalier.fr" target="_blank">www.theochevalier.fr</a>
+      </div>',
+  'en' => '<div id="cv_infos">
+      <span class="b">Théo Chevalier</span>
       <br />2 rue des lauriers
       <br />11600 Fraïsse-Cabardès - FRANCE
-      <br /><span class=\"i\">Tel:</span> +336.77.31.45.99
-      <br /><span class=\"i\">Email:</span> <a href=\"mailto:contact@theochevalier.fr\">contact@theochevalier.fr</a>
-      <br /><span class=\"i\">Website:</span> <a href=\"http://www.theochevalier.fr\" target=\"_blank\">www.theochevalier.fr</a>
-      <br /><i>21 years, driving license</i>"),
+      <br /><i>21 years, driving license</i>
+      </div>
+      <div id="cv_contact">
+        <br /><span class="i">Tel:</span> +336.77.31.45.99
+        <br /><span class="i">Email:</span> <a href="mailto:contact@theochevalier.fr">contact@theochevalier.fr</a>
+        <br /><span class="i">Website:</span> <a href="http://www.theochevalier.fr" target="_blank">www.theochevalier.fr</a>
+      </div>
+      '),
 'exp_titre' => array(
   'fr' => "Expériences professionnelles / personnelles",
   'en' => "Work experience / personal"),
@@ -77,7 +86,7 @@ $langage = array(
             <li>C# <span class="level2"></span></li>
             <li>C <span class="level1"></span></li>
             <li>Assembler x86 <span class="level1"></span></li>
-            <li>W langage <span class="level1"></span></li></li>
+            <li>W language <span class="level1"></span></li></li>
           </ul>
           <ul>
             <li>French <span class="level4"></span></li>
