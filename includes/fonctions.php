@@ -66,7 +66,7 @@ function update_rss($lang)
      <name>'.NAME.'</name>
      <email>'.EMAIL.'</email>
    </author>
-   <id>'.ROOTPATH.$lang.'_rss.xml</id>';
+   <id>'.ROOTPATH.'/'.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
   $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update, texte_".$lang.", art_img, categorie FROM tc_articles
   WHERE categorie = 'mozilla' ORDER BY date DESC" ) or die("Impossible d'afficher le flux RSS.");
@@ -75,13 +75,13 @@ function update_rss($lang)
   while($news = mysql_fetch_array($requete))
   {
     $titre = utf8_encode(str_replace("&", "&amp;", $news['titre_'.$lang]));
-    $lien = ROOTPATH.'/index.php?page=6&article='.$news['art_id'].'&lang='.$lang;
+    $lien = ROOTPATH.'/index.php?page=6&amp;article='.$news['art_id'].'&amp;lang='.$lang;
     $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", $news['texte_'.$lang]).']]>');
     $items = $items.'
     
       <entry>
         <author>
-          <name>'.NAME.'/name>
+          <name>'.NAME.'</name>
         </author>
         <title>'.$titre.'</title>
         <link href="'.$lien.'" />

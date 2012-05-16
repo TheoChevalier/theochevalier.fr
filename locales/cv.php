@@ -41,8 +41,8 @@ $langage = array(
   'en' => "
   <p><span class=\"i b\">June 2012</span> - 4-week internship as a web developer in PSV.COM (www.psvideo.fr) in Toulouse for my Associate Degree.
       <p><span class=\"i b\">May, 25/26<sup>th</sup> 2012</span> - Participate in SudWeb 2012, two days of talks and code experimentations at Toulouse, all about the Web.
-      <p><span class=\"i b\">April 2012 / Today</span> - Internship in ADN Mobile, as a front-end developper on an online file storing and sharing mobile solution.</p>
-      <p><span class=\"i b\">Nov. 2011 / Today</span> - Firefox volunteer: developement of patches into the Web browser, mainly about telemetry and UI.</p>
+      <p><span class=\"i b\">April 2012 / Today</span> - Internship in ADN Mobile, as a front-end developer on an online file storing and sharing mobile solution.</p>
+      <p><span class=\"i b\">Nov. 2011 / Today</span> - Firefox volunteer: development of patches into the Web browser, mainly about telemetry and UI.</p>
       <p><span class=\"i b\">Summer 2011</span> - Production of my <b>professional site</b> <a href=\"http://www.theochevalier.fr\" target=\"_blank\">www.theochevalier.fr</a> (Design entirely based on CSS3)</p>
       <p><span class=\"i b\">February 2011</span> - Website <a href=\"http://www.gtaier.fr\" target=\"_blank\">www.gtaier.fr</a> for the association of performing arts « J'étais Ailleurs », in collaboration with his President.</p>
       <p><span class=\"i b\">2009 / 2010</span> - Creation of <b>dynamic website</b> for the Team For Fun association (Dynamic display of the site by using a database, AJAX slideshow photo albums, forum, panel administration, management of user accounts ...)</p>"),
@@ -104,7 +104,7 @@ $langage = array(
       <br />2010: 1ère année <b>Licence SVS</b>, Université Paul Sabatier, Toulouse
       <br />2009: 1ère année <b>DUT Informatique</b>, IUT Blagnac
       <br />2008: <b>Baccalauréat Scientifique</b>, Lycée Jules Fil, Carcassonne",
-  'en' => "2011 - 2012: Associate Degree <b>IT Services for Organisations</b>, Lycée Paul Sabatier, Carcassonne (in pending)
+  'en' => "2011 - 2012: Associate Degree <b>IT Services for Organizations</b>, Lycée Paul Sabatier, Carcassonne (in pending)
       <br /> 2010: 1st year of geology <b>bachelor degree</b>, University Paul Sabatier, Toulouse
       <br /> 2009: 1st year of <b>IT degree</b>, IUT Blagnac
       <br /> 2008: <b>High school diploma in sciences</b>, Lycée Jules Fil, Carcassonne"),
@@ -112,25 +112,23 @@ $langage = array(
   'fr' => "Logiciels / Systèmes d'exploitation",
   'en' => "Software / Operating Systems"),
 'os' => array(
-  'fr' => "Développement: Notepad++, Visual Studio 2010/2011, WAMP
+  'fr' => "Développement: Notepad++, Visual Studio 2010/2011, WAMP, MySQL Workbench, PhpMyAdmin 
       <br />Outils: Mercurial (hg), GIT, Bugzilla
       <br />Graphisme/Vidéo : The GIMP, Balsamiq Mockups, Adobe Suite, InkScape, Sony Vegas Pro
       <br />Autres: VirtualBox, Suite Office 2010
       <br />OS: Windows, GNU/Linux",
-  'en' => "Development: Notepad++, Visual Studio 2010/2011, WAMP
+  'en' => "Development: Notepad++, Visual Studio 2010/2011, WAMP, MySQL Workbench, PhpMyAdmin
       <br />Tools: Mercurial (hg), GIT, Bugzilla
-      <br />Graphism/Video : The GIMP, Balsamiq Mockups, Adobe Suite, InkScape, Sony Vegas Pro
+      <br />Graphics/Video : The GIMP, Balsamiq Mockups, Adobe Suite, InkScape, Sony Vegas Pro
       <br />Other: VirtualBox, Suite Office 2010
       <br />OS: Windows, GNU/Linux"),
 'divers_titre' => array(
   'fr' => "Divers",
   'en' => "Various"),
 'divers' => array(
-  'fr' => "• Pratique la photographie,le théâtre
-      <br />• Contribution au développement du logiciel libre <b>Mozilla Firefox</b>
+  'fr' => "• Contribution au développement du logiciel libre <b>Mozilla Firefox</b>
       <br />• Anglais et Espagnol niveau scolaire",
-  'en' => "• Practical photography, theater
-      <br />• Contribution to the development of free software <b>Mozilla Firefox</b>
+  'en' => "• Contribution to the development of free software <b>Mozilla Firefox</b>
       <br />• English and Spanish at school"),
 'telecharger' => array(
   'fr' => "Télécharger ce CV au format PDF",

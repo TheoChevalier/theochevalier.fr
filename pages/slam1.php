@@ -136,7 +136,7 @@ input[type="text"]{width: 290px;}
     <option></option>
     <?php
     //On génère les ordres avec une requête SQL
-    $requete_ordre = mysqli_prepare($service, "SELECT * FROM ppe_ordre");
+    $requete_ordre = mysqli_prepare($service, "SELECT ordre FROM ppe_ordre");
     mysqli_stmt_execute($requete_ordre);
     mysqli_stmt_bind_result($requete_ordre, $ordre);
     while(mysqli_stmt_fetch($requete_ordre))

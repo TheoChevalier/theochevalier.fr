@@ -1,37 +1,35 @@
 <?php
+include("locales/contact.php");
 $page_titre = "Contact";
-$page_desc = "Vous pouvez me contacter sur cette page.";
+$page_desc = $langage['informations'][$lang];
 include("pages/header.php");
 include("pages/body.php");
-include("locales/contact.php");
 if(isset($_POST["nom"]) && !empty($_POST["nom"]) && isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["message"]) && !empty($_POST["message"]))
 {
-$passage_ligne = "\n";
-$to = EMAIL;
-$subject = 'Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).' à partir de '.WEB_SERVER . $passage_ligne;
-$mail = '<html>
-<head>
-<title>Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).'</title>
+  $passage_ligne = "\n";
+  $to = EMAIL;
+  $subject = 'Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).' à partir de '.WEB_SERVER . $passage_ligne;
+  $mail = '<html>
+  <head>
+  <title>Message de '.htmlspecialchars($_POST["nom"], ENT_QUOTES).'</title>
 
-</head>
-<body>
-'.stripslashes(htmlspecialchars($_POST["message"], ENT_QUOTES)).'
-</body>
-</html>' . $passage_ligne;
+  </head>
+  <body>
+  '.stripslashes(htmlspecialchars($_POST["message"], ENT_QUOTES)).'
+  </body>
+  </html>' . $passage_ligne;
 
-$headers  = 'MIME-Version: 1.0' . $passage_ligne;
-$headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
-$headers .= 'From: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
-$headers .= 'Reply-To: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
+  $headers  = 'MIME-Version: 1.0' . $passage_ligne;
+  $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
+  $headers .= 'From: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
+  $headers .= 'Reply-To: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
 
-mail($to, $subject, $mail, $headers) or die ("Email server unreachable.");
-$resultat = $langage['message_ok'][$lang];
+  mail($to, $subject, $mail, $headers) or die ("Email server unreachable.");
+  $resultat = $langage['message_ok'][$lang];
 }
 else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
-{
   $resultat = $langage['message_erreur'][$lang];
-}
- ?>
+?>
 
   <article id="contact">
     <div class="titre">
