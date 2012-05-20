@@ -42,6 +42,6 @@ $langage = array(
         <p>I focused on the use of new standards, which I strongly believe,
         to develop an open and accessible Web. </p>
         <p>I apologize for all the English grammar faults on this website, but if you want, 
-        you can help me fixing this. :)</p>")
+        you can help me to fix it. :)</p>")
 );
  ?>

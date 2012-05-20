@@ -3,6 +3,9 @@ $langage = array(
 'titre' => array(
   'fr' => "Curriculum Vitae",
   'en' => "My resume"),
+'page_desc' => array(
+  'fr' => "Consultez mon CV, qui comporte mes expériences professionelles, mes compétences, ma formation, etc.",
+  'en' => "Look at my resume, which includes my professional experiences, my skills, my education, etc."),
 'coord' => array(
   'fr' => '<div id="cv_infos">
       <span class="b">Théo Chevalier</span>

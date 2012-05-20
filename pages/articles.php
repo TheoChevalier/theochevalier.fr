@@ -22,7 +22,12 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     <?php if($art['date'] != $art['date_update']) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update'], $lang).'.</span>'; ?>
     <div class="art_text">
       <div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
-      <?php echo utf8_encode($art['texte_'.$lang]); ?>
+      <?php 
+      if ($art['texte_'.$lang] == "") {
+        echo '<div class="warning">'.$langage['warning'][$lang].'</div>';
+        echo utf8_encode($art['texte_fr']);
+      }
+      else echo utf8_encode($art['texte_'.$lang]); ?>
       <div id="partage">
         <div>
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="t_chevalier" data-lang="<?=$lang?>">Tweeter</a>
@@ -52,7 +57,6 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       }
     }
     ?>
-    
     <script src="js/libs/canvasloader.min.js"></script>
     <script type="text/javascript">
     function creerRequete() {

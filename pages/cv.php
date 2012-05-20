@@ -1,8 +1,10 @@
 <?php
+include("locales/cv.php");
 $page_titre="Curriculum Vitae";
+$page_desc = $langage['page_desc'][$lang];
 include("pages/header.php");
 include("pages/body.php");
-include("locales/cv.php"); ?>
+ ?>
 	<article id="cv">
 		<div class="titre">
 			<h1><?=$langage['titre'][$lang]?></h1>

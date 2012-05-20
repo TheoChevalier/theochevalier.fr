@@ -168,6 +168,7 @@ if(isset($_POST['n_fr_h']))
   mysqli_stmt_bind_param($requete, 'sssss', $_POST['n_ln'], $n_fr, $_POST['n_fm'], $img, $_POST['n_fr_h']);
   mysqli_stmt_execute($requete);
   
+  // Si image supplémentaire envoyée, traitement puis enregistrement
 }
 else{
   if(isset($_POST['search']) && $_POST['search'] != "")
@@ -187,16 +188,17 @@ else{
       FROM ppe_especes WHERE nom_francais = ?;");
       mysqli_stmt_bind_param($requete_2, 's', $nom_fr);
       mysqli_stmt_execute($requete_2);
-      mysqli_stmt_bind_result($requete_2, $nln, $nfr, $nfm, $img);
+      mysqli_stmt_bind_result($requete_2, $nln, $nfr, $nfm, $formeBec, $coulDom, $nbOeufs, $largOeuf, $hautOeuf, $longMax, $longMin, $envMax, $envMin);
       mysqli_stmt_fetch($requete_2);
       mysqli_close($service);
       $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
       $requete_ordre = mysqli_prepare($service, "SELECT ordre
-      FROM ppe_famille WHERE nom_famille = ?;");
+      FROM ppe_fam WHERE nom_famille = ?;");
       mysqli_stmt_bind_param($requete_ordre, 's', $nfm);
       mysqli_stmt_execute($requete_ordre);
       mysqli_stmt_bind_result($requete_ordre, $ord);
       mysqli_stmt_fetch($requete_ordre);
+      mysqli_close($service);
   ?>
 <form id="modifsup" name="modifsup" action="" method="post">
   <p>
@@ -210,12 +212,94 @@ else{
     <label for="n_fm">Famille:</label> <input type="text" id="n_fm" name="n_fm" value="<?php echo $nfm; ?>" required=""/>
   </p>
   <p>
-    <img src="<?php
-    if($img) echo "img/oiseaux/".strtolower($ord)."/".strtolower($nfm)."/".str_replace(' ', '_', $nln).".".$img;
-    else echo "img/oiseaux/default.jpg"; ?>" />
-    <p><label for="keep_img">Conserver l'image: </label><input type="checkbox" id="keep_img" name="keep_img" checked="checked" value="<?php echo $img; ?>" /></p>
+  <?php
+  // Requete images
+  $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+  $requete_images = mysqli_prepare($service, "SELECT num_image, image FROM ppe_images WHERE nom_latin = ?;");
+  mysqli_stmt_bind_param($requete_images, 's', $nln);
+  mysqli_stmt_execute($requete_images);
+  mysqli_stmt_bind_result($requete_images, $numImage, $image);
+  while (mysqli_stmt_fetch($requete_images))
+    echo '<img src="img/oiseaux/'.strtolower($ord)."/".strtolower($nfm)."/".str_replace(' ', '_', $nln)."_".$numImage.".".$image.'" alt="" />';
+
+  mysqli_close($service);
+  ?>
+  <label for="image">Ajouter une image</label> <input type="file" name="image" id="image" />
   </p>
-  <button type="submit">Envoyer</button>
+  <?php
+  // Requete chants
+  $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+  $requete_chants = mysqli_prepare($service, "SELECT chant FROM ppe_chant WHERE nom_latin = ?;");
+  mysqli_stmt_bind_param($requete_chants, 's', $nln);
+  mysqli_stmt_execute($requete_chants);
+  mysqli_stmt_bind_result($requete_chants, $chant);
+  while (mysqli_stmt_fetch($requete_chants))
+    echo $chant.'<br/>';
+
+  mysqli_close($service);
+  ?>
+  <p>
+    <audio src="<?php
+    if($chant) echo "img/oiseaux/chants/".strtolower($ord)."/".strtolower($nfm)."/".str_replace(' ', '_', $nln).".".$chant;
+    else echo "img/oiseaux/chants/default.jpg"; ?>">Vous ne supportez pas la balise audio</audio>
+  </p>
+  <p>Longueur entre <?=$longMin?> cm et <?=$longMax?> cm.</p>
+  <p>Envergure entre <?=$envMin?> cm et <?=$envMax?> cm.</p>
+  <p><?=$nbOeufs?> oeuf(s) (h:<?=$hautOeuf?>, l:<?=$largOeuf?>)</p>
+  <p>Forme du bec: <?=$formeBec?></p>
+  <p>Couleur dominante: <?=$coulDom?></p>
+  <p>Proies:</p>
+  <?php
+  // Requete proies
+  $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+  $requete_proies = mysqli_prepare($service, "SELECT nom_proie
+  FROM ppe_proies WHERE nom_latin = ?;");
+  mysqli_stmt_bind_param($requete_proies, 's', $nln);
+  mysqli_stmt_execute($requete_proies);
+  mysqli_stmt_bind_result($requete_proies, $proie);
+  while (mysqli_stmt_fetch($requete_proies))
+    echo $proie.'<br/>';
+
+  mysqli_close($service);
+  ?>
+  <fieldset><legend>Zones de répartition</legend>
+  <?php
+  // Requete zones
+  $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+  $requete_zones = mysqli_prepare($service, "SELECT num_repartition, pays
+  FROM ppe_repartition WHERE nom_latin = ?;");
+  mysqli_stmt_bind_param($requete_zones, 's', $nln);
+  mysqli_stmt_execute($requete_zones);
+  mysqli_stmt_bind_result($requete_zones, $nZone, $pays);
+  $zone1 = "";
+  $zone2 = "";
+  $zone3 = "";
+  $zone4 = "";
+  
+  while (mysqli_stmt_fetch($requete_zones)) {
+    switch ($Zones) {
+      case "1":
+        $zone1 = $zone1.$pays;
+      break;
+      case "2":
+        $zone2 = $zone2.$pays;
+      break;
+      case "3":
+        $zone3 = $zone3.$pays;
+      break;
+      case "4":
+        $zone4 = $zone4.$pays;
+      break;
+    }
+  }
+  mysqli_close($service);
+  ?>
+  <p>Zone de présence estivale: <?=$zone1;?></p>
+  <p>Zone de présence continue: <?=$zone2;?></p>
+  <p>Zone de présence en période migratoire: <?=$zone3;?></p>
+  <p>Zone de présence hivernale : <?=$zone4;?></p>
+  </fieldset>
+  <button type="submit" class="submit">Envoyer</button>
   </form>
   <?php
     }

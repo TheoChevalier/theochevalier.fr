@@ -675,7 +675,6 @@ td { vertical-align: top; }
 }
 .header_menu a {
   background: #3a74a6;
-  box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
   color: #fff;
   margin: 0;
 }
@@ -803,7 +802,7 @@ h2{font-size: 20px;}
 }
 
 #main .texte{
-  margin-top: 3px;
+  margin-top: 2px;
   padding: 20px;
   background: #fff;
   font-size: 16px;

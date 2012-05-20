@@ -13,7 +13,7 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
   echo 's.options.length = 0;'; 
   echo 's.options[s.options.length] = new Option("Choisissez votre famille");';
   //... puis on récupère toutes les familles de l'ordre
-  $requete = mysqli_prepare($service, "SELECT nom_famille FROM ppe_famille WHERE ordre = ?");
+  $requete = mysqli_prepare($service, "SELECT nom_famille FROM ppe_fam WHERE ordre = ?");
   mysqli_stmt_bind_param($requete, 's', $_POST["ordre"]);
   mysqli_stmt_execute($requete);
   mysqli_stmt_bind_result($requete, $famille);
@@ -26,12 +26,12 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
   //On affiche la première ligne du tableau
   echo '<table><tr><th>Photo</th><th>Nom latin</th><th>Nom français</th></tr>';
   //On sélectionne les espèces en fonction de l'ordre et de la famille
-  $requete = mysqli_prepare($service, "SELECT nom_latin, nom_francais, ppe_famille.nom_famille, ordre, image 
-  FROM ppe_especes, ppe_famille 
-  WHERE ordre = ? AND ppe_famille.nom_famille = ? AND ppe_especes.nom_famille = ppe_famille.nom_famille;");
+  $requete = mysqli_prepare($service, "SELECT nom_latin, nom_francais, ppe_fam.nom_famille, ordre
+  FROM ppe_especes, ppe_fam 
+  WHERE ordre = ? AND ppe_fam.nom_famille = ? AND ppe_especes.nom_famille = ppe_fam.nom_famille;");
   mysqli_stmt_bind_param($requete, 'ss', $_POST['ordre'], $_POST['famille']);
   mysqli_stmt_execute($requete);
-  mysqli_stmt_bind_result($requete, $nla, $nfr, $nfam, $ord, $bool);
+  mysqli_stmt_bind_result($requete, $nla, $nfr, $nfam, $ord);
   while(mysqli_stmt_fetch($requete))
   {
     //On éfface la variable $chemin_ext sinon il contient la valeur de l'image précédente
@@ -43,8 +43,17 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
     $ord = str_replace(' ','',$ord);
     //Définition du chemin d'enregistrement
     $dir = "../img/oiseaux/".strtolower($ord."/".$nfam);
-    $chemin = $dir."/".strtolower(str_replace('+', '_', $nom));
-    if($bool == NULL) //Si null: pas d'image
+    $chemin = $dir."/".strtolower(str_replace('+', '_', $nom))."_1";
+    // Requete images
+    $service_i = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+    $requete_images = mysqli_prepare($service_i, "SELECT image FROM ppe_images WHERE nom_latin = ?;");
+    mysqli_stmt_bind_param($requete_images, 's', $nla);
+    mysqli_stmt_execute($requete_images);
+    mysqli_stmt_bind_result($requete_images, $image);
+    if (mysqli_stmt_fetch($requete_images)!= NULL)
+      $bool = $image;
+    else $bool = NULL;
+    if ($bool == NULL)//Si il n'y a pas d'image
     {
       //Génération de la requête Google pour avoir les résultats pour l'espèce courante
       //Optimisation en faisant appel à Google Mobile à la place du Google classique qui renvoie plus de résultats
@@ -95,13 +104,13 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
         $bool = image_type_to_extension($type[2], false);
         //On ouvre une nouvelle connexion pour sauvegarder l'extention
         $service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-        $update = mysqli_prepare($service_u, "UPDATE ppe_especes SET image = ? WHERE nom_famille = ? AND nom_latin = ?;");
-        mysqli_stmt_bind_param($update, 'sss', $bool, $nfam, $nla);
+        $update = mysqli_prepare($service_u, "INSERT INTO ppe_images SET nom_latin = ?, num_image = 1, image = ?;");
+        mysqli_stmt_bind_param($update, 'ss', $nla, $bool);
         mysqli_stmt_execute($update);
         mysqli_close($service_u);
       }
     }
-    //Si on a une image
+    //Si après la requete Google on a une image
     if($bool != NULL)
     {
       //On retire ../ pour obtenir le chemin relatif correct à envoyer à la page (située à la racine)
