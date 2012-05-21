@@ -30,8 +30,18 @@ $langage_index = array(
   'fr' => "Contact",
   'en' => "Contact"),
 
-// Footer
+// IE banner
+'ie_banner' => array(
+'fr' => 'Vous utilisez un navigateur obsolète. Pour une expérience Web plus rapide et plus sûre, 
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie" target="_blank">mettez-le à jour gratuitement dès maintenant.</a>
+        <br/>Si vous souhaitez continuer à utiliser votre version actuelle d\'Internet Explorer, vous pouvez 
+        <a href="http://www.google.com/chromeframe" target="_blank">activer Chrome Frame pour Internet Explorer.</a>',
+'en' => 'You are using an outdated browser. For a faster, safer browsing experience, 
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie" target="_blank">upgrade for free today.</a>
+        <br/>If you want to keep using your current Internet Explorer, you can 
+        <a href="http://www.google.com/chromeframe" target="_blank">activate Chrome Frame for Internet Explorer now.</a>'),
 
+// Footer
 'blogs' => array(
 'fr' => '<li class="footer_title">Blogs/sites recommandés</li>
          <li><a href="http://www.mozfr.org" target="_blank"><div id="mozfr"></div><div>Communauté Mozilla francophone</div></a></li>

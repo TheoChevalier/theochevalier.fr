@@ -19,6 +19,16 @@
       header.setAttribute('style','opacity: 0;');
     }
   </script>
+<!--[if lte IE 8 ]>
+<style>
+#github{position: relative;display: block;float:left;}
+#choix_langue{position: relative;display: block; float: right;}
+</style>
+<div id="ie_banner">
+<img src="img/ico/ie_stop.png" alt="Stop" />
+<?=$langage_index['ie_banner'][$lang]?>
+</div>
+<![endif]--> 
   <div id="container">
     <header>
       <div class="header_degrade">

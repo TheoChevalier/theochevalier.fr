@@ -77,7 +77,7 @@ a:hover { text-decoration: underline; }
   color: #fff;
   text-decoration: none;
 }
-.lien, .lien:hover{ border-bottom: 1px dashed #fff; }
+.lien{ border-bottom: 1px solid #fff; }
 a:focus { outline: none; }
 footer a{color: #fff;}
 footer a:hover, .art_all a:hover { text-decoration: none; }
@@ -238,6 +238,20 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: Théo Chevalier
    ========================================================================== */
+#ie_banner {
+ clear: both;
+ min-height: 9px;
+ position: relative;
+ margin: auto;
+ padding: 10px 0;
+ text-align: center;
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fac118,endColorstr=#ee4727);
+ color: #fff;
+ font-size:1.2em;
+}
+#ie_banner a {
+  color: #0a518f;
+}
 #github {
   position: absolute;
   top: 0;
