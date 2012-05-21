@@ -99,7 +99,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
           $headers  = 'MIME-Version: 1.0' . $passage_ligne;
           $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
           $headers .= 'From: "'.WEB_SERVER.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
-          mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers) or die ('Email server unreachable.');
+          @mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
         }
       }
     }
@@ -116,9 +116,12 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     $headers  = 'MIME-Version: 1.0' . $passage_ligne;
     $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
     $headers .= 'From: "'.NAME.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
-    mail(EMAIL, '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers) or die ('Email server unreachable.');
     $i_msg++;
-    $msg[$i_msg] = $langage['com_ok'][$lang];
+    if(!@mail(EMAIL, '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers))
+      $msg[$i_msg] =  $langage['message_erreur_mail'][$lang];
+    else 
+      $msg[$i_msg] = $langage['com_ok'][$lang];
+
     $count_message++;
     echo addslashes(html_entity_decode(add_com($count_message,$id,$mail,$site,$nom,$time,$message,$lang)));
   }
@@ -133,7 +136,8 @@ if($i_msg > 0)
 {
   for($i = 1; $i <= $i_msg;$i++)
   {
-    echo $msg[$i]."<br/>";
+    if($i > 1) echo "<br/>";
+    echo $msg[$i];
   }
 }
 echo '<button id="bouton_ok" class="submit" onClick="document.getElementById(\'resultats\').style.display = \'none\';document.getElementById(\'bouton_submit\').style.display = \'block\';">OK</button>';

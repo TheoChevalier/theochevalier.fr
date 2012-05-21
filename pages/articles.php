@@ -4,7 +4,7 @@ include("locales/articles.php");
 if(isset($_GET['article'])&& !empty($_GET['article']))
 {
   $art_id = mysql_real_escape_string($_GET['article']);
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update FROM tc_articles WHERE art_id = '.$art_id);
+  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles WHERE art_id = '.$art_id);
   $art = mysql_fetch_array($requete_art);
   //On prépare les variables pour les afficher dans le header
   $page_titre = utf8_encode($art['titre_'.$lang]);
@@ -16,18 +16,22 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   include("pages/body.php");
   //Et on affiche l'article
  ?>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link titre"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
   <article class="art_all">
     <h1 class="art_titre art_titre_article"><?=utf8_encode($art['titre_'.$lang])?></h1>
-    <?php if($art['date'] != $art['date_update']) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update'], $lang).'.</span>'; ?>
+    <?php if(!empty($art['date_update_'.$lang])) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update_'.$lang], $lang).'.</span>'; ?>
     <div class="art_text">
-      <div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
+      
       <?php 
-      if ($art['texte_'.$lang] == "") {
+      if (empty($art['texte_'.$lang])) {
         echo '<div class="warning">'.$langage['warning'][$lang].'</div>';
-        echo utf8_encode($art['texte_fr']);
+        $requete_art_alt = mysql_query('SELECT texte_fr FROM tc_articles WHERE art_id = '.$art_id);
+        $art_alt = mysql_fetch_array($requete_art_alt);
+        ?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
+        echo utf8_encode($art_alt['texte_fr']);
       }
-      else echo utf8_encode($art['texte_'.$lang]); ?>
+      else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
+      echo utf8_encode($art['texte_'.$lang]); }?>
       <div id="partage">
         <div>
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="t_chevalier" data-lang="<?=$lang?>">Tweeter</a>
@@ -141,11 +145,11 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     cl.setFPS(60); // default is 24
     cl.show(); // Hidden by default
     </script>
-      <div id="resultats"></div>
+      <div id="resultats" class="warning"></div>
     </div>
     <span class="requis"><?=$langage['requis'][$lang]?></span>
   </article>
-  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link art_link_bot"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
+  <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link art_link_bot titre"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
 <?php
 }
 //Sinon on affiche tous les articles

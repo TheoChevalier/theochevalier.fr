@@ -2,9 +2,7 @@
 include("pages/header.php");
 include("pages/body.php"); ?>
   <article id="creations">
-    <div class="titre">
-      <h1>Fichiers mis à disposition</h1>
-    </div>
+    <div class="titre">Fichiers mis à disposition</div>
     <div class="cadre_titre"></div>
     <div class="texte">
     <h2>Polycopié de Mathématiques Discrètes (Versions .pdf)</h2>

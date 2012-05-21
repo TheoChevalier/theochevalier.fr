@@ -2,9 +2,7 @@
 include("pages/body.php");
 include("locales/profil.php"); ?>
 	<article id="profil">
-		<div class="titre">
-			<h1><?=$langage['titre'][$lang]?></h1> 
-		</div>
+		<div class="titre"><?=$langage['titre'][$lang]?></div>
 		<div class="cadre_titre"></div>
 		<div class="texte">
 			<div class="image"><img src="img/theo.jpg" alt="" width="219" height="146"/></div><?=$langage['presentation_deb'][$lang]?>

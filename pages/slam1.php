@@ -200,6 +200,7 @@ else{
       mysqli_stmt_fetch($requete_ordre);
       mysqli_close($service);
   ?>
+  160,8 321,6
 <form id="modifsup" name="modifsup" action="" method="post">
   <p>
     <label for="n_fr">Nom français:</label> <input type="text" id="n_fr" name="n_fr" value="<?php echo utf8_encode($nfr); ?>" required="" />

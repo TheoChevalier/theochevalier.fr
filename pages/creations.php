@@ -6,9 +6,7 @@ include("pages/header.php");
 include("pages/body.php");
  ?>
   <article id="creations">
-    <div class="titre">
-      <h1><?=$langage['titre'][$lang]?></h1>
-    </div>
+    <div class="titre"><?=$langage['titre'][$lang]?></div>
     <div class="cadre_titre"></div>
     <div class="texte">
     <div>

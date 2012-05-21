@@ -24,17 +24,17 @@ if(isset($_POST["nom"]) && !empty($_POST["nom"]) && isset($_POST["email"]) && !e
   $headers .= 'From: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
   $headers .= 'Reply-To: "'.stripslashes(htmlspecialchars($_POST["nom"], ENT_QUOTES)).'"<'.stripslashes(htmlspecialchars($_POST["email"], ENT_QUOTES)).'>' . $passage_ligne;
 
-  mail($to, $subject, $mail, $headers) or die ("Email server unreachable.");
-  $resultat = $langage['message_ok'][$lang];
+  if(!@mail($to, $subject, $mail, $headers))
+    $resultat =  $langage['message_erreur_mail'][$lang];
+  else 
+    $resultat = $langage['message_ok'][$lang];
 }
 else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
   $resultat = $langage['message_erreur'][$lang];
 ?>
 
   <article id="contact">
-    <div class="titre">
-    <h1><?=$langage['titre'][$lang]?></h1>
-    </div>
+    <div class="titre"><?=$langage['titre'][$lang]?></div>
     <div class="cadre_titre"></div>
     <div class="texte">
     <p><?=$langage['informations'][$lang]?></p><br />
@@ -46,6 +46,6 @@ else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
       <button class="submit submit_contact" type="submit" ><?=$langage['envoyer'][$lang]?></button>
       </form>
       
-      <?php if(isset($resultat)) echo '<br />'.$resultat; ?>
+      <?php if(isset($resultat)) echo '<div class="warning">'.$resultat.'</div>'; ?>
     </div>
   </article>

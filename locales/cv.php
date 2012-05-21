@@ -130,9 +130,9 @@ $langage = array(
   'en' => "Various"),
 'divers' => array(
   'fr' => "• Contribution au développement du logiciel libre <b>Mozilla Firefox</b>
-      <br />• Anglais et Espagnol niveau scolaire",
+      <br />• Anglais soutenu et Espagnol niveau lycée",
   'en' => "• Contribution to the development of free software <b>Mozilla Firefox</b>
-      <br />• English and Spanish at school"),
+      <br />• Good English, and high school level Spanish"),
 'telecharger' => array(
   'fr' => "Télécharger ce CV au format PDF",
   'en' => "Download resume in PDF"),
