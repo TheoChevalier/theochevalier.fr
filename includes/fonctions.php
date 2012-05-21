@@ -98,7 +98,45 @@ function update_rss($lang)
     header('location:'.$lang.'_rss.xml');
   }
 }
+function update_sitemap() {
+$head ='<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+$links = "";
+$languages = array("fr", "en");
+foreach ($languages as $language)
+{
+  $links .= '
+  
+  <url><loc>
+  '.ROOTPATH.'/index.php?lang='.$language.'
+  </loc></url>
+  <url><loc>
+  '.ROOTPATH.'/index.php?page=6&amp;lang='.$language.'
+  </loc></url>
+  ';
+  $requete_art = mysql_query("SELECT art_id, titre_".$language.", date FROM tc_articles ORDER BY date");
+  while($art = mysql_fetch_array($requete_art))
+    $links .= '<url><loc>'.ROOTPATH.'/index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$language.'</loc></url>';
 
+  $links .= '
+  <url><loc>
+  '.ROOTPATH.'/index.php?page=2&amp;lang='.$language.'
+  </loc></url>
+  <url><loc>
+  '.ROOTPATH.'/index.php?page=5&amp;lang='.$language.'
+  </loc></url>
+  <url><loc>
+  '.ROOTPATH.'/index.php?page=4&amp;lang='.$language.'
+  </loc></url>
+  <url><loc>
+  '.ROOTPATH.'/index.php?page=sitemap&amp;lang='.$language.'
+  </loc></url>';
+}
+$eof ='</urlset>';
+$sitemap = $head.$links.$eof;
+file_put_contents ("sitemap.xml", $sitemap);
+header('location:sitemap.xml');
+}
 function parse($text) {
   $text = preg_replace('#http://[a-z0-9._/-]+#i', '<a href="$0" target="_blank">$0</a>', $text);
   $text = preg_replace('#@([a-z0-9_]+)#i', '<a href="http://twitter.com/$1" target="_blank">@$1</a>', $text);
