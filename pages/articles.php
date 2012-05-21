@@ -9,7 +9,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   //On prépare les variables pour les afficher dans le header
   $page_titre = utf8_encode($art['titre_'.$lang]);
   $page_img = "articles/".$art['art_img'];
-  $page_desc = utf8_encode(strip_tags(substr($art['texte_'.$lang], 0, 400)))." ...";
+  $page_desc = utf8_encode(str_replace('"', "'", (strip_tags(substr($art['texte_'.$lang], 0, 400)))))." ...";
   $page_keywords = utf8_encode($art['keywords']);
   //On inclue le header et le menu
   include("pages/header.php");
