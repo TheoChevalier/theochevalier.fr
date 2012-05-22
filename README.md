@@ -4,7 +4,7 @@ theochevalier.fr
 My personal website.
 
 To set it up:
-- Create a database and execute the SQL requests in /database.sql
+- Create a database and execute the SQL queries in /database.sql
 - Create a connexion.php file in /includes directory following the model /includes/connexion.sample.php.
 - git clone git://github.com/peteboere/css-crush
 - Make sure PHP short open tags are enabled
