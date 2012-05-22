@@ -16,14 +16,12 @@ table{margin-left:auto;margin-right:auto;border:1px solid #333;}
   -o-transition-duration: .1s;
   transition-duration: .1s; }
 .result_focus, #results > div:hover{background-color:#333!important; color: #fff!important;}
-#results {box-shadow: 0 0 3px #333;max-width: 300px;cursor:pointer;margin-left: 1px;}
+#results {box-shadow: 0 0 3px #333;max-width: 300px;cursor:pointer;margin-left: 221px;margin-top: -20px;}
 input, input:focus, select, select:focus, textarea {background-color:#fff;}
 input[type="text"]{width: 290px;}
 
 </style>
-<div class="titre">
-  <h1><?=$page_titre?></h1> 
-</div>
+<div class="titre"><?=$page_titre?></div>
 <div class="cadre_titre"></div>
 <div class="texte">
 <form name="formulaire" method="post" action="">
@@ -103,29 +101,35 @@ input[type="text"]{width: 290px;}
     var indexo = ordre.selectedIndex;
     //On empêche les cas négatifs
     if(indexf < 1)
-      famille.options.length = 0;
+      famille.options.length = 1;
     else {
-      //On initialise la connexion, et on définit le mode d'envoi (POST)
-      requete.open('POST', url, true);
-      //On regarde quand la connexion change d'état (reception d'une réponse)
-      requete.onreadystatechange = function anonymous() {
-      //Si l'état de la connexion est 4 (réponse reçue)
-      if(this.readyState == 4) { 
-      //On cache l'élement contenant le loader ("chargement ...") qui utilise canvas
-      document.getElementById('loading').style.display = 'none';
-      //On affiche la div où l'on va mettre le tableau des résultats
-      document.getElementById('result').hidden = false;
-      document.getElementById('search').hidden = false;
-      //On met tout le texte reçu de la réponse dans cette div
-      document.getElementById('result').innerHTML = this.responseText;
+      console.log(famille.options[indexf].value);
+      if (famille.options[indexf].value != "Choisissez votre famille") {
+        document.getElementById('loading').style.display = 'inline-block';
+        document.getElementById('result').hidden = true;
+        //On initialise la connexion, et on définit le mode d'envoi (POST)
+        requete.open('POST', url, true);
+        //On regarde quand la connexion change d'état (reception d'une réponse)
+        requete.onreadystatechange = function anonymous() {
+        //Si l'état de la connexion est 4 (réponse reçue)
+        if(this.readyState == 4) { 
+        //On cache l'élement contenant le loader ("chargement ...") qui utilise canvas
+        document.getElementById('loading').style.display = 'none';
+        //On affiche la div où l'on va mettre le tableau des résultats
+        document.getElementById('result').hidden = false;
+        document.getElementById('search').hidden = false;
+        document.getElementById('labelSearch').hidden = false;
+        //On met tout le texte reçu de la réponse dans cette div
+        document.getElementById('result').innerHTML = this.responseText;
+        }
+        };
+        //Définition du type de contenu qui sera envoyé (en-tête)
+        requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //Création de la requête à envoyer au script(on envoie les deux valeurs sélectionnées dans les CB, et le code requête -voir slam1_ajax.php-)
+        var data = "ordre="+escape(ordre.options[indexo].value)+"&famille="+escape(famille.options[indexf].value)+"&requete=2"; 
+        //On envoie ces données
+        requete.send(data);
       }
-      };
-      //Définition du type de contenu qui sera envoyé (en-tête)
-      requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      //Création de la requête à envoyer au script(on envoie les deux valeurs sélectionnées dans les CB, et le code requête -voir slam1_ajax.php-)
-      var data = "ordre="+escape(ordre.options[indexo].value)+"&famille="+escape(famille.options[indexf].value)+"&requete=2"; 
-      //On envoie ces données
-      requete.send(data);
     }
   }
   </script>
@@ -149,9 +153,7 @@ input[type="text"]{width: 290px;}
 </p>
 <p id="p_famille" hidden="true">
   <label for="famille">Famille :</label>
-  <select id="famille" name="famille" size="1" onchange="envoi_famille(this.form);
-  document.getElementById('loading').style.display = 'inline-block';
-  document.getElementById('result').hidden = true;" >
+  <select id="famille" name="famille" size="1" onchange="envoi_famille(this.form);" >
     <option></option>
   </select>
 </p>
@@ -163,12 +165,53 @@ if(isset($_POST['n_fr_h']))
   else $img = 'NULL';
   echo "image:".$img;
   $n_fr = utf8_decode($_POST['n_fr']);
-  $requete = mysqli_prepare($service, "UPDATE ppe_especes SET nom_latin = ?, nom_francais = ?, nom_famille = ?, image = ?
+  $requete = mysqli_prepare($service, "UPDATE ppe_especes SET nom_latin = ?, nom_francais = ?, nom_famille = ?
   WHERE nom_francais = ?;");
-  mysqli_stmt_bind_param($requete, 'sssss', $_POST['n_ln'], $n_fr, $_POST['n_fm'], $img, $_POST['n_fr_h']);
+  mysqli_stmt_bind_param($requete, 'ssss', $_POST['n_ln'], $n_fr, $_POST['n_fm'], $_POST['n_fr_h']);
   mysqli_stmt_execute($requete);
   
   // Si image supplémentaire envoyée, traitement puis enregistrement
+  if(!empty($_FILES['image'])) {
+    $service_fam_ordre = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+    $requete_fam_ordre = mysqli_prepare($service_fam_ordre, "SELECT nom_latin, ppe_especes.nom_famille, ordre FROM ppe_fam, ppe_especes WHERE nom_francais = ?
+    AND ppe_especes.nom_famille = ppe_fam.nom_famille");
+    mysqli_stmt_bind_param($requete_fam_ordre, 's', $n_fr);
+    mysqli_stmt_execute($requete_fam_ordre);
+    mysqli_stmt_bind_result($requete_fam_ordre, $nln, $famille, $ordre);
+    mysqli_stmt_fetch($requete_fam_ordre);
+    mysqli_close($service_fam_ordre);
+    //Définition du chemin d'enregistrement
+    $dir = "img/oiseaux/".strtolower($ordre."/".$famille."/");
+    $chemin = $dir.strtolower(str_replace('+', '_', $nln));
+    if(move_uploaded_file($_FILES['image']['tmp_name'], $chemin))
+    {
+      //Instanciation de l'objet Image
+      include("includes/image.php");
+      if(!is_dir("img/oiseaux/".strtolower($ordre)."/"))
+        mkdir("img/oiseaux/".strtolower($ordre)."/");
+      if(!is_dir($dir))
+        mkdir($dir);
+      $image = new Image($chemin_ext);
+      $x = 100;
+      $y = 100;
+      //Récupération des informations du fichier
+      $size = getimagesize($chemin_ext);
+      //On choisi quel côté redimensionner, afin que le plus grand côté mesure 100px
+      if($size[0] >= $size[1]) $y = ($size[1] * 100)/$size[0];
+      else $x = ($size[0] * 100)/$size[1];
+      //Utilisation des méthodes de l'objet Image pour redimensionner et enregistrer
+      $image->resize_to($x, $y);
+      $image->save_as($chemin_ext);
+      //On a enregistré l'image, on sauvegarde son extention, ce qui signifira aussi que cet oiseau possède une image
+      $bool = image_type_to_extension($type[2], false);
+      //On ouvre une nouvelle connexion pour sauvegarder l'extention
+      $service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+      $update = mysqli_prepare($service_u, "INSERT INTO ppe_images SET nom_latin = ?, num_image = 1, image = ?;");
+      mysqli_stmt_bind_param($update, 'ss', $nla, $bool);
+      mysqli_stmt_execute($update);
+      mysqli_close($service_u);
+    }
+  }
 }
 else{
   if(isset($_POST['search']) && $_POST['search'] != "")
@@ -200,7 +243,6 @@ else{
       mysqli_stmt_fetch($requete_ordre);
       mysqli_close($service);
   ?>
-  160,8 321,6
 <form id="modifsup" name="modifsup" action="" method="post">
   <p>
     <label for="n_fr">Nom français:</label> <input type="text" id="n_fr" name="n_fr" value="<?php echo utf8_encode($nfr); ?>" required="" />
@@ -307,14 +349,14 @@ else{
     else echo "L'oiseau n'existe pas dans la base de données.";
   }else{
 ?>
-<form name="modification" method="post" action="" id="form_search">
-  <input id="search" name="search" type="text" <?php if(isset($_POST['search']) && $_POST['search'] != "") echo 'hidden="true"'; ?> autocomplete="off" />
-  <div id="results" onClick="this.form.submit();"></div>
-<p>
-</p>
-</form>
-<?php } } ?>
 
+<?php } } ?>
+<form name="modification" method="post" action="" id="form_search">
+  <p>
+    <label for="search" id="labelSearch" hidden="true">Rechercher:</label><input id="search" name="search" type="text" <?php if(isset($_POST['search']) && $_POST['search'] != "") echo 'hidden="true"'; ?> autocomplete="off"  hidden="true" />
+  </p>
+  <div id="results" onClick="this.form.submit();"></div>
+</form>
 <script type="text/Javascript">
   
   (function() {
@@ -349,6 +391,9 @@ else{
         };
       }
     }
+    document.addEventListener('click', function(e) {
+      results.style.display = "none";
+    }, true);
   }
   function chooseResult(result) { // Choisi un des résultats d'une requête et gère tout ce qui y est attaché
   searchElement.value = previousValue = result.innerHTML; // On change le contenu du champ de recherche et on enregistre en tant que précédente valeur
@@ -357,7 +402,7 @@ else{
   selectedResult = -1; // On remet la sélection à "zéro"
   searchElement.focus(); // Si le résultat a été choisi par le biais d'un clique alors le focus est perdu, donc on le réattribue
   }
-  searchElement.onkeyup = function(e) {
+  var fonctionSearch = function (e) {
   var famille = document.forms["formulaire"].elements["famille"];
   var indexf = famille.selectedIndex;
   var fam = escape(famille.options[indexf].value);
@@ -379,15 +424,19 @@ else{
   else if (e.keyCode == 13 && selectedResult > -1) { // Si la touche pressée est "Entrée"
   chooseResult(divs[selectedResult]);
   }
-  else if (searchElement.value != previousValue) { // Si le contenu du champ de recherche a changé
+  else if (searchElement.value != previousValue || results.style.display == "none" && searchElement.value != "") { // Si le contenu du champ de recherche a changé
   previousValue = searchElement.value;
   if (previousRequest && previousRequest.readyState < 4) {
   previousRequest.abort(); // Si on a toujours une requête en cours, on l'arrête
   }
   previousRequest = getResults(previousValue, fam); // Onstocke la nouvelle requête
   selectedResult = -1; // On remet la sélection à "zéro" à chaque caractère écrit
-  }
+  }else if (searchElement.value == "")
+    results.style.display = 'none';
   };
+  searchElement.addEventListener('click', fonctionSearch, true);
+  searchElement.addEventListener('keyup', fonctionSearch, true);
+  
 })();
 </script>
 

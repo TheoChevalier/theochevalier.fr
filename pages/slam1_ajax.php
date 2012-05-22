@@ -126,7 +126,7 @@ if(isset($_POST['requete']) && $_POST['requete'] == 1)
 }
 elseif(isset($_GET['requete']) && $_GET['requete'] == 3)
 {
-  $auto = urldecode($_GET['s']).'%';
+  $auto = '%'.urldecode($_GET['s']).'%';
   $requete = mysqli_prepare($service, "SELECT nom_francais
   FROM ppe_especes WHERE nom_famille = ? AND nom_francais LIKE ? LIMIT 10;");
   mysqli_stmt_bind_param($requete, 'ss', $_GET['fam'], $auto);

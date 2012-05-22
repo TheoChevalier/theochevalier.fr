@@ -32,7 +32,6 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
 body { margin: 0; font-size: 13px; line-height: 1.231;
-  font-family: "PT Serif", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", Arial, sans-serif;
   background-color:#599cc9;
   background: url(../img/bg.jpg);
   background-image: radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
@@ -44,7 +43,7 @@ body { margin: 0; font-size: 13px; line-height: 1.231;
  }
  
 
-body, button, input, select, textarea { font-family: OpenSansLight, sans-serif; color: #333; }
+body, button, input, select, textarea { font-family: OpenSansLight, "PT Serif", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", Arial, sans-serif; color: #333; }
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -752,6 +751,8 @@ td { vertical-align: top; }
 }
 .image_black {
   background: #000;
+}
+.image_shadow {
   box-shadow: 0px 0px 2px rgba(0,0,0,1),0px 0px 7px rgba(0,0,0,0.2);
   -o-box-shadow: 0px 0px 2px rgba(0,0,0,1),0px 0px 7px rgba(0,0,0,0.2);
   -ms-box-shadow: 0px 0px 2px rgba(0,0,0,1),0px 0px 7px rgba(0,0,0,0.2);
@@ -897,11 +898,6 @@ h2{font-size: 20px;}
   margin:0;
   width: 80%;
   padding-top: 10px;
-  transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -ms-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
 }
 .art_titre_text {
   font-size: 25px;
@@ -910,6 +906,11 @@ h2{font-size: 20px;}
   color: #333;
   border-bottom: 1px solid #fff;
   margin-bottom: 5px;
+    transition-duration:.3s;
+  -o-transition-duration:.3s;
+  -ms-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -webkit-transition-duration:.3s;
 }
 .article:hover .art_titre_text {
   color: #0074d8;
