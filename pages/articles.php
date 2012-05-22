@@ -190,7 +190,7 @@ else
   <?php
   //On définit le numéro du premier article à afficher en fonction du numéro de la page et du nombre d'articles à afficher par page
   $premierMessageAafficher = ($page - 1) * $nombreDeMessagesParPage;
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date FROM tc_articles ORDER BY date DESC LIMIT '.$premierMessageAafficher.', '.$nombreDeMessagesParPage);
+  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles ORDER BY date DESC LIMIT '.$premierMessageAafficher.', '.$nombreDeMessagesParPage);
   //On affiche les articles
   while($art = mysql_fetch_array($requete_art))
   { ?>
@@ -199,9 +199,11 @@ else
   <div class="article">
     <div class="art_img"><img src="img/articles/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <div class="art_titre">
-        <?php echo utf8_encode($art['titre_'.$lang]); ?>
+        <div class="art_titre_text"><?php echo utf8_encode($art['titre_'.$lang]); ?></div>
+        <div class="clear"></div>
+        <div class="art_date"><?php echo utf8_encode(date('d/m/y', $art['date'])); ?></div>
+        <?php if(!empty($art['date_update_'.$lang])) echo '<div class="art_date_update">'.$langage['update'][$lang].' '.date_heure($art['date_update_'.$lang], $lang).'.</div>'; ?>
       </div>
-    <div class="art_date"><?=$langage['date'][$lang]?> <?php echo utf8_encode(date_heure($art['date'], $lang)); ?></div>
     <div class="clear"></div>
     </div>
   </article>

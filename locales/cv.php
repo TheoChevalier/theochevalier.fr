@@ -22,7 +22,7 @@ $langage = array(
       <span class="b">Théo Chevalier</span>
       <br />2 rue des lauriers
       <br />11600 Fraïsse-Cabardès - FRANCE
-      <br /><i>21 years, driving license</i>
+      <br /><i>21 years old, driving license</i>
       </div>
       <div id="cv_contact">
         <br /><span class="i">Tel:</span> +336.77.31.45.99
