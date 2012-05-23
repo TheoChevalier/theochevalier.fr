@@ -13,9 +13,7 @@ include("pages/header.php");
 		<div id="main">
 			<div class="titre_site"><?=$langage['big_title'][$lang]?></div>
 			<article>
-				<div class="titre">
-				  <h1><?=$langage['title'][$lang]?></h1>
-				</div>
+				<div class="titre"><?=$langage['title'][$lang]?></div>
 				<div class="clear"></div>
 				<div class="cadre_titre"></div>
 				<div class="texte">

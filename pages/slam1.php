@@ -16,7 +16,7 @@ table{margin-left:auto;margin-right:auto;border:1px solid #333;}
   -o-transition-duration: .1s;
   transition-duration: .1s; }
 .result_focus, #results > div:hover{background-color:#333!important; color: #fff!important;}
-#results {box-shadow: 0 0 3px #333;max-width: 300px;cursor:pointer;margin-left: 221px;margin-top: -20px;}
+#results {box-shadow: 0 0 3px #333;width: 300px;cursor:pointer;margin-left: 221px;margin-top: -16px;position: absolute;}
 input, input:focus, select, select:focus, textarea {background-color:#fff;}
 input[type="text"]{width: 290px;}
 #result {margin-top: 50px;}
