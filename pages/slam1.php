@@ -19,6 +19,7 @@ table{margin-left:auto;margin-right:auto;border:1px solid #333;}
 #results {box-shadow: 0 0 3px #333;max-width: 300px;cursor:pointer;margin-left: 221px;margin-top: -20px;}
 input, input:focus, select, select:focus, textarea {background-color:#fff;}
 input[type="text"]{width: 290px;}
+#result {margin-top: 50px;}
 
 </style>
 <div class="titre"><?=$page_titre?></div>
@@ -163,15 +164,14 @@ if(isset($_POST['n_fr_h']))
 {
   if(isset($_POST['keep_img'])) $img = $_POST['keep_img'];
   else $img = 'NULL';
-  echo "image:".$img;
   $n_fr = utf8_decode($_POST['n_fr']);
-  $requete = mysqli_prepare($service, "UPDATE ppe_especes SET nom_latin = ?, nom_francais = ?, nom_famille = ?
+  $requete = mysqli_prepare($service, "UPDATE ppe_especes SET nom_latin = ?, nom_francais = ?, nom_famille = ?, forme_bec = ? , couleur_dominante = ?
   WHERE nom_francais = ?;");
-  mysqli_stmt_bind_param($requete, 'ssss', $_POST['n_ln'], $n_fr, $_POST['n_fm'], $_POST['n_fr_h']);
+  mysqli_stmt_bind_param($requete, 'ssssss', $_POST['n_ln'], $n_fr, $_POST['n_fm'], $_POST['formebec'], $_POST['coulDom'], $_POST['n_fr_h']);
   mysqli_stmt_execute($requete);
   
   // Si image supplémentaire envoyée, traitement puis enregistrement
-  if(!empty($_FILES['image'])) {
+  if(!empty($_FILES['image']['name'])) {
     $service_fam_ordre = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
     $requete_fam_ordre = mysqli_prepare($service_fam_ordre, "SELECT nom_latin, ppe_especes.nom_famille, ordre FROM ppe_fam, ppe_especes WHERE nom_francais = ?
     AND ppe_especes.nom_famille = ppe_fam.nom_famille");
@@ -180,34 +180,45 @@ if(isset($_POST['n_fr_h']))
     mysqli_stmt_bind_result($requete_fam_ordre, $nln, $famille, $ordre);
     mysqli_stmt_fetch($requete_fam_ordre);
     mysqli_close($service_fam_ordre);
+    
+    // On compte le nombe d'images déja présentes pour cette espèce
+    $service_fam_ordre = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
+    $requete_fam_ordre = mysqli_prepare($service_fam_ordre, "SELECT COUNT(*) FROM ppe_images WHERE nom_latin = ?");
+    mysqli_stmt_bind_param($requete_fam_ordre, 's', $nln);
+    mysqli_stmt_execute($requete_fam_ordre);
+    mysqli_stmt_bind_result($requete_fam_ordre, $count_i);
+    mysqli_stmt_fetch($requete_fam_ordre);
+    mysqli_close($service_fam_ordre);
+    $count_i++;
     //Définition du chemin d'enregistrement
-    $dir = "img/oiseaux/".strtolower($ordre."/".$famille."/");
-    $chemin = $dir.strtolower(str_replace('+', '_', $nln));
+    $nom_file = strtolower($_FILES['image']['name']);
+    $extention = '.'. str_replace('.','',strstr($nom_file, '.'));
+    $dir = "img/oiseaux/".strtolower(str_replace(' ', '', $ordre)."/".$famille."/");
+    $chemin = $dir.strtolower(str_replace(' ', '_', $nln)).'_'.$count_i.$extention;
     if(move_uploaded_file($_FILES['image']['tmp_name'], $chemin))
     {
       //Instanciation de l'objet Image
       include("includes/image.php");
       if(!is_dir("img/oiseaux/".strtolower($ordre)."/"))
         mkdir("img/oiseaux/".strtolower($ordre)."/");
-      if(!is_dir($dir))
-        mkdir($dir);
-      $image = new Image($chemin_ext);
+      //if(!is_dir($dir))
+      //  mkdir($dir);
+      $image = new Image($chemin);
       $x = 100;
       $y = 100;
       //Récupération des informations du fichier
-      $size = getimagesize($chemin_ext);
+      $size = getimagesize($chemin);
       //On choisi quel côté redimensionner, afin que le plus grand côté mesure 100px
       if($size[0] >= $size[1]) $y = ($size[1] * 100)/$size[0];
       else $x = ($size[0] * 100)/$size[1];
       //Utilisation des méthodes de l'objet Image pour redimensionner et enregistrer
       $image->resize_to($x, $y);
-      $image->save_as($chemin_ext);
+      $image->save_as($chemin);
       //On a enregistré l'image, on sauvegarde son extention, ce qui signifira aussi que cet oiseau possède une image
-      $bool = image_type_to_extension($type[2], false);
       //On ouvre une nouvelle connexion pour sauvegarder l'extention
       $service_u = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-      $update = mysqli_prepare($service_u, "INSERT INTO ppe_images SET nom_latin = ?, num_image = 1, image = ?;");
-      mysqli_stmt_bind_param($update, 'ss', $nla, $bool);
+      $update = mysqli_prepare($service_u, "INSERT INTO ppe_images SET nom_latin = ?, num_image = ?, image = ?;");
+      mysqli_stmt_bind_param($update, 'sis', $nln, $count_i, $extention);
       mysqli_stmt_execute($update);
       mysqli_close($service_u);
     }
@@ -217,8 +228,7 @@ else{
   if(isset($_POST['search']) && $_POST['search'] != "")
   {
     $nom_fr = utf8_decode($_POST['search']);
-    $requete = mysqli_prepare($service, "SELECT COUNT(*)
-    FROM ppe_especes WHERE nom_francais = ?;");
+    $requete = mysqli_prepare($service, "SELECT COUNT(*) FROM ppe_especes WHERE nom_francais = ?;");
     mysqli_stmt_bind_param($requete, 's', $nom_fr);
     mysqli_stmt_execute($requete);
     mysqli_stmt_bind_result($requete, $nb);
@@ -227,23 +237,21 @@ else{
     if($nb > 0)
     {
       $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-      $requete_2 = mysqli_prepare($service, "SELECT *
-      FROM ppe_especes WHERE nom_francais = ?;");
+      $requete_2 = mysqli_prepare($service, "SELECT * FROM ppe_especes WHERE nom_francais = ?;");
       mysqli_stmt_bind_param($requete_2, 's', $nom_fr);
       mysqli_stmt_execute($requete_2);
       mysqli_stmt_bind_result($requete_2, $nln, $nfr, $nfm, $formeBec, $coulDom, $nbOeufs, $largOeuf, $hautOeuf, $longMax, $longMin, $envMax, $envMin);
       mysqli_stmt_fetch($requete_2);
       mysqli_close($service);
       $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-      $requete_ordre = mysqli_prepare($service, "SELECT ordre
-      FROM ppe_fam WHERE nom_famille = ?;");
+      $requete_ordre = mysqli_prepare($service, "SELECT ordre FROM ppe_fam WHERE nom_famille = ?;");
       mysqli_stmt_bind_param($requete_ordre, 's', $nfm);
       mysqli_stmt_execute($requete_ordre);
       mysqli_stmt_bind_result($requete_ordre, $ord);
       mysqli_stmt_fetch($requete_ordre);
       mysqli_close($service);
   ?>
-<form id="modifsup" name="modifsup" action="" method="post">
+<form enctype="multipart/form-data" id="modifsup" name="modifsup" action="" method="post">
   <p>
     <label for="n_fr">Nom français:</label> <input type="text" id="n_fr" name="n_fr" value="<?php echo utf8_encode($nfr); ?>" required="" />
     <input type="hidden" id="n_fr_h" name="n_fr_h" value="<?php echo utf8_encode($nfr); ?>" />
@@ -263,7 +271,7 @@ else{
   mysqli_stmt_execute($requete_images);
   mysqli_stmt_bind_result($requete_images, $numImage, $image);
   while (mysqli_stmt_fetch($requete_images))
-    echo '<img src="img/oiseaux/'.strtolower($ord)."/".strtolower($nfm)."/".str_replace(' ', '_', $nln)."_".$numImage.".".$image.'" alt="" />';
+    echo '<img src="img/oiseaux/'.strtolower(str_replace(" ", "", $ord))."/".strtolower($nfm)."/".strtolower(str_replace(' ', '_', $nln))."_".$numImage.$image.'" alt="" />';
 
   mysqli_close($service);
   ?>
@@ -289,14 +297,13 @@ else{
   <p>Longueur entre <?=$longMin?> cm et <?=$longMax?> cm.</p>
   <p>Envergure entre <?=$envMin?> cm et <?=$envMax?> cm.</p>
   <p><?=$nbOeufs?> oeuf(s) (h:<?=$hautOeuf?>, l:<?=$largOeuf?>)</p>
-  <p>Forme du bec: <?=$formeBec?></p>
-  <p>Couleur dominante: <?=$coulDom?></p>
-  <p>Proies:</p>
+  <p><label for="formeBec">Forme du bec:</label> <input type="text" name="formebec" value="<?=$formeBec?>" id="formebec" /></p>
+  <p><label for="coulDom">Couleur dominante:</label> <input type="text" name="coulDom" value="<?=$coulDom?>" id="coulDom" /></p>
+  <p><label>Proies:</label></p>
   <?php
   // Requete proies
   $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-  $requete_proies = mysqli_prepare($service, "SELECT nom_proie
-  FROM ppe_proies WHERE nom_latin = ?;");
+  $requete_proies = mysqli_prepare($service, "SELECT nom_proie FROM ppe_proies WHERE nom_latin = ?;");
   mysqli_stmt_bind_param($requete_proies, 's', $nln);
   mysqli_stmt_execute($requete_proies);
   mysqli_stmt_bind_result($requete_proies, $proie);
@@ -309,8 +316,7 @@ else{
   <?php
   // Requete zones
   $service = mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD2);
-  $requete_zones = mysqli_prepare($service, "SELECT num_repartition, pays
-  FROM ppe_repartition WHERE nom_latin = ?;");
+  $requete_zones = mysqli_prepare($service, "SELECT num_repartition, pays FROM ppe_repartition WHERE nom_latin = ?;");
   mysqli_stmt_bind_param($requete_zones, 's', $nln);
   mysqli_stmt_execute($requete_zones);
   mysqli_stmt_bind_result($requete_zones, $nZone, $pays);

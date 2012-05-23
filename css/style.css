@@ -918,7 +918,8 @@ h2{font-size: 20px;}
 }
 .art_titre_article{
   display: block;
-  max-width: 100%;
+  width: 100%;
+  border-bottom: 1px solid #999;
 }
 .art_date{
   color: #999;
