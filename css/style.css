@@ -1170,6 +1170,10 @@ input:focus, textarea:focus, select:focus {outline:none;border-color:#666;color:
   padding: 7px 15px;
   border: 0;
 }
+#goog-wm-sb{
+  margin-left: 0;
+  width: 412px;
+}
 .warning .submit {
   margin-left: 20px;
 }
@@ -1338,7 +1342,9 @@ footer .dark_shadow {
 }
 #firefox .ff_mobile{ display: none;}
 
-
+.404-notfound {
+  padding-bottom: 50px;
+}
 /* ==|== non-semantic helper classes ========================================
    Styles must be defined before this section.
    ========================================================================== */
@@ -1494,7 +1500,6 @@ video{max-width: 280px;}
 .art_all{padding: 5px;}
 #main .texte{padding: 20px 10px;}
 }
-
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r

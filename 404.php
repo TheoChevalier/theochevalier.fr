@@ -10,7 +10,7 @@ include("pages/header.php");
 	.titre_site{ margin-top: 50px;}
 	</style>
 	<body>
-		<div id="main">
+		<div id="main" class="404-notfound">
 			<div class="titre_site"><?=$langage['big_title'][$lang]?></div>
 			<article>
 				<div class="titre"><?=$langage['title'][$lang]?></div>
