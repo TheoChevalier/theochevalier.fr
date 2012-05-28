@@ -296,7 +296,7 @@ td { vertical-align: top; }
   font-weight: bold;
   text-align: center;
   margin-bottom: 5px;
-  color: rgb(251,251,251);
+  color: #fbfbfb;
   text-shadow: 
     0px 0px 0 rgb(231,231,231),
     1px 1px 0 rgb(216,216,216),
@@ -684,7 +684,7 @@ td { vertical-align: top; }
   transition-duration: 0.1s;
   -o-transition-duration: 0.1s;
   -ms-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
+  -moz-transition-duration: 0.3s;
   -webkit-transition-duration: 0.1s;
 }
 .header_menu a {

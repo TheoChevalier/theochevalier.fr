@@ -49,7 +49,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
   {
     $mail = strtolower(mysql_real_escape_string(utf8_decode($_POST['email'])));
     $nom = mysql_real_escape_string(utf8_decode($_POST['nom']));
-    $message = stripslashes(nl2br(htmlspecialchars(utf8_decode($_POST['message']))));
+    $message = mysql_real_escape_string(str_replace('\n', '', stripslashes(nl2br(htmlspecialchars(utf8_decode($_POST['message']))))));
     $follow = mysql_real_escape_string(utf8_decode($_POST['follow']));
     $time = time();
     $art = intval($_POST['article']);
