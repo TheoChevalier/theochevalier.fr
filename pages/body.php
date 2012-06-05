@@ -9,15 +9,6 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-    
-    function menu() {
-      var menu = document.getElementById('menu').querySelector('ul');
-      menu.classList.add('menu_active');
-      menu.setAttribute('style','margin-top: -55px;');
-      var header = document.querySelector('header');
-      header.classList.add('header_close');
-      header.setAttribute('style','opacity: 0;');
-    }
   </script>
 <!--[if lte IE 8 ]>
 <style>

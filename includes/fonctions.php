@@ -68,7 +68,7 @@ function update_rss($lang)
    </author>
    <id>'.ROOTPATH.'/'.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
-  $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update, texte_".$lang.", art_img, categorie FROM tc_articles
+  $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img, categorie FROM tc_articles
   WHERE categorie = 'mozilla' ORDER BY date DESC" ) or die("Impossible d'afficher le flux RSS.");
   $num = mysql_num_rows($requete);
   $items ='';
@@ -76,7 +76,7 @@ function update_rss($lang)
   {
     $titre = utf8_encode(str_replace("&", "&amp;", $news['titre_'.$lang]));
     $lien = ROOTPATH.'/index.php?page=6&amp;article='.$news['art_id'].'&amp;lang='.$lang;
-    $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", $news['texte_'.$lang]).']]>');
+    $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles_big/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", $news['texte_'.$lang]).']]>');
     $items = $items.'
     
       <entry>

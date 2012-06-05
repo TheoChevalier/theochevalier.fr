@@ -1,0 +1,27 @@
+Première expérience pour moi, ce Sud Web aura été une réussite! Je n'ai pas vraiment d'éléments de comparaison, 
+mais ces deux journées auront été magiques pour moi. Toutes ces personnes que je suis régulièrement sur internet,
+ou via d'anciennes vidéos de Sud Web et Paris Web, j'ai pu enfin les rencontrer, et ça impressionne! 
+La journée de Vendredi, dédiée aux conférences aura, à mes yeux, été marquée par les conférences de Bruce Lawson d'Opera
+et Nicolas Hoffman. Les deux conférences se rejoignaient sur le thème de l'Open Web: Bruce lawsonn ous a rappellé que nous
+étions heureux lors de la sortie d'IE6. Enfin, rappellé à ceux qui ont connu cette époque, ce qui n'est pas mon cas!
+J'ai réellement été étonné d'apprendre qu'à sa sortie avec l'apport d'HTML 4.01, des CSS, des .htc et de ActiveX, IE6 fût un succès auprès du public
+ et des professionels.
+Celà entraîna un monopole, avec environs 95% du marché rapidement occupé par cet illustre butineur. Ce monopole entraîna l'adoption
+de technologies propres à IE6, et rapidement les sites furent développés uniquement pour lui, vu qu'il était ultra-majoritaire.
+C'est à ce moment là que Bruce fit un lien avec la situation actuelle et la possible création de monopole par Webkit.
+Certains indicateurs sont là: des sites commencent à n'être développés qu'en pensant à webkit (Oubli des autres préfixes dans l'utilisation
+de propriétés expérimentales), applications uniquement disponibles pour un seul navigateur, etc.
+Un nombre important de développeurs seraient favorables à ce monopole, mais je ne pense pas qu'ils aient conscience des conséquences.
+Certes, il serait plus facile d'utiliser certaines propriétés (plus qu'un seul préfixe), mais la liste des avantages s'arrête là.
+Une monoculture entraînerait l'arrêt de l'innovation pour le Web, <---->
+
+Peter Gasston, employé d'Opera Software à pour sa part réalisé une très belle (et fun aussi, les slides valent le coup d'oeil) conférence sur
+l'utilisation des CSS3 en production. Il nous a fait prendre conscience, parfois en exagérant, mais c'était efficace, que déjà le
+"pixel-perfect" était une utopie, et que seul un mauvais designer voudrait imposer à l'intégrateur le pixel-perfect.
+Un tel designer travaille avec vous? "Ne lui dites rien" Pourquoi? "Parce que vous devez faire des choses cool!".
+Et puis, tant que celà ne gêne pas la navigation, il est inutile d'alourdir le site ou de perdre beacoup de temps pour les navigateurs obsolètes,
+d'après peter, il faut plutôt chercher à récompenser les personnes utilisant un navigateur à jour.
+
+Nicolas Hoffman sous la forme d'un lightning-talk (5 minutes), nous a quant à lui <----->
+
+Le Samedi, consacré aux ateliers, 

@@ -81,6 +81,9 @@ a:focus { outline: none; }
 footer a{color: #fff;}
 footer a:hover, .art_all a:hover { text-decoration: none; }
 
+a[hreflang]:after {  
+    content : " ["attr(hreflang)"]";  
+}
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 
 
@@ -268,11 +271,11 @@ td { vertical-align: top; }
   display: inline-block;
   background-color: rgba(255,255,255,0.15);
   padding: 5px 10px;
-  transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -ms-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
 }
 .lang:hover {
   background-color: #fff;
@@ -922,10 +925,11 @@ h2{font-size: 20px;}
   border-bottom: 1px solid #999;
 }
 .art_date{
-  color: #999;
+  color: #777;
   font-size: 12px;
   text-align: left;
   float: left;
+  letter-spacing: .1em;
 }
 .art_date_update{
   color: #4c76a4;
@@ -967,13 +971,31 @@ h2{font-size: 20px;}
 .art_text a{color:#0074d8;}
 .art_text a:hover{text-decoration:underline;}
 .art_text p{text-indent: 50px;margin-bottom: 1.5em;}
-.art_text video{
-  box-shadow: 2px 2px 5px 2px #999;
+.art_text video, .art_image{
   display:block;
   margin: 30px auto 30px auto;
   max-width: 90%;
-  width: auto;
-  }
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.art_text  img:before {  
+    top: 52px;  
+    left: 5px;  
+    transform: rotate(-5deg);  
+    box-shadow: 7px 6px 15px #333;  
+}  
+.art_text  img:after {  
+    top: 52px;  
+    right: 5px;  
+    transform: rotate(5deg);  
+    box-shadow: -7px 6px 15px #333;  
+}
+.art_text h3 {
+  font-family: OpenSansLight,"PT Serif","Lucida Sans","Lucida Grande","Lucida Sans Unicode","Luxi Sans",Arial,sans-serif;
+  font-weight: normal;
+  color: #333;
+  font-size: 1.7em;
+}
 /*.art_text::-moz-selection,.art_text > ::-moz-selection { background: #666; color: #eee;}
 .art_text::selection,.art_text > ::selection { background: #666; color: #eee; }*/
 .art_all article{margin:0;}

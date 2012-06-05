@@ -30,8 +30,10 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
         ?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
         echo utf8_encode($art_alt['texte_fr']);
       }
-      else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
+      else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
+      <div><?php
       echo utf8_encode($art['texte_'.$lang]); }?>
+      </div>
       <div id="partage">
         <div>
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="t_chevalier" data-lang="<?=$lang?>">Tweeter</a>
