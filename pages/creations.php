@@ -9,6 +9,14 @@ include("pages/body.php");
     <div class="titre"><?=$langage['titre'][$lang]?></div>
     <div class="cadre_titre"></div>
     <div class="texte">
+        <div>
+      <div class="image image_black image_shadow"><a href="http://psvideo.fr/index.php" target="_blank"><img src="img/creations/default.jpg" alt="" /></a></div>
+      <div class="creations_text">
+      <h2><?=$langage['psv_titre'][$lang]?></h2>
+      <p><?=$langage['psv'][$lang]?></p>
+      </div>
+      <div class="clear"></div>
+    </div>
     <div>
       <div class="image image_black image_shadow"><a href="http://www.mozilla.org/about" target="_blank"><img src="img/creations/5.jpg" alt="" /></a></div>
       <div class="creations_text">

@@ -17,7 +17,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
   //Et on affiche l'article
  ?>
   <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link titre"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
-  <article class="art_all">
+  <div class="art_all">
     <h1 class="art_titre art_titre_article"><?=utf8_encode($art['titre_'.$lang])?></h1>
     <?php if(!empty($art['date_update_'.$lang])) echo '<span id="update">'.$langage['update'][$lang].' '.date_heure($art['date_update_'.$lang], $lang).'.</span>'; ?>
     <div class="art_text">
@@ -150,7 +150,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       <div id="resultats" class="warning"></div>
     </div>
     <span class="requis"><?=$langage['requis'][$lang]?></span>
-  </article>
+  </div>
   <a href="index.php?page=6&amp;lang=<?=$lang?>" onClick="menu();"><div class="art_link art_link_bot titre"><div class="arrow_back"></div> <?=$langage['titre'][$lang]?></div></a>
 <?php
 }

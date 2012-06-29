@@ -35,13 +35,13 @@ $langage = array(
         <a class=\"lien\" href=\"index.php?page=6&amp;article=2&amp;lang=en\" onClick='menu();'>get involved!</a></p>
         <p>On this site you will find information about me, my current projects,
         the Mozilla community, open-source softwares, development, etc.<br/>
-        I create websites for several years now, and mastering key
+        I've been building website for several years now, and mastering key
         programming languages ​​of today's web (HTML, CSS, PHP, SQL, JavaScript ...).
         I also have some experience in the integration within the Content Management Systems
         (Joomla for example.), And mastery GIMP. </p>
         <p>I focused on the use of new standards, which I strongly believe,
         to develop an open and accessible Web. </p>
-        <p>I apologize for all the English grammar faults on this website, but if you want, 
+        <p>I apologize for all the English grammar mistakes on this website, but if you want, 
         you can help me to fix it. :)</p>")
 );
  ?>
