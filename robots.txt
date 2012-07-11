@@ -4,3 +4,4 @@ User-agent: *
 Disallow: /ppe/
 Disallow: index.php?page=slam1
 Disallow: index.php?page=admin
+Sitemap: sitemap.xml

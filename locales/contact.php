@@ -36,5 +36,8 @@ $langage = array(
 'envoyer' => array(
 	'fr' => "Envoyer",
 	'en' => "Submit"),
+'phone' => array(
+	'fr' => "Vous pouvez également me contacter par téléphone au 06 77 31 45 99.",
+	'en' => "You can also reach me via mobile at +33 677 314 599."),
 );
  ?>

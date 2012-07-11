@@ -38,6 +38,7 @@ else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
     <div class="cadre_titre"></div>
     <div class="texte">
     <p><?=$langage['informations'][$lang]?></p><br />
+    <?php if(isset($resultat)) echo '<div class="warning">'.$resultat.'</div>'; ?>
         <form method="post" action="index.php?page=4" name="formulaire" id="form_contact">
       <div><label for="nom"><?=$langage['nom'][$lang]?></label> <input type="text" name="nom" id="nom" required=""/></div>
       <div><label for="email"><?=$langage['email'][$lang]?></label> <input type="text" name="email" id="email"  required=""/></div>
@@ -45,7 +46,7 @@ else if(isset($_POST["verif"]) && $_POST["verif"] == '1')
       <input type="hidden" name="verif" id="verif" value="1" />
       <button class="submit submit_contact" type="submit" ><?=$langage['envoyer'][$lang]?></button>
       </form>
+      <p><?=$langage['phone'][$lang]?></p>
       
-      <?php if(isset($resultat)) echo '<div class="warning">'.$resultat.'</div>'; ?>
     </div>
   </article>

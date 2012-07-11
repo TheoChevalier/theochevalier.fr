@@ -79,6 +79,12 @@ $langage = array(
   'en' => "Your browser doesn\'t support data sending without reloading page (XMLHttpRequest)."),
 
 //com.php
+'com' => array(
+  'fr' => "commentaire",
+  'en' => "comment"),
+'coms' => array(
+  'fr' => "commentaires",
+  'en' => "comments"),
 'com_nom_erreur' => array(
   'fr' => "Le nom doit être compris entre 2 et 100 caractères.",
   'en' => "Name must be between two and 100 characters."),

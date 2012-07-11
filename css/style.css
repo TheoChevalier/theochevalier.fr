@@ -294,7 +294,7 @@ td { vertical-align: top; }
 .titre_site {
   font-family: 'Helvetica Neue',Helvetica, sans-serif;
   line-height: 1em;
-  font-size: 75px;
+  font-size: 5em;
   margin-top: 0px;
   font-weight: bold;
   text-align: center;
@@ -1424,7 +1424,6 @@ body{
   padding:0;
 }
 .titre_site{
-  padding-top: 130px;
   min-width: 300px;
   max-width: 728px;
   line-height: 55px;

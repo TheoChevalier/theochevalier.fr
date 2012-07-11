@@ -36,7 +36,7 @@ $langage = array(
 'exp' => array(
   'fr' => "<p><span class=\"i b\">Juin 2012</span> - Stage de 4 semaines en tant que développeur Web chez PSV.COM (www.psvideo.fr) à Toulouse dans le cadre du BTS SIO.
       <p><span class=\"i b\">25/26 Mai 2012</span> - Participation à SudWeb 2012, deux journées de conférences et ateliers à Toulouse axées sur le Web.
-      <p><span class=\"i b\">Avril 2012 / Aujourd'hui</span> - Stagiaire chez ADN Mobile, en tant que développeur front-end sur une solution mobile de stockage et de partage de fichiers en ligne.</p>
+      <p><span class=\"i b\">Avril / Mai 2012</span> - Stagiaire chez ADN Mobile, en tant que développeur front-end sur une solution mobile de stockage et de partage de fichiers en ligne.</p>
       <p><span class=\"i b\">Nov. 2011 / Aujourd'hui</span> - Contributeur Firefox: développement de plusieurs patchs au sein du navigateur concernants la télémétrie et l'interface utilisateur</p>
       <p><span class=\"i b\">Eté 2011</span> - Réalisation de mon <b>site professionnel</b> <a href=\"http://www.theochevalier.fr\" target=\"_blank\">www.theochevalier.fr</a> (Design entièrement réalisé avec CSS3)</p>
       <p><span class=\"i b\">Février 2011</span> - Réalisation du site <a href=\"http://www.gtaier.fr\" target=\"_blank\">www.gtaier.fr</a> pour l'association des arts de la scène J'étais Ailleurs, en collaboration avec son président.</p>
@@ -44,7 +44,7 @@ $langage = array(
   'en' => "
   <p><span class=\"i b\">June 2012</span> - 4-week internship as a web developer in PSV.COM (www.psvideo.fr) in Toulouse for my Associate Degree.
       <p><span class=\"i b\">May, 25/26<sup>th</sup> 2012</span> - Participate in SudWeb 2012, two days of talks and code experimentations at Toulouse, all about the Web.
-      <p><span class=\"i b\">April 2012 / Today</span> - Internship in ADN Mobile, as a front-end developer on an online file storing and sharing mobile solution.</p>
+      <p><span class=\"i b\">April / May 2012</span> - Internship in ADN Mobile, as a front-end developer on an online file storing and sharing mobile solution.</p>
       <p><span class=\"i b\">Nov. 2011 / Today</span> - Firefox volunteer: development of patches into the Web browser, mainly about telemetry and UI.</p>
       <p><span class=\"i b\">Summer 2011</span> - Production of my <b>professional site</b> <a href=\"http://www.theochevalier.fr\" target=\"_blank\">www.theochevalier.fr</a> (Design entirely based on CSS3)</p>
       <p><span class=\"i b\">February 2011</span> - Website <a href=\"http://www.gtaier.fr\" target=\"_blank\">www.gtaier.fr</a> for the association of performing arts « J'étais Ailleurs », in collaboration with his President.</p>
@@ -103,11 +103,11 @@ $langage = array(
   'fr' => "Formation",
   'en' => "Studies"),
 'formation' => array(
-  'fr' => "2011 - 2012: <b>BTS Services Informatiques aux Organisations</b>, Lycée Paul Sabatier, Carcassonne (En cours d'obtention)
+  'fr' => "2011 - 2012: <b>BTS Services Informatiques aux Organisations</b>, Lycée Paul Sabatier, Carcassonne (Moyenne actuelle: 16,5/20)
       <br />2010: 1ère année <b>Licence SVS</b>, Université Paul Sabatier, Toulouse
       <br />2009: 1ère année <b>DUT Informatique</b>, IUT Blagnac
       <br />2008: <b>Baccalauréat Scientifique</b>, Lycée Jules Fil, Carcassonne",
-  'en' => "2011 - 2012: Associate Degree <b>IT Services for Organizations</b>, Lycée Paul Sabatier, Carcassonne (in pending)
+  'en' => "2011 - 2012: Associate Degree <b>IT Services for Organizations</b>, Lycée Paul Sabatier, Carcassonne (Current average: 16.5/20)
       <br /> 2010: 1st year of geology <b>bachelor degree</b>, University Paul Sabatier, Toulouse
       <br /> 2009: 1st year of <b>IT degree</b>, IUT Blagnac
       <br /> 2008: <b>High school diploma in sciences</b>, Lycée Jules Fil, Carcassonne"),
@@ -129,9 +129,9 @@ $langage = array(
   'fr' => "Divers",
   'en' => "Various"),
 'divers' => array(
-  'fr' => "• Contribution au développement du logiciel libre <b>Mozilla Firefox</b>
+  'fr' => "• Contribution au développement et à la traduction du logiciel libre <b>Mozilla Firefox</b>
       <br />• Anglais soutenu et Espagnol niveau lycée",
-  'en' => "• Contribution to the development of free software <b>Mozilla Firefox</b>
+  'en' => "• Contribution to the development and the localization of free software <b>Mozilla Firefox</b>
       <br />• Good English, and high school level Spanish"),
 'telecharger' => array(
   'fr' => "Télécharger ce CV au format PDF",

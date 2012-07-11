@@ -64,7 +64,7 @@
       </div>
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
-          <a href="index.php?page=4&amp;lang=<?=$lang?>" target="_blank" id="contact"></a>
+          <a href="index.php?page=4&amp;lang=<?=$lang?>" id="contact"></a>
           <a href="http://www.facebook.com/theo.chevalier" target="_blank" id="facebook"></a>
           <a href="http://twitter.com/#!/t_chevalier" target="_blank" id="twitter"></a>
           <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" target="_blank"  id="linkedin"></a>

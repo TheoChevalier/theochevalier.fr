@@ -28,11 +28,15 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
         $requete_art_alt = mysql_query('SELECT texte_fr FROM tc_articles WHERE art_id = '.$art_id);
         $art_alt = mysql_fetch_array($requete_art_alt);
         ?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
-        echo utf8_encode($art_alt['texte_fr']);
+        echo str_replace("'", "’", utf8_encode($art_alt['texte_fr']));
       }
       else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <div><?php
-      echo utf8_encode($art['texte_'.$lang]); }?>
+        if($lang == "fr")
+          echo str_replace("'", "’", utf8_encode($art['texte_'.$lang]));
+        else
+          echo utf8_encode($art['texte_'.$lang]);
+      }?>
       </div>
       <div id="partage">
         <div>
@@ -53,7 +57,10 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     $com_requete = mysql_query('SELECT * FROM tc_com WHERE com_art ='.$art['art_id']);
     $compte = mysql_query('SELECT COUNT(*) AS nb_com FROM tc_com WHERE com_art ='.$art['art_id']);
     $com_compte = mysql_fetch_array($compte);
-    if($com_compte["nb_com"] > 0) echo "<h2>".$com_compte["nb_com"]." commentaires</h2>";
+    if($com_compte["nb_com"] > 0) {
+       if($com_compte["nb_com"] == 1) echo "<h2>".$com_compte["nb_com"]." ".$langage['com'][$lang]."</h2>";
+       else echo "<h2>".$com_compte["nb_com"]." ".$langage['coms'][$lang]."</h2>";
+    }
     if($com_requete)
     {
       while($com = mysql_fetch_array($com_requete))
