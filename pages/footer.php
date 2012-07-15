@@ -50,8 +50,7 @@
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
-        <li><a href='http://sudweb.fr' target="_blank" class="footer_img"><img class="dark_shadow" src="img/sudweb_120.png" alt="Sud Web" width="120" height="120" /></a></li>
-        <li><a href="http://www.stopacta.info/" target="_blank" class="footer_img"><img src="img/stop-acta.png" alt="STOP ACTA!" width="120" height="98" /></a></li>
+        <li><a href='http://www.mozfr.org' target="_blank" class="footer_img"><img src="img/mozfr.png" alt="Communauté Mozilla francophone" width="120" height="120" /></a></li>
       </ul>
     </div>
     <div id="firefox">
