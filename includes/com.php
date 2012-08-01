@@ -97,14 +97,14 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
         {
           $key .= $caracteres[$n];
         }
-        mysql_query("INSERT INTO tc_keys (email, key) VALUES ('".$mail."', '".$key."')");
+        mysql_query("INSERT INTO tc_keys (email, keygen) VALUES ('".$mail."', '".$key."')");
       }
     }
       
     if(isset($_POST['site']) && $_POST['site'] != "")
       mysql_query('UPDATE tc_com SET com_site = "'.$site.'" WHERE com_id = '.$id);
 
-    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, follow, key FROM tc_com, tc_follow, tc_keys WHERE com_art = '.$art.' AND com_mail != "'.$mail.'"
+    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, follow, keygen FROM tc_com, tc_follow, tc_keys WHERE com_art = '.$art.' AND com_mail != "'.$mail.'"
     AND tc_follow.email = com_mail AND tc_follow.email = tc_keys.email');
     if($req_com)
     {
@@ -125,7 +125,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
           <p>'.utf8_encode($nom).$langage['com_mail_2'][$com_lang].'<br />
           <a href="'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'">'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'</a></p>
           <p>'.$langage['com_mail_auto'][$com_lang].'</p>
-          <p>'.$langage['com_mail_unsubscribe'][$com_lang].' <a href="'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['key'].'">'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['key'].'</a></p>
+          <p>'.$langage['com_mail_unsubscribe'][$com_lang].' <a href="'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'">'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'</a></p>
           </body>
           </html>';
           $headers  = 'MIME-Version: 1.0' . $passage_ligne;
