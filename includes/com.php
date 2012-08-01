@@ -104,35 +104,34 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     if(isset($_POST['site']) && $_POST['site'] != "")
       mysql_query('UPDATE tc_com SET com_site = "'.$site.'" WHERE com_id = '.$id);
 
-    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, follow, keygen FROM tc_com, tc_follow, tc_keys WHERE com_art = '.$art.' AND com_mail != "'.$mail.'"
+    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, keygen FROM tc_com, tc_follow, tc_keys
+    WHERE follow = 1 AND article = '.$art.' AND com_mail != "'.$mail.'"
     AND tc_follow.email = com_mail AND tc_follow.email = tc_keys.email');
     if($req_com)
     {
       while($com = mysql_fetch_array($req_com))
       {
-        if($com['follow'] == 1) {
-          $com_lang = $com['com_lang'];
-          if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $com['com_mail']))
-            $passage_ligne = "\r\n";
-          else
-            $passage_ligne = "\n";
-          $subject = $langage['com_mail_1'][$com_lang].utf8_encode($nom).$passage_ligne;
-          $mail_notif = '<html>
-          <head>
-          <title>'.$langage['com_mail_1'][$com_lang].utf8_encode($nom).'</title>
-          </head>
-          <body>
-          <p>'.utf8_encode($nom).$langage['com_mail_2'][$com_lang].'<br />
-          <a href="'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'">'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'</a></p>
-          <p>'.$langage['com_mail_auto'][$com_lang].'</p>
-          <p>'.$langage['com_mail_unsubscribe'][$com_lang].' <a href="'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'">'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'</a></p>
-          </body>
-          </html>';
-          $headers  = 'MIME-Version: 1.0' . $passage_ligne;
-          $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
-          $headers .= 'From: "'.WEB_SERVER.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
-          @mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
-        }
+        $com_lang = $com['com_lang'];
+        if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $com['com_mail']))
+          $passage_ligne = "\r\n";
+        else
+          $passage_ligne = "\n";
+        $subject = $langage['com_mail_1'][$com_lang].utf8_encode($nom).$passage_ligne;
+        $mail_notif = '<html>
+        <head>
+        <title>'.$langage['com_mail_1'][$com_lang].utf8_encode($nom).'</title>
+        </head>
+        <body>
+        <p>'.utf8_encode($nom).$langage['com_mail_2'][$com_lang].'<br />
+        <a href="'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'">'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'</a></p>
+        <p>'.$langage['com_mail_auto'][$com_lang].'</p>
+        <p>'.$langage['com_mail_unsubscribe'][$com_lang].' <a href="'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'">'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['keygen'].'</a></p>
+        </body>
+        </html>';
+        $headers  = 'MIME-Version: 1.0' . $passage_ligne;
+        $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
+        $headers .= 'From: "'.WEB_SERVER.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
+        @mail($com['com_mail'], '=?UTF-8?B?'.base64_encode($subject).'?=', $mail_notif, $headers);
       }
     }
     $passage_ligne = "\n";

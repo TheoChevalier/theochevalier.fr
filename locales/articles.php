@@ -102,9 +102,9 @@ $langage = array(
   'en' => "New comment from "),
 'com_mail_2' => array(
   'fr' => " a laissé un nouveau message dans une conversation à laquelle vous avez participé. 
-      Pour le consulter, suivez le lien suivant:",
+      Pour le consulter, cliquez sur ce lien :",
   'en' => " has left a new message in a conversation in which you participated.
-      To view, follow this link:"),
+      To view it, follow this link:"),
 'com_mail_auto' => array(
   'fr' => "Ceci est un email automatique, merci de ne pas y répondre.",
   'en' => "This is an automatic email, thank you for not answering."),
