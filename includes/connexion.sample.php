@@ -1,6 +1,4 @@
 <?php
-define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
-
 // Database configuration
 
   // Name of the database server
@@ -16,12 +14,18 @@ define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
   define('NOM_BD','theochevalier', true);
 
 // Server configuration
-  $server = str_replace('http://', '', ROOTPATH);
-  define('WEB_SERVER',$server, true);
   
   // The mail you want to use to be joined
   define('EMAIL','contact@theochevalier.fr', true);
   
   // The name to be displayed on the website
   define('NAME','Théo Chevalier', true);
+  
+  // Your reCaptcha private key (https://www.google.com/recaptcha)
+  define('PRIVATE_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', true);
+  
+  // No need to change this
+  define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
+  $server = str_replace('http://', '', ROOTPATH);
+  define('WEB_SERVER',$server, true);
 ?>

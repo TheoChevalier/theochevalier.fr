@@ -20,6 +20,17 @@
 <?=$langage_index['ie_banner'][$lang]?>
 </div>
 <![endif]--> 
+<script type="text/javascript">
+    window._idl = {};
+    _idl.variant = "banner";
+    (function() {
+        var idl = document.createElement('script');
+        idl.type = 'text/javascript';
+        idl.async = true;
+        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+        document.getElementsByTagName('body')[0].appendChild(idl);
+    })();
+</script>
   <div id="container">
     <header>
       <div class="header_degrade">
@@ -65,7 +76,6 @@
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
           <a href="index.php?page=4&amp;lang=<?=$lang?>" id="contact"></a>
-          <a href="http://www.facebook.com/theo.chevalier" target="_blank" id="facebook"></a>
           <a href="http://twitter.com/#!/t_chevalier" target="_blank" id="twitter"></a>
           <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" target="_blank"  id="linkedin"></a>
           <a href="https://mozillians.org/tchevalier" target="_blank" id="mozillans"></a>

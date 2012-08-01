@@ -1205,6 +1205,10 @@ input:focus, textarea:focus, select:focus {outline:none;border-color:#666;color:
 .submit:active{
   box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
+
+#recaptcha_widget_div {
+  width: 400px;
+}
 #form_contact input, #form_contact textarea{background:#fff;}
 .submit_contact{background-color: rgba(0,0,0,.3);}
 .clear{clear: both;}

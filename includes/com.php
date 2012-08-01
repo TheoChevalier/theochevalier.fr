@@ -45,6 +45,24 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
       $i++;
     }
   }
+  if($_POST['response'] == "") {
+    $i_msg++;
+    $msg[$i_msg] = $langage['com_captcha_erreur'][$lang];
+    $i++;
+  }
+  else {
+    require_once('recaptchalib.php');
+    $privatekey = PRIVATE_KEY;
+    $resp = recaptcha_check_answer ($privatekey,
+                                  $_SERVER["REMOTE_ADDR"],
+                                  $_POST["challenge"],
+                                  $_POST["response"]);
+    if (!$resp->is_valid) {
+        $i_msg++;
+        $msg[$i_msg] = $resp->error;
+        $i++;
+    }
+  }
   if($i == 0)
   {
     $mail = strtolower(mysql_real_escape_string(utf8_decode($_POST['email'])));
@@ -67,14 +85,27 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     $suivi = mysql_fetch_array($requete_suivi);
     if ($suivi)
       mysql_query("UPDATE tc_follow SET follow = '".$follow_bool."' WHERE email = '".$mail."' AND article = ".$art);
-    else
+    else {
       mysql_query("INSERT INTO tc_follow (follow, email, article) VALUES ('".$follow_bool."', '".$mail."', '".$art."')");
+      $requete_email_exists = mysql_query("SELECT email FROM tc_keys WHERE email = '".$mail."'");
+      
+      if(!$requete_email_exists) {
+        $caracteres = array("a", "b", "c", "d", "e", "f", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+        shuffle($caracteres);
+        $key = "";
+        for($n=0; $n <= 15; $n++)
+        {
+          $key .= $caracteres[$n];
+        }
+        mysql_query("INSERT INTO tc_keys (email, key) VALUES ('".$mail."', '".$key."')");
+      }
+    }
       
     if(isset($_POST['site']) && $_POST['site'] != "")
       mysql_query('UPDATE tc_com SET com_site = "'.$site.'" WHERE com_id = '.$id);
 
-    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, follow FROM tc_com, tc_follow WHERE com_art = '.$art.' AND com_mail != "'.$mail.'"
-    AND email = com_mail');
+    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, follow, key FROM tc_com, tc_follow, tc_keys WHERE com_art = '.$art.' AND com_mail != "'.$mail.'"
+    AND tc_follow.email = com_mail AND tc_follow.email = tc_keys.email');
     if($req_com)
     {
       while($com = mysql_fetch_array($req_com))
@@ -94,6 +125,7 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
           <p>'.utf8_encode($nom).$langage['com_mail_2'][$com_lang].'<br />
           <a href="'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'">'.ROOTPATH.'/index.php?page=6&amp;article='.$art.'#c'.$id.'</a></p>
           <p>'.$langage['com_mail_auto'][$com_lang].'</p>
+          <p>'.$langage['com_mail_unsubscribe'][$com_lang].' <a href="'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['key'].'">'.ROOTPATH.'/index.php?page=unsubscribe&amp;e='.$com['com_mail'].'&amp;a='.$art.'&amp;key='.$com['key'].'</a></p>
           </body>
           </html>';
           $headers  = 'MIME-Version: 1.0' . $passage_ligne;

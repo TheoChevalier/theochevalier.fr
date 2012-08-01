@@ -100,6 +100,8 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       var site = form.site.value;
       var message = form.message.value;
       var follow = form.follow;
+      var challenge = form.recaptcha_challenge_field.value;
+      var response = form.recaptcha_response_field.value;
       if(follow.checked)
         var follow = follow.value;
       else
@@ -116,6 +118,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           var message = document.getElementById('resultats');
           if (tmp[0] != "") {
             form.reset();
+            Recaptcha.reload();
             var div = document.createElement('div');
             div.innerHTML = tmp[0];
             com.parentNode.insertBefore(div, com);
@@ -129,9 +132,13 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
         }
       };
       requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      var data = "nom="+nom+"&email="+email+"&site="+site+"&article="+article+"&message="+message+"&lang="+lang+"&count_message="+count_message+"&follow="+follow;
+      var data = "nom="+nom+"&email="+email+"&site="+site+"&article="+article+"&message="+message+"&lang="+lang+"&count_message="+count_message+"&follow="+follow+"&challenge="+challenge+"&response="+response;
       requete.send(data);
     }
+    var RecaptchaOptions = {
+      theme : 'clean',
+      lang : '<?=$lang?>'
+    };
     </script>
     <div id="com_js"></div>
     <h2><?=$langage['form_titre'][$lang]?></h2>
@@ -141,6 +148,13 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       <div><label for="site"><?=$langage['site'][$lang]?></label> <input type="url" id="site" name="site" placeholder="<?=$langage['pl_site'][$lang]?>" /></div>
       <div><label for="message"><span class="requis">(*)</span> <?=$langage['message'][$lang]?></label> <textarea id="message" name="message" rows="4" placeholder="<?=$langage['pl_message'][$lang]?>" required="" ></textarea></div>
       <div><input type="checkbox" name="follow" id="follow" checked="" value="follow" /><label for="follow" id="labelBox"><?=$langage['follow'][$lang]?></label></div>
+        <div><label for="recaptcha_response_field"><span class="requis">(*)</span> <?=$langage['captcha'][$lang]?></label>
+        <?php
+          require_once('includes/recaptchalib.php');
+          $publickey = "6LcrxdQSAAAAADZjjikt9wnopncgjGQMDSXxp6os"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?>
+        </div>
       <button id="bouton_submit" class="submit" onClick="envoi_ajax();document.getElementById('canvasloader-container').style.display = 'block';document.getElementById('bouton_submit').style.display = 'none';"><?=$langage['envoyer'][$lang]?></button>
       </form>
       <div id="canvasloader-container"></div>
