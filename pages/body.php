@@ -75,10 +75,11 @@
       </div>
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
-          <a href="index.php?page=4&amp;lang=<?=$lang?>" id="contact"></a>
-          <a href="http://twitter.com/#!/t_chevalier" target="_blank" id="twitter"></a>
-          <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" target="_blank"  id="linkedin"></a>
-          <a href="https://mozillians.org/tchevalier" target="_blank" id="mozillans"></a>
+          <a href="index.php?page=4&amp;lang=<?=$lang?>" title="Contact" id="contact"></a>
+          <a href="http://twitter.com/#!/t_chevalier" title="Twitter" id="twitter"></a>
+          <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" title="Linkedin" id="linkedin"></a>
+          <a href="https://github.com/TheoChevalier" title="Gihub" id="github_social"></a>
+          <a href="https://reps.mozilla.org/u/tchevalier/" title="Mozilla Reps" id="mozillans"></a>
         </div>
       </div>
     </header>

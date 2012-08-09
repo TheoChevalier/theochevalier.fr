@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=UTF-8');
 include("includes/fonctions.php");
 connexionbdd();
 include("includes/lang.php");
-
+$ProfileLoaded = false;
 switch($page)
 {
   case'2':

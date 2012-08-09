@@ -1,5 +1,5 @@
 
- </div>
+ <?php if(!$ProfileLoaded) echo "</div>"; ?>
   <footer>
     <section class="menu">
       <ul>

@@ -14,6 +14,7 @@
   <link rel="image_src" href="<?=ROOTPATH?>/img/<?php if(isset($page_img)) echo $page_img; else echo "logo.jpg"; ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="alternate" type="application/rss+xml"  href="<?=ROOTPATH.'/'.$lang?>_rss.xml">
+  <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
   <![endif]-->
