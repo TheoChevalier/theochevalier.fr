@@ -780,7 +780,11 @@ td { vertical-align: top; }
 
 #home_items {
   background-color: #3a74a6;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3); 
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3); 
+     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3); 
+      -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
+       -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
   margin-bottom: -60px;
   border-top: 1px solid #81b0d8;
 }
@@ -806,20 +810,16 @@ td { vertical-align: top; }
   display: block;
   padding-left: 90px;
   color: #fff;
-  
 }
+
 #home_items h3 {font-size: 1.5em;}
 #home_items p {text-shadow: 0 0 1px rgba(0,0,0,.4);font-size: 1.3em;}
-#remo .home_icons{background-position: -80px 0;}
+#home_items li:hover h3:after{ content : " »";}
 
 #blog .home_icons{background-position: 0 -80px;}
-#blog .home_icons{background-position: -80px -80px;}
-
 #school .home_icons{background-position: 0 -160px;}
-#school .home_icons{background-position: -80px -160px;}
-
 #code .home_icons{background-position: 0 -240px;}
-#code .home_icons{background-position: -80px -240px;}
+
 .logo_h2 {
   height: 40px;
   width: 40px;
