@@ -4,7 +4,7 @@ include("locales/profil.php");
 $ProfileLoaded = true; ?>
 </div>
 
-  <div id="welcome"><div class="home_image drop-shadow lifted"><img src="img/theo.jpg" alt="" /></div><div id="welcome_inline"><?=$langage['welcome_inline'][$lang]?></div></div>
+  <div id="welcome"><div class="home_image drop-shadow lifted"><img src="img/Theo_Chevalier.jpg" alt="" /></div><div id="welcome_inline"><?=$langage['welcome_inline'][$lang]?></div></div>
 	<article id="profil">
       <div class="clear"></div>
       <section id="home_items">
