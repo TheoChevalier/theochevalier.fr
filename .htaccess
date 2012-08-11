@@ -503,4 +503,4 @@ Options -Indexes
 </IfModule>
 
 
-AddType x-mapp-php5 .php .php3 .php4 .htm .html.js .css .txt
+AddType x-mapp-php5 .php .php3 .php4 .htm .html .js .txt

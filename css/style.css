@@ -1525,7 +1525,17 @@ footer{max-width:728px;min-width:300px;}
 }
 
 @media only screen and (max-width : 320px) {
+body{font-size: .8em;}
 /* header */
+
+#github {display: none;}
+.home_image, .home_image img{
+  width:130px;
+  height: 156px;
+}
+#welcome_inline {float:right; width: 150px;}
+.home_image{margin-left: 10px;}
+#welcome {text-align: left;width: 300px;margin: 0;}
 .separateur_header, .header_degrade, .conteneur_liens_sociaux a, .lien_social{
   animation-name: none;
   -o-animation-name: none;
@@ -1533,10 +1543,21 @@ footer{max-width:728px;min-width:300px;}
   -moz-animation-name: none;
   -webkit-animation-name: none;
 }
-#main{max-width:320px;}
-.titre_site{padding-top:30px;max-width:320px;line-height:45px;font-size:45px;}
-.sous_titre_site, .header_degrade, .container header, .conteneur_liens_sociaux, .menu ul, footer{max-width:320px;}
-.conteneur_liens_sociaux{width:70%;}
+.titre_site{line-height:2em;font-size:2em;float: left;text-align: left;}
+#titre_site {padding-top: 0;}
+#main, .titre_site, .sous_titre_site, .header_degrade, .container header, .conteneur_liens_sociaux, .menu ul, footer{max-width:320px;}
+.conteneur_liens_sociaux a {
+  margin-right: 10px;
+  margin-top: 10px;
+  transform:none;
+  -o-transform:none;
+  -ms-transform:none;
+  -moz-transform:none;
+  -webkit-transform:none;
+}
+#home_items li {padding: 0 4%;}
+#welcome_inline {font-size: .45em;}
+
 video{max-width: 280px;}
 /*Menu*/
 .footer_menu {
@@ -1544,13 +1565,12 @@ video{max-width: 280px;}
   margin: 0;
 }
 .footer_menu a, .header_menu a {
-  display: block;
-  margin: 0;
   margin-bottom:1px;
-  width:300px;
-  padding: 10px 0;
+  padding: 3px 0;
+  font-size: 1.2em;
   max-width: 300px;
 }
+
 .art_all{padding: 5px;}
 #main .texte{padding: 20px 10px;}
 }

@@ -69,7 +69,7 @@
           <a href="<?=$url_en?>" class="lang" onClick="menu();"><div class="en"></div></a>
         </div>
         <div id="titre_site">
-          <span class="titre_site roll"><span data-title="<?=NAME?>"><a class="unstyled_link" href="<?=ROOTPATH?>" onClick="menu();"><?=NAME?></a></span></span>
+          <span class="titre_site"><a class="unstyled_link" href="<?=ROOTPATH?>" onClick="menu();"><?=NAME?></a></span>
           <div class="sous_titre_site"><div class="star">*</div><?=$langage_index['ss_titre1'][$lang]?><div class="star">*</div><?=$langage_index['ss_titre2'][$lang]?><div class="star">*</div></div>
         </div>
       </div>
