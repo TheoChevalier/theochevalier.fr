@@ -16,7 +16,7 @@
       <ul>
         <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
         <?php 
-        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", date FROM tc_articles ORDER BY date DESC LIMIT 7");
+        $requete_art = mysql_query("SELECT art_id, titre_".$lang.", date FROM tc_articles ORDER BY date DESC LIMIT 6");
         while($art = mysql_fetch_array($requete_art))
           echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
         ?>

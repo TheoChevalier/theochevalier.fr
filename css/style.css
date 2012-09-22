@@ -1,3 +1,8 @@
+/* 
+ * Ce fichier est un joyeux bordel, mais je vais essayer de rendre ça plus lisible prochainement...
+ * Welcome in the jungle!
+ */
+
 @font-face {
     font-family: 'OpenSansLight';
     src: url('../fonts/OpenSans-Light-webfont.eot');
@@ -45,17 +50,6 @@ body { margin: 0; font-size: .9em; line-height: 1.231;
 
 body, button, input, select, textarea { font-family: OpenSansLight, "PT Serif", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", Arial, sans-serif; color: #333; }
 
-/* 
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
- */
- 
-/*
-::-moz-selection { background: #599cc9; color: #333; text-shadow: none; }
-::selection { background: #599cc9; color: #333; text-shadow: none; }
-*/
-
 /* =============================================================================
    Links
    ========================================================================== */
@@ -84,9 +78,6 @@ footer a:hover, .art_all a:hover { text-decoration: none; }
 a[hreflang]:after {  
   content : " ["attr(hreflang)"]";
 }
-/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-
-
 
 /* =============================================================================
    Typography
@@ -277,7 +268,7 @@ td { vertical-align: top; }
   -moz-transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
 }
-.lang:hover {
+.lang:hover, .lang:focus, .lang:active {
   background-color: #fff;
 }
 .fr , .en {
@@ -523,7 +514,9 @@ td { vertical-align: top; }
   -moz-transform:rotate(20deg);
   -webkit-transform:rotate(20deg);
 }
-.conteneur_liens_sociaux  a:hover {margin-top: 5px;}
+.conteneur_liens_sociaux a:hover,
+.conteneur_liens_sociaux a:active,
+.conteneur_liens_sociaux a:focus {margin-top: 5px;}
 
 /* Sprites lien_sociaux */
 #mozillans {
@@ -642,7 +635,9 @@ td { vertical-align: top; }
   color: #fff;
   margin: 0;
 }
-.header_menu a:hover {
+.header_menu a:hover,
+.header_menu a:active,
+.header_menu a:focus {
   background: #2e5d85;
 }
 .footer_menu {
@@ -650,7 +645,16 @@ td { vertical-align: top; }
   margin: 0 10px;
   background: none;
 }
-.footer_menu a:hover, #footer li > a:hover, .tweet:hover{
+
+.footer_menu a:hover,
+.footer_menu a:active,
+.footer_menu a:focus,
+#footer li > a:hover,
+#footer li > a:active,
+#footer li > a:focus,
+.tweet:hover,
+.tweet:active,
+.tweet:focus {
   background: rgba(255,255,255,.07);
   border-radius: 2px;
   box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
@@ -659,9 +663,14 @@ td { vertical-align: top; }
   -moz-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
   -webkit-box-shadow: inset 0px 0px 2px rgba(0,0,0,.8);
 }
-.footer_menu a:hover, #footer li > a:hover {
-  color:#ddd;
-}
+
+.footer_menu a:hover,
+.footer_menu a:active,
+.footer_menu a:focus,
+#footer li > a:hover,
+#footer li > a:active,
+#footer li > a:focus { color:#ddd; }
+
 #main{
   max-width: 1880px;
   min-width: 728px;
@@ -702,7 +711,9 @@ td { vertical-align: top; }
   -moz-transition:opacity .2s linear;
   -webkit-transition:opacity .2s linear;
 }
-.image a img:hover{opacity: 0.85;}
+.image img:hover,
+.image img:active,
+.image img:focus{opacity: 0.85;}
 
 /* #### WELCOME MESSAGE #### */
 .home_image {
@@ -814,7 +825,9 @@ td { vertical-align: top; }
 
 #home_items h3 {font-size: 1.5em;}
 #home_items p {text-shadow: 0 0 1px rgba(0,0,0,.4);font-size: 1.3em;}
-#home_items li:hover h3:after{ content : " »";}
+#home_items li:hover h3:after,
+#home_items li:active h3:after,
+#home_items li:focus h3:after{ content : " »";}
 
 #blog .home_icons{background-position: 0 -80px;}
 #school .home_icons{background-position: 0 -160px;}
@@ -864,9 +877,6 @@ h2{font-size: 20px;}
 }
 #main .texte p{text-indent: 30px; }
 
-.stop-acta{text-align: center;margin-top: 20px;}
-.stop-acta a{display: inline-block;}
-
 /* Style des articles */
 .pages{
   margin-top: 30px;
@@ -892,7 +902,9 @@ h2{font-size: 20px;}
   display: inline-block;
   margin-right: 2px;
 }
-.page:hover{
+.page:hover,
+.page:active,
+.page:focus{
   background: #fff;
   color: #3a74a6;
 }
@@ -903,7 +915,9 @@ h2{font-size: 20px;}
   display: inline-block;
   vertical-align: middle;
 }
-.art_link:hover{background-color:#333;color:#fff;}
+.art_link:hover,
+.art_link:active,
+.art_link:focus{background-color:#333;color:#fff;}
 .art_link_bot{ margin-top: 2px;}
 .art_all{background-color: #fff; padding: 20px 5%; margin-top: 2px;}
 .art_img {
@@ -930,6 +944,7 @@ h2{font-size: 20px;}
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   display: block;
   margin-top: 5px;
+  text-indent: 0px!important;
 }
 .art_titre {
   display: inline-block;
@@ -950,7 +965,9 @@ h2{font-size: 20px;}
   -moz-transition-duration:.3s;
   -webkit-transition-duration:.3s;
 }
-.article:hover .art_titre_text {
+.article:hover .art_titre_text,
+.article:active .art_titre_text,
+.article:focus .art_titre_text {
   color: #0074d8;
   border-bottom: 1px solid #0074d8;
 }
@@ -1004,7 +1021,9 @@ h2{font-size: 20px;}
 
 }
 .art_text a{color:#0074d8;}
-.art_text a:hover{text-decoration:underline;}
+.art_text a:hover,
+.art_text a:active,
+.art_text a:focus {text-decoration:underline;}
 .art_text p{text-indent: 50px;margin-bottom: 1.5em;}
 .art_text video, .art_image{
   display:block;
@@ -1081,6 +1100,15 @@ h2{font-size: 20px;}
 }
 #cv_contact {
   text-align: right;
+}
+.cv_date {
+  font-style: italic;
+  font-weight: normal;
+  float: right;
+}
+#cv h3 {
+  background: #f2f2f2;
+  padding: 0 10px;
 }
 #skills_level {
   display: table;
@@ -1161,7 +1189,9 @@ h2{font-size: 20px;}
   color: #333;
   background-color: #fff;
 }
-.pdf:hover{background-color: #333;color: #fff;}
+.pdf:hover,
+.pdf:active,
+.pdf:focus{background-color: #333;color: #fff;}
 #pdf{
   margin-right: 20px;
   padding:0;
@@ -1169,7 +1199,9 @@ h2{font-size: 20px;}
   width: 21px;
   background-position: -40px -80px;
 }
-.pdf:hover #pdf{
+.pdf:hover #pdf,
+.pdf:active #pdf,
+.pdf:focus #pdf {
   box-shadow: 0px 0px 6px 1px #fff;
   background-color: rgba(255,255,255, .5);
 }
@@ -1273,7 +1305,9 @@ footer{
 .tweet a {
   color: #3ba4ff;
 }
-.tweet a:hover {
+.tweet a:hover,
+.tweet a:active,
+.tweet a:focus {
   text-decoration: underline;
 }
 .tweet_date {
@@ -1301,7 +1335,9 @@ footer{
 #sites div:nth-child(2) {
  margin-left: 20px;
 }
-#sites a:hover div {
+#sites a:hover div,
+#sites a:active div,
+#sites a:focus div {
  opacity: 1;
 }
 /* Sprites favicons */
@@ -1454,7 +1490,6 @@ body{
   -webkit-animation-name: none;
 }
 #menu { height: auto;}
-#main .texte, .art_text{text-align:left;}
 /* header */
 #main{
   min-width: 300px;
@@ -1495,7 +1530,6 @@ body{
 video{max-width:728px;min-width:300px;}
 .art_titre{display:block;max-width: 100%;}
 article .art_date{margin:0;}
-.art_text{font-size:16px;line-height:26px;letter-spacing:0;text-align:left;}
 .art_text img{max-width:80%;text-align:center;}
 .art_img_big img{width: auto;max-width:300px;display:inline;}
 .art_img_big{float:none;margin:auto 20px auto 0;text-align:center;}
@@ -1581,7 +1615,7 @@ video{max-width: 280px;}
   max-width: 300px;
 }
 
-.art_all{padding: 5px;}
+.art_all{padding: 4%;}
 #main .texte{padding: 20px 10px;}
 }
 /* ==|== print styles =======================================================
