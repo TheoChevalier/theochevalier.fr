@@ -81,7 +81,7 @@ function update_rss($id, $categorie, $lang)
   {
     $titre = utf8_encode(str_replace("&", "&amp;", $news['titre_'.$lang]));
     $lien = ROOTPATH.'/index.php?page=6&amp;article='.$news['art_id'].'&amp;lang='.$lang;
-    $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles_big/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", $news['texte_'.$lang]).']]>');
+    $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles_big/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", str_replace('src="img/', 'src="'.ROOTPATH.'/img/', $news['texte_'.$lang])).']]>');
     if ($news['date_update_'.$lang] == "") $news['date_update_'.$lang] = $news['date'];
     $items = $items.'
     
