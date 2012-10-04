@@ -4,7 +4,8 @@ include("locales/articles.php");
 if(isset($_GET['article'])&& !empty($_GET['article']))
 {
   $art_id = mysql_real_escape_string($_GET['article']);
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles WHERE art_id = '.$art_id);
+  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles
+  WHERE art_id = '.$art_id.' AND published = 1');
   $art = mysql_fetch_array($requete_art);
   //On prépare les variables pour les afficher dans le header
   $page_titre = utf8_encode($art['titre_'.$lang]);
@@ -189,7 +190,7 @@ else
   //On définit le nombre d'articles par page
   $nombreDeMessagesParPage = 4;
   //on commence par récupérer le nombre total d'articles
-  $retour = mysql_query('SELECT COUNT(*) AS nb_articles FROM tc_articles');
+  $retour = mysql_query('SELECT COUNT(*) AS nb_articles FROM tc_articles WHERE published = 1');
   $donnees = mysql_fetch_array($retour);
   //ce nombre d'articles sera le total des messages pour l'ensemble des pages
   $totalDesMessages = $donnees['nb_articles'];
@@ -213,7 +214,8 @@ else
   <?php
   //On définit le numéro du premier article à afficher en fonction du numéro de la page et du nombre d'articles à afficher par page
   $premierMessageAafficher = ($page - 1) * $nombreDeMessagesParPage;
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles ORDER BY date DESC LIMIT '.$premierMessageAafficher.', '.$nombreDeMessagesParPage);
+  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM
+  tc_articles WHERE published = 1 ORDER BY date DESC LIMIT '.$premierMessageAafficher.', '.$nombreDeMessagesParPage);
   //On affiche les articles
   while($art = mysql_fetch_array($requete_art))
   { ?>
