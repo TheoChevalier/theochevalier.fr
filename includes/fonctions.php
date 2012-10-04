@@ -70,10 +70,10 @@ function update_rss($id, $categorie, $lang)
   $fin_fichier = '</feed>';
   if ($categorie != "all")
     $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
-    WHERE art_id IN (SELECT art_id FROM tc_categorie WHERE categorie = ".$id.") AND published = 1");
+    WHERE art_id IN (SELECT art_id FROM tc_categorie WHERE categorie = ".$id.") AND published = 1 ORDER BY date DESC");
   else
      $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
-     WHERE published = 1");
+     WHERE published = 1 ORDER BY date DESC");
 
   $num = mysql_num_rows($requete);
   $items ='';
