@@ -24,6 +24,9 @@
   // Your reCaptcha private key (https://www.google.com/recaptcha)
   define('PRIVATE_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', true);
   
+  // The password you want use to access the admin page
+  define('PASSWD_RSS', 'xxxxxxxxxxxxx', true);
+
   // No need to change this
   define('ROOTPATH','http://'.$_SERVER['HTTP_HOST'], true);
   $server = str_replace('http://', '', ROOTPATH);

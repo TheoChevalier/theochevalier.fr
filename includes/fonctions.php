@@ -54,7 +54,7 @@ echo '<div class="com_date">&nbsp; '.utf8_encode(date_heure($date, $lang)).' <a 
 <div class="clear"></div>';
 }
 
-function update_rss($lang)
+function update_rss($id, $categorie, $lang)
 {
   $debut_fichier ='<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
@@ -68,8 +68,12 @@ function update_rss($lang)
    </author>
    <id>'.ROOTPATH.'/'.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
-  $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img, categorie FROM tc_articles
-  WHERE categorie = 'mozilla' ORDER BY date DESC" ) or die("Impossible d'afficher le flux RSS.");
+  if ($categorie != "all")
+    $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
+    WHERE art_id IN (SELECT art_id FROM tc_categorie WHERE categorie = ".$id.")");
+  else
+     $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles");
+
   $num = mysql_num_rows($requete);
   $items ='';
   while($news = mysql_fetch_array($requete))
@@ -77,6 +81,7 @@ function update_rss($lang)
     $titre = utf8_encode(str_replace("&", "&amp;", $news['titre_'.$lang]));
     $lien = ROOTPATH.'/index.php?page=6&amp;article='.$news['art_id'].'&amp;lang='.$lang;
     $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles_big/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", $news['texte_'.$lang]).']]>');
+    if ($news['date_update_'.$lang] == "") $news['date_update_'.$lang] = $news['date'];
     $items = $items.'
     
       <entry>
@@ -88,15 +93,12 @@ function update_rss($lang)
         <id>'.$lien.'</id>
         <summary type="html">'.$description.'</summary>
         <published>'.date(DATE_ATOM, $news['date']).'</published>
-        <updated>'.date(DATE_ATOM, $news['date_update']).'</updated>
+        <updated>'.date(DATE_ATOM, $news['date_update_'.$lang]).'</updated>
       </entry>';
   }
   $rss = $debut_fichier.$items.$fin_fichier;
   if($num != 0)
-  {
-    file_put_contents ($lang."_rss.xml", $rss);
-    header('location:'.$lang.'_rss.xml');
-  }
+    file_put_contents ("rss/".$categorie."_".$lang.".xml", $rss);
 }
 function update_sitemap() {
 $head ='<?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +137,6 @@ foreach ($languages as $language)
 $eof ='</urlset>';
 $sitemap = $head.$links.$eof;
 file_put_contents ("sitemap.xml", $sitemap);
-header('location:sitemap.xml');
 }
 function parse($text) {
   $text = preg_replace('#http://[a-z0-9._/-]+#i', '<a href="$0" target="_blank">$0</a>', $text);

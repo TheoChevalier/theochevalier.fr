@@ -1,31 +1,23 @@
 <?php
-if(isset($_POST['mot_de_passe']) && $_POST['mot_de_passe'] == "updateflux")
+if(isset($_POST['mot_de_passe']) && $_POST['mot_de_passe'] == PASSWD_RSS)
 {
-if(isset($_POST['rss']) && $_POST['rss'] != "")
-if($_POST['rss'] == 'sitemap')
   update_sitemap();
-else
-  update_rss($_POST['rss']);
+  $req_categories = mysql_query("SELECT categorie_id, libelle, lang FROM tc_categorie_nom");
+  while($categories = mysql_fetch_array($req_categories)) {
+    update_rss($categories['categorie_id'], $categories['libelle'], $categories['lang']);
+  }
+  // Defaul RSS containing everything
+  update_rss(0, "all", "fr");
+  update_rss(0, "all", "en");
 
 include("pages/header.php");
 include("pages/body.php");
 ?>
 <article id="creations">
-<div class="texte">
-<form method="post" action="">
-  <label for="rss">RSS à mettre à jour :</label>
-  <select id="rss" name="rss" size="1" onchange="this.form.submit();" >
-    <option value="">--</option>
-    <option value="fr">Français</option>
-    <option value="en">Anglais</option>
-    <option value="sitemap">Sitemap</option>
-  </select>
-  
-  <input type="hidden" name="mot_de_passe" value="<?php if(isset($_POST['mot_de_passe'])) echo $_POST['mot_de_passe']; ?>" />
- </form>
- <?=date(DATE_ATOM, time())?>
- </div>
- </article>
+  <div class="texte">
+    Mise à jour des flux RSS effectuée avec succès.
+  </div>
+</article>
 <?php
  }else{ 
 include("pages/header.php");
