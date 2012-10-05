@@ -907,6 +907,9 @@ h2{font-size: 20px;}
   background: #fff;
   color: #3a74a6;
 }
+.pages_bot {
+  margin-top: 2px;
+}
 .arrow_back {
   background: url(../img/ico/icones_sprites.png) -61px -80px no-repeat;
   height: 29px;

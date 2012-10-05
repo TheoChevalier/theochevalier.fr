@@ -236,6 +236,17 @@ else
   <?php
   } ?>
   </div>
+  <div class="pages pages_bot" id="pages"><?php
+  //On affiche les liens de pages, en affichant spécialement la page actuelle
+  for($i = 1 ; $i <= $nombreDePages ; $i++)
+  {
+    echo '<a href="index.php?page=6&amp;p='.$i.'" onClick="menu();">';
+    echo '<div class=';
+    if($page == $i) echo '"page_actuelle">'; else echo '"page">';
+    echo $i.'</div></a>';
+  }
+  ?>
+  </div>
 <?php
 }
  ?>
