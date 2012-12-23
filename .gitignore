@@ -46,6 +46,10 @@ includes/connexion.php
 fichiers/
 files/
 css-crush/
+piwik/
+rss/
+wiki/
+slides/
 /css/style.crush.css
 css/style.crush.css
 style.crush.css

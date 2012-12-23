@@ -98,8 +98,12 @@ function update_rss($id, $categorie, $lang)
       </entry>';
   }
   $rss = $debut_fichier.$items.$fin_fichier;
-  if($num != 0)
-    file_put_contents ("rss/".$categorie."_".$lang.".xml", $rss);
+  if($num != 0) {
+    if($categorie == "mozilla" && $lang == "fr")
+      file_put_contents ("fr_rss.xml", $rss);
+    else
+      file_put_contents ("rss/".$categorie."_".$lang.".xml", $rss);
+  }
 }
 function update_sitemap() {
 $head ='<?xml version="1.0" encoding="UTF-8"?>

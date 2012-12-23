@@ -15,9 +15,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="alternate" type="application/rss+xml"  href="<?=ROOTPATH.'/'.$lang?>_rss.xml">
   <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
-  <!--[if IE]>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-  <![endif]-->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <?php
   require_once 'css-crush/CssCrush.php';

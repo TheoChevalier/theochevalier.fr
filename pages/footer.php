@@ -36,7 +36,7 @@
       $date_format = 'd M Y, H\hi';
       $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
       //$url = 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier';
-      if ($oXML = simplexml_load_file( $url ))
+      /*if ($oXML = simplexml_load_file( $url ))
       {
         foreach( $oXML->status as $oStatus ) {
           $datetime = date_create($oStatus->created_at);
@@ -44,13 +44,14 @@
           echo '<li><div class="tweet">'.parse($oStatus->text);
           echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div></li>'."\n";
         }
-      }
+      }*/
       ?>
       <li><a href="https://twitter.com/#!/t_chevalier" target="_blank"><?=$langage_index['tweeter'][$lang]?></a></li>
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
         <li><a href='http://www.mozfr.org' target="_blank" class="footer_img"><img src="img/mozfr.png" alt="Communauté Mozilla francophone" width="120" height="120" /></a></li>
+        <li><a href='http://www.capitoledulibre.org/2012/' target="_blank" class="footer_img"><img src="img/articles_big/capitole_du_libre_2012.png" alt="Capitole du Libre 2012" width="200" height="200" /></a></li>
       </ul>
     </div>
     <div id="firefox">

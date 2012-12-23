@@ -1,11 +1,31 @@
 <?php
 $langage = array(
 'titre' => array(
-  'fr' => "Projets sur lesquels j'ai travaillé",
+  'fr' => "Portfolio",
   'en' => "Projects I worked on"),
 'page_desc' => array(
   'fr' => "Voici la liste des projets sur lesquels j'ai travaillé.",
-  'en' => "Here is the list of projects I've worked on."),
+  'en' => "Here is the list of projects I worked on."),
+  'locopha_titre' => array(
+  'fr' => "LOCOPHA",
+  'en' => "LOCOPHA"),
+'locopha' => array(
+  'fr' => "Logiciel de gestion C# pour les tournois de jeux vidéo.
+   <br/>À trois développeurs nous avons réalisé une application à partir d'un cahier des charges (disponible ici).
+   Cette application a été développée en C# et utilise une base de données.
+   <br/>Nous avons créé un jeu d’essai, un manuel de l’utilisateur, un tutoriel, ainsi qu’une documentation technique.
+   <br/>
+   ",
+  'en' => ""),
+  'tippen_titre' => array(
+  'fr' => "TIPPEN N’ SHOES",
+  'en' => "TIPPEN N’ SHOES"),
+'tippen' => array(
+  'fr' => "Logiciel de gestion C# pour la vente de chaussures.<br/>Mise à jour du code source de l’application.
+   <br/>Mise à jour du manuel de l’utilisateur et de la documentation technique.
+   <br/>
+   ",
+  'en' => ""),
 'psv_titre' => array(
   'fr' => "PSV.COM",
   'en' => "PSV.COM"),
@@ -16,10 +36,7 @@ $langage = array(
   'fr' => "Mozilla Firefox",
   'en' => "Mozilla Firefox"),
 'fx' => array(
-  'fr' => "J'ai réalisé plusieurs modifications dans Firefox, de la simple modification de l'interface, 
-          à l'envoi par défaut de données de performances dans les versions de développement. 
-          Vous pouvez consulter la <a class=\"lien\" href=\"https://bugzilla.mozilla.org/buglist.cgi?list_id=2930875;resolution=FIXED;emailtype1=exact;query_format=advanced;emailassigned_to1=1;email1=theo.chevalier11%40gmail.com\">
-          liste de mes modifications.</a>",
+  'fr' => "Navigateur web libre et ouvert utilisé par plus de 400 milions de personnes.",
   'en' => "I made several changes in Firefox, from the simple modification of the interface,
           to enable performance data sending by default in development versions. You can view a <a class=\"lien\" href=\"https://bugzilla.mozilla.org/buglist.cgi?list_id=2930875;resolution=FIXED;emailtype1=exact;query_format=advanced;emailassigned_to1=1;email1=theo.chevalier11%40gmail.com\">
           list of my changes.</a>"),
@@ -27,10 +44,10 @@ $langage = array(
   'fr' => "Ligue de Paintball de Lorraine (Projet BTS)",
   'en' => "Ligue de Paintball de Lorraine (Associate Degree project)"),
 'lpl' => array(
-  'fr' => "Site factice réalisé en binôme dans le cadre du BTS SIO. Site complet contenant 
+  'fr' => "Site factice réalisé dans le cadre du BTS SIO. Site complet contenant 
           une boutique en ligne, gérant les équipes de paintball, les matchs, les news ...
           <br />Projet en voie de finalisation.",
-  'en' => "Fake site made ​​in pairs for my IT Associate Degree. Full site contains an online store, managing teams of paintball, game results, news system ...
+  'en' => "Fake site made ​for my IT Associate Degree. Full site contains an online store, managing teams of paintball, game results, news system ...
       <br />Project being finalized."),
 'gtaier_titre' => array(
   'fr' => "J'étais Ailleurs",
