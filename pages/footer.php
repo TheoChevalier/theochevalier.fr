@@ -26,32 +26,13 @@
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['tweets'][$lang]?></li>
-      <?php
-      
-      /* Nom d'utilisateur sur Twitter */
-      $user = "t_chevalier";
-      /* Nombre de message à afficher */
-      $count = 4;
-      /* Format de la date à afficher */
-      $date_format = 'd M Y, H\hi';
-      $url = 'http://twitter.com/statuses/user_timeline/'.$user.'.xml?count='.$count;
-      //$url = 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=t_chevalier';
-      /*if ($oXML = simplexml_load_file( $url ))
-      {
-        foreach( $oXML->status as $oStatus ) {
-          $datetime = date_create($oStatus->created_at);
-          $date = date_format($datetime, $date_format);
-          echo '<li><div class="tweet">'.parse($oStatus->text);
-          echo '<div class="tweet_date"><a href="http://twitter.com/'.$user.'/status/'.$oStatus->id.'" target="_blank">'.$date.'</a></div></div></li>'."\n";
-        }
-      }*/
-      ?>
-      <li><a href="https://twitter.com/#!/t_chevalier" target="_blank"><?=$langage_index['tweeter'][$lang]?></a></li>
+          <a class="twitter-timeline"  href="https://twitter.com/t_chevalier"  data-widget-id="353618369028694016">Tweets de @t_chevalier</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
         <li><a href='http://www.mozfr.org' target="_blank" class="footer_img"><img src="img/mozfr.png" alt="Communauté Mozilla francophone" width="120" height="120" /></a></li>
-        <li><a href='http://www.capitoledulibre.org/2012/' target="_blank" class="footer_img"><img src="img/articles_big/capitole_du_libre_2012.png" alt="Capitole du Libre 2012" width="200" height="200" /></a></li>
+        <li><a href='http://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/regardez_lavenir.png" alt="Firefox OS" width="125" height="125" /></a></li>
       </ul>
     </div>
     <div id="firefox">

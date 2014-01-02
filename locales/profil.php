@@ -10,8 +10,8 @@ $langage = array(
 	'fr' => "Représentant Mozilla",
 	'en' => "Mozilla Representative"),
 'remo' => array(
-	'fr' => "Je représente Mozilla pour la France. À ce titre je communique sur la mission de Mozilla,
-          assiste à des évènements, écris des patchs pour Firefox, et traduis les logiciels Mozilla en français.",
+	'fr' => "Je représente Mozilla. Je contribue au projet Mozilla,
+          assiste à des évènements, écris du code pour Firefox et traduis les logiciels Mozilla en français.",
 	'en' => "I represent Mozilla. I communicate about Mozilla mission, attend to events, write patches for Firefox,
           and translate Mozilla softwares in French."),
 'blog_title' => array(
@@ -24,7 +24,7 @@ $langage = array(
 	'fr' => "Étudiant développeur",
 	'en' => "Student developer"),
 'school' => array(
-	'fr' => "Je suis actuellement en BTS Services Informatiques aux Organisations à Carcassonne. Consultez mon CV !",
-	'en' => "I currently spend an Associate Degree IT Services for Organizations in the south of France. Check my resume!")
+	'fr' => "J’étudie actuellement au sein de la formation MIAGE à Toulouse. Consultez mon CV !",
+	'en' => "I currently spend a Bachelor Degree Miage in the south of France. Check my resume!")
 );
  ?>

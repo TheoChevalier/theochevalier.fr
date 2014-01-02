@@ -17,7 +17,7 @@ switch($page)
     include("pages/contact.php");
   break;
   case'5':
-    include("pages/cv.php");
+    header('Location: files/CV_theo_chevalier_fr.pdf');
   break;
   case'6':
     include("pages/articles.php");

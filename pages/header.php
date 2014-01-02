@@ -17,10 +17,10 @@
   <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <?php
-  require_once 'css-crush/CssCrush.php';
+  //require_once 'css-crush/CssCrush.php';
   /*$options = array(
     'debug' => true);*/
-  $global_css = CssCrush::file('/css/style.css'); ?>
-    <link rel="stylesheet" type="text/css" href="<?=$global_css?>" />
+  //$global_css = CssCrush::file('/css/style.css'); ?>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!--[if lte IE 8]><link rel="stylesheet" href="css/iestyle.css" /><![endif]-->
 </head>

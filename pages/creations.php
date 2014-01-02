@@ -10,20 +10,11 @@ include("pages/body.php");
     <div class="cadre_titre"></div>
     <div class="texte">
       <h1>Logiciels</h1>
-      <a href="index.php?page=locopha" class="portfolio_link">
-        <div class="image image_black image_shadow"><img src="img/creations/7.jpg" alt="" /></div>
+      <a href="index.php?page=foxshop" class="portfolio_link">
+        <div class="image image_black image_shadow"><img src="img/creations/9.jpg" alt="" /></div>
         <div class="creations_text">
-          <h2><?=$langage['locopha_titre'][$lang]?></h2>
-          <p><?=$langage['locopha'][$lang]?></p>
-        </div>
-        <div class="clear"></div>
-      </a>
-
-      <a href="index.php?page=tippen" class="portfolio_link">
-        <div class="image image_black image_shadow"><img src="img/creations/8.jpg" alt="" /></div>
-        <div class="creations_text">
-          <h2><?=$langage['tippen_titre'][$lang]?></h2>
-          <p><?=$langage['tippen'][$lang]?></p>
+          <h2><?=$langage['foxshop_titre'][$lang]?></h2>
+          <p><?=$langage['foxshop'][$lang]?></p>
         </div>
         <div class="clear"></div>
       </a>

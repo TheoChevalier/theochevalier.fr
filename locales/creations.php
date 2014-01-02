@@ -26,17 +26,24 @@ $langage = array(
    <br/>
    ",
   'en' => ""),
+  'foxshop_titre' => array(
+  'fr' => "FoxShop",
+  'en' => "FoxShop"),
+'foxshop' => array(
+  'fr' => "Application web pour la gestion et le partage de listes de courses. Fonctionne sur de nombreuses plateformes, entièrement multilingue.
+   ",
+  'en' => "Web App to manage and share shopping lists. Works on many platforms, multilingual."),
 'psv_titre' => array(
-  'fr' => "PSV.COM",
-  'en' => "PSV.COM"),
+  'fr' => "PSV.COMTV",
+  'en' => "PSV.COMTV"),
 'psv' => array(
-  'fr' => "Refonte du site de l'agence de publicité toulousaine PSV.COM, dans le cadre de mon stage de première année de BTS.",
-  'en' => "New website of advertising agency PSV.COM based in Toulouse, as part of my internship in the first year of BTS."),
+  'fr' => "Refonte du site de l'agence de publicité toulousaine PSV.COMTV, dans le cadre de mon stage de première année de BTS.",
+  'en' => "New advertising website for PSV.COMTV agency, based in Toulouse, as part of my internship during the first year of BTS."),
 'fx_titre' => array(
   'fr' => "Mozilla Firefox",
   'en' => "Mozilla Firefox"),
 'fx' => array(
-  'fr' => "Navigateur web libre et ouvert utilisé par plus de 400 milions de personnes.",
+  'fr' => "Navigateur web libre et ouvert utilisé par près d’un demi-milliard de personnes.",
   'en' => "I made several changes in Firefox, from the simple modification of the interface,
           to enable performance data sending by default in development versions. You can view a <a class=\"lien\" href=\"https://bugzilla.mozilla.org/buglist.cgi?list_id=2930875;resolution=FIXED;emailtype1=exact;query_format=advanced;emailassigned_to1=1;email1=theo.chevalier11%40gmail.com\">
           list of my changes.</a>"),
@@ -45,8 +52,8 @@ $langage = array(
   'en' => "Ligue de Paintball de Lorraine (Associate Degree project)"),
 'lpl' => array(
   'fr' => "Site factice réalisé dans le cadre du BTS SIO. Site complet contenant 
-          une boutique en ligne, gérant les équipes de paintball, les matchs, les news ...
-          <br />Projet en voie de finalisation.",
+          une boutique en ligne, gérant les équipes de paintball, les matchs, les actualités…
+          ",
   'en' => "Fake site made ​for my IT Associate Degree. Full site contains an online store, managing teams of paintball, game results, news system ...
       <br />Project being finalized."),
 'gtaier_titre' => array(

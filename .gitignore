@@ -60,3 +60,5 @@ crossdomain.xml
 googlebd2e733928502d2c.html
 php.ini
 sitemap.xml
+locales/config.ini.php
+phpmyadmin/

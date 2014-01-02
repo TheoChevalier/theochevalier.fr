@@ -15,15 +15,14 @@ include("pages/body.php");
       </div>
       <p><a href="img/creations/ppe_full.jpg"><img src="img/creations/ppe_mini.jpg" alt="" /></a> Présentation de l’interface</p>
       <p class="competences">Compétences acquises :
-      <br/>- Intégration de nombreux services
+      <br/>- Intégration de services
       <br/>- Répondre à des besoins précis
-      <br/>- Élaboration d’un dossier de proposition
-      <br/>- PHP
-      <br/>- SQL
-      <br/>- CSS3
+      <br/>- Élaboration d’un dossier de propositions
+      <br/>- PHP, SQL, CSS3, AJAX
       </p>
       <p>Fonctionnalités implémentées :
       <br/>
+      <!--
       <p>&#8226; La création de comptes utilisateurs, (vérification des données, enregistrement bdd, envoi de mail pour activation, activation)</p>
     <p>&#8226; La connexion au compte utilisateur (vérification pseudo/mdp, envoi de $_SESSION) et la déconnexion.</p>
     <p>&#8226; L'affichage de produits d'une catégorie, avec cookie mémorisant le nombre d'articles affichés par page (affichage dynamique en pages), récupération des données produits dans la bdd, tri par prix, catégories.</p>
@@ -31,11 +30,16 @@ include("pages/body.php");
     <p>&#8226; Envoi de message via un formulaire à un joueur d'une équipe. (En étant connecté à un compte)</p>
     <p>&#8226; Affichage des résultats sur la page d'accueil, avec mise en évidence du vainqueur et du perdant, plus affichage des scores.</p>
     <p>&#8226; Affichage des news: apperçu à l'accueil, présentation sur plusieurs pages sur la page des news.</p>
-    <p>&#8226; Présentation sous forme de slides CSS3 des informations importantes (Promos, résultats...) à l'accueil.</p>
-    <p>&#8226; Page d'erreur 404 originale.</p>
     <p>&#8226; Ajout de produits, avec choix de quantité dans le panier (cookie id/nb produits), vérification de la quantité commandée en stock, signature numérique du panier pour éviter les ajouts multiples.</p>
     <p>&#8226; Fonctions vider panier, et valider le panier (Vérification des données de livraison, paiement en ligne non-sécurisé pour cette version factice.).</p>
-    <p>&#8226; Page de contact de la LPL via un formulaire.</p>
+    <p>&#8226; Page de contact de la LPL via un formulaire.</p>-->
+
+    
+    <p>&#8226; Enregistrement des utilisateurs, récupération des mots de passe, modification du profil</p>
+    <p>&#8226; Connexion spéciale pour les représentants, pour passer commande au nom des clients, appliquer des réductions, consulter le planning généré par les demandes clients</p>
+    <p>&#8226; Affichage des produits en plsieurs catégories, recherche</p>
+    <p>&#8226; Gestion hors connexion du panier, modification des quantités, enregistrement des commandes, paiement (non-sécurisé sur cette version factice)</p>
+    <p>&#8226; Prise en charge de plusieurs fournisseurs pour chaque produit, avec mise à jour utilisant AJAX pour la mise à jour des informations</p>
     </p>
       <p>Temps de développement nécessaire : deux mois.</p>
 

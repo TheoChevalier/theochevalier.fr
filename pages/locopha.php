@@ -14,7 +14,7 @@ include("pages/body.php");
         <div class="portfolio-shadow curved"><img src="img/creations/locopha.jpg" alt="" /></div>
       </div>
       <p>Logiciel de gestion C# pour les tournois de jeux vidéo.
-   <br/>À trois développeurs nous avons réalisé une application à partir d'un cahier des charges (disponible ici).
+   <br/>À trois développeurs nous avons réalisé une application à partir d'un cahier des charges.
    Cette application a été développée en C# et utilise une base de données.
    <br/>Nous avons créé un jeu d’essai, un manuel de l’utilisateur, un tutoriel, ainsi qu’une documentation technique.</p>
    <p>Temps de développement nécessaire : quelques jours.</p>

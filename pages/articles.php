@@ -34,7 +34,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <div><?php
         if($lang == "fr")
-          echo str_replace("'", "’", utf8_encode($art['texte_'.$lang]));
+          echo utf8_encode(str_replace(chr(146), "&#8217;", $art['texte_'.$lang]));
         else
           echo utf8_encode($art['texte_'.$lang]);
       }?>
