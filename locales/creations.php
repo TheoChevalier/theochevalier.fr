@@ -4,14 +4,14 @@ $langage = array(
   'fr' => "Portfolio",
   'en' => "Projects I worked on"),
 'page_desc' => array(
-  'fr' => "Voici la liste des projets sur lesquels j'ai travaillé.",
+  'fr' => "Voici la liste des projets sur lesquels j’ai travaillé.",
   'en' => "Here is the list of projects I worked on."),
   'locopha_titre' => array(
   'fr' => "LOCOPHA",
   'en' => "LOCOPHA"),
 'locopha' => array(
   'fr' => "Logiciel de gestion C# pour les tournois de jeux vidéo.
-   <br/>À trois développeurs nous avons réalisé une application à partir d'un cahier des charges (disponible ici).
+   <br/>À trois développeurs nous avons réalisé une application à partir d’un cahier des charges (disponible ici).
    Cette application a été développée en C# et utilise une base de données.
    <br/>Nous avons créé un jeu d’essai, un manuel de l’utilisateur, un tutoriel, ainsi qu’une documentation technique.
    <br/>
@@ -37,7 +37,7 @@ $langage = array(
   'fr' => "PSV.COMTV",
   'en' => "PSV.COMTV"),
 'psv' => array(
-  'fr' => "Refonte du site de l'agence de publicité toulousaine PSV.COMTV, dans le cadre de mon stage de première année de BTS.",
+  'fr' => "Refonte du site de l’agence de publicité toulousaine PSV.COMTV, dans le cadre de mon stage de première année de BTS.",
   'en' => "New advertising website for PSV.COMTV agency, based in Toulouse, as part of my internship during the first year of BTS."),
 'fx_titre' => array(
   'fr' => "Mozilla Firefox",
