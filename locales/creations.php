@@ -44,9 +44,7 @@ $langage = array(
   'en' => "Mozilla Firefox"),
 'fx' => array(
   'fr' => "Navigateur web libre et ouvert utilisé par près d’un demi-milliard de personnes.",
-  'en' => "I made several changes in Firefox, from the simple modification of the interface,
-          to enable performance data sending by default in development versions. You can view a <a class=\"lien\" href=\"https://bugzilla.mozilla.org/buglist.cgi?list_id=2930875;resolution=FIXED;emailtype1=exact;query_format=advanced;emailassigned_to1=1;email1=theo.chevalier11%40gmail.com\">
-          list of my changes.</a>"),
+  'en' => "The free and open Web browser, used by half a billion people."),
 'lpl_titre' => array(
   'fr' => "Ligue de Paintball de Lorraine (Projet BTS)",
   'en' => "Ligue de Paintball de Lorraine (Associate Degree project)"),
