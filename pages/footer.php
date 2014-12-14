@@ -37,10 +37,10 @@
       </ul>
     </div>
     <div id="firefox">
-    <?=$langage_index['credit'][$lang]?> <?php
+    <?=$langage_index['credit'][$lang]?><?php
     $date_footer = getdate();
     $annee = $date_footer['year'];
-    echo $annee; ?> — <a href="index.php?page=sitemap" class="lien">Sitemap</a><br/>
+    echo $annee; ?> &middot; <a href="index.php?page=sitemap" class="lien">Sitemap</a><br/>
      <a class="ff_desktop" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_<?=$lang?>.png" alt='Firefox Download Button' width="468" height="60"/></a>
      <a class="ff_mobile" href="https://affiliates.mozilla.org/link/banner/1287/1/91"><img src="img/firefox_mobile_en.png" alt="Firefox Mobile Download Button" width="125" height="125"/></a>
     </div>

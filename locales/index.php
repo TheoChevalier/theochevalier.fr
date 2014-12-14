@@ -52,7 +52,7 @@ $langage_index = array(
 'fr' => '&nbsp;',
 'en' => '&nbsp;'),
 'credit' => array(
-'fr' => 'Design et code par Théo Chevalier — 2011 - ',
-'en' => 'Design &amp; code by Théo Chevalier — 2011 - '),
+'fr' => 'Design et code par Théo Chevalier &middot; 2011-',
+'en' => 'Design &amp; code by Théo Chevalier &middot; 2011-'),
 );
  ?>
