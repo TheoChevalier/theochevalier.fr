@@ -26,10 +26,11 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       <?php 
       if (empty($art['texte_'.$lang])) {
         echo '<div class="warning">'.$langage['warning'][$lang].'</div>';
-        $requete_art_alt = mysql_query('SELECT texte_fr FROM tc_articles WHERE art_id = '.$art_id);
+        $lang_alt = ($lang == 'fr') ? 'en' : 'fr';
+        $requete_art_alt = mysql_query('SELECT texte_' . $lang_alt . ' FROM tc_articles WHERE art_id = '.$art_id);
         $art_alt = mysql_fetch_array($requete_art_alt);
         ?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
-        echo str_replace("'", "’", utf8_encode($art_alt['texte_fr']));
+        echo str_replace("'", "’", utf8_encode($art_alt['texte_' . $lang_alt]));
       }
       else {?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div>
       <div><?php
