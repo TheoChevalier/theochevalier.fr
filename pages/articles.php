@@ -38,8 +38,9 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           echo utf8_encode(str_replace(chr(146), "&#8217;", $art['texte_'.$lang]));
         else
           echo utf8_encode($art['texte_'.$lang]);
+        ?></div>
+        <?php
       }?>
-      </div>
       <div id="partage">
         <div>
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="t_chevalier" data-lang="<?=$lang?>">Tweeter</a>

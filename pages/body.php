@@ -49,7 +49,7 @@
         </div>
         <div id="titre_site">
           <span class="titre_site"><a class="unstyled_link" href="<?=ROOTPATH?>" onClick="menu();"><?=NAME?></a></span>
-          <div class="sous_titre_site"><div class="star">*</div><?=$langage_index['ss_titre1'][$lang]?><div class="star">*</div><?=$langage_index['ss_titre2'][$lang]?><div class="star">*</div></div>
+          <div class="sous_titre_site"><?=$langage_index['ss_titre1'][$lang]?> <div class="star"><i class="fa fa-certificate"></i></div> <?=$langage_index['ss_titre2'][$lang]?></div>
         </div>
       </div>
       <div class="separateur_header">
@@ -68,7 +68,9 @@
         <li class="header_menu" onClick="menu();"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
-        class="header_menu" onClick="menu();"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li><li
-        class="header_menu"><a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        class="header_menu" onClick="menu();"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
+</a></li><li
+        class="header_menu"><a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?> <i class="fa fa-paper-plane-o"></i>
+</a></li>
       </ul>
     </section>
