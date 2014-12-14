@@ -24,7 +24,7 @@ $langage = array(
 	'fr' => "Étudiant",
 	'en' => "Student"),
 'school' => array(
-	'fr' => "J’étudie actuellement au sein de la formation MIAGE à Toulouse. Consultez mon CV !",
+	'fr' => "J’étudie actuellement au sein de la formation MIAGE à Toulouse. Consultez mon CV ! (En anglais)",
 	'en' => "I currently spend a Bachelor’s degree in Computing in the South of France. Check my resume!")
 );
  ?>

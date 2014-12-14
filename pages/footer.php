@@ -32,17 +32,15 @@
       </ul>
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
-        <li><a href='http://www.mozfr.org' target="_blank" class="footer_img"><img src="img/mozfr.png" alt="Communauté Mozilla francophone" width="120" height="120" /></a></li>
+        <li><a class="footer_img" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_desktop_<?=$lang?>.png" alt='Firefox Download Button' width="125" height="125"/></a></li>
         <li><a href='https://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/regardez_lavenir.png" alt="Firefox OS" width="125" height="125" /></a></li>
       </ul>
     </div>
     <div id="firefox">
-    <?=$langage_index['credit'][$lang]?><?php
-    $date_footer = getdate();
-    $annee = $date_footer['year'];
-    echo $annee; ?> &middot; <a href="index.php?page=sitemap" class="lien">Sitemap</a><br/>
-     <a class="ff_desktop" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_<?=$lang?>.png" alt='Firefox Download Button' width="468" height="60"/></a>
-     <a class="ff_mobile" href="https://affiliates.mozilla.org/link/banner/1287/1/91"><img src="img/firefox_mobile_en.png" alt="Firefox Mobile Download Button" width="125" height="125"/></a>
+      <?=$langage_index['credit'][$lang]?><?php
+      $date_footer = getdate();
+      $annee = $date_footer['year'];
+      echo $annee; ?> &middot; <a href="index.php?page=sitemap" class="lien">Sitemap</a>
     </div>
   </footer>
 </div> <!--! end of #container -->
