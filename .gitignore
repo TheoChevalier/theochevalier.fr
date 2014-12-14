@@ -40,7 +40,7 @@ publish
 build/buildinfo.properties
 build/config/buildinfo.properties
 
-img/oiseaux/
+config/
 logs/
 includes/connexion.php
 fichiers/

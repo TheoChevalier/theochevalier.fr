@@ -14,7 +14,7 @@ switch($page)
     include("pages/competences.php");
   break;
   case'4':
-    include("pages/contact.php");
+    include("pages/profil.php");
   break;
   case'5':
     header('Location: files/CV_theo_chevalier_fr.pdf');

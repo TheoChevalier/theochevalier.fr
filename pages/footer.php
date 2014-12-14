@@ -7,7 +7,7 @@
         <li class="footer_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
-        <li class="footer_menu"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        <li class="footer_menu"><a class="mailto" data-mailto-user="contact-web"><?=$langage_index['menu_contact'][$lang]?></a></li>
         <li class="footer_menu"><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
         <li class="footer_menu"><a href="<?=$url_en?>" class="lang_footer"><div class="en"></div></a></li>
       </ul>
@@ -32,14 +32,14 @@
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
         <li><a href='http://www.mozfr.org' target="_blank" class="footer_img"><img src="img/mozfr.png" alt="Communauté Mozilla francophone" width="120" height="120" /></a></li>
-        <li><a href='http://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/regardez_lavenir.png" alt="Firefox OS" width="125" height="125" /></a></li>
+        <li><a href='https://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/regardez_lavenir.png" alt="Firefox OS" width="125" height="125" /></a></li>
       </ul>
     </div>
     <div id="firefox">
-    Design &amp; code by Théo Chevalier - 2011- <?php
+    <?=$langage_index['credit'][$lang]?> <?php
     $date_footer = getdate();
     $annee = $date_footer['year'];
-    echo $annee; ?> - <a href="index.php?page=sitemap" class="lien">Sitemap</a><br/>
+    echo $annee; ?> — <a href="index.php?page=sitemap" class="lien">Sitemap</a><br/>
      <a class="ff_desktop" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_<?=$lang?>.png" alt='Firefox Download Button' width="468" height="60"/></a>
      <a class="ff_mobile" href="https://affiliates.mozilla.org/link/banner/1287/1/91"><img src="img/firefox_mobile_en.png" alt="Firefox Mobile Download Button" width="125" height="125"/></a>
     </div>
@@ -55,4 +55,8 @@
       header.classList.add('header_close');
       header.setAttribute('style','opacity: 0;');
     }
+
+  ;[].forEach.call(document.getElementsByClassName("mailto"), function(el) {
+  el.setAttribute("href", "mailto:" + el.getAttribute("data-mailto-user") + "@" + (el.getAttribute("data-mailto-domain") || window.location.host))
+  })
 </script>

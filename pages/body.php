@@ -9,7 +9,7 @@
 <?=$langage_index['ie_banner'][$lang]?>
 </div>
 <![endif]--> 
-<script type="text/javascript">
+<script>
     window._idl = {};
     _idl.variant = "banner";
     (function() {
@@ -65,8 +65,8 @@
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
           <a href="index.php?page=4&amp;lang=<?=$lang?>" title="Contact" id="contact"></a>
-          <a href="http://twitter.com/#!/t_chevalier" title="Twitter" id="twitter"></a>
-          <a href="http://fr.linkedin.com/pub/th%C3%A9o-chevalier/3a/108/b44" title="Linkedin" id="linkedin"></a>
+          <a href="https://twitter.com/#!/t_chevalier" title="Twitter" id="twitter"></a>
+          <a href="https://www.linkedin.com/in/theochevalier/" title="Linkedin" id="linkedin"></a>
           <a href="https://github.com/TheoChevalier" title="Github" id="github_social"></a>
           <a href="https://reps.mozilla.org/u/tchevalier/" title="Mozilla Reps" id="mozillans"></a>
         </div>
@@ -79,6 +79,6 @@
         class="header_menu" onClick="menu();"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li><li
-        class="header_menu" onClick="menu();"><a href="index.php?page=4&amp;lang=<?=$lang?>"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        class="header_menu"><a class="mailto" data-mailto-user="contact-web"><?=$langage_index['menu_contact'][$lang]?></a></li>
       </ul>
     </section>

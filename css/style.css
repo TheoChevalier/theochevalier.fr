@@ -271,7 +271,7 @@ td { vertical-align: top; }
   background-color: #fff;
 }
 .fr , .en {
-  background: url(../img/sprites.png) no-repeat;
+  background: url(../img/sprites.png?dec-14) no-repeat;
   width: 16px;
   height: 12px;
 }
@@ -481,7 +481,7 @@ td { vertical-align: top; }
   text-align: right;
 }
 .conteneur_liens_sociaux a {
-  background: url(../img/sprites.png) no-repeat;
+  background: url(../img/sprites.png?dec-14) no-repeat;
   margin-right: 10px;
   margin-top: 20px;
   width: 40px;
@@ -519,7 +519,7 @@ td { vertical-align: top; }
 
 /* Sprites lien_sociaux */
 #mozillans {
-  background: url(../img/sprites.png) 0 0 no-repeat;
+  background: url(../img/sprites.png?dec-14) 0 0 no-repeat;
 }
 #linkedin {
   background-position: -40px 0;
@@ -785,7 +785,7 @@ td { vertical-align: top; }
   width: 80px;
   height: 80px;
   margin-top: 10px;
-  background: url('../img/ico/home_sprites.png') no-repeat scroll 0px 0px transparent;
+  background: url('../img/ico/home_sprites.png?dec-14') no-repeat scroll 0px 0px transparent;
 }
 
 #home_items {
