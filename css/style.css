@@ -1556,6 +1556,7 @@ footer .dark_shadow {
   text-shadow: 1px 1px 0 rgba(0,0,0,.4);
   max-width: 1000px;
   margin: auto;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-image: radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 70%);
   background-image: -o-radial-gradient(50% 100%, ellipse farthest-corner, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 70%);
