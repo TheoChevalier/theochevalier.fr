@@ -7,7 +7,7 @@
         <li class="footer_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?></a></li>
-        <li class="footer_menu"><a class="mailto" data-mailto-user="contact-web"><?=$langage_index['menu_contact'][$lang]?></a></li>
+        <li class="footer_menu"><a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?></a></li>
         <li class="footer_menu"><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
         <li class="footer_menu"><a href="<?=$url_en?>" class="lang_footer"><div class="en"></div></a></li>
       </ul>
