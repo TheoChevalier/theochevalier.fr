@@ -33,7 +33,7 @@
       <ul>
         <li class="footer_title"><?=$langage_index['pub'][$lang]?></li>
         <li><a class="footer_img" href='https://affiliates.mozilla.org/link/banner/1287/2/3' target="_blank"><img src="img/firefox_desktop_<?=$lang?>.png" alt='Firefox Download Button' width="125" height="125"/></a></li>
-        <li><a href='https://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/regardez_lavenir.png" alt="Firefox OS" width="125" height="125" /></a></li>
+        <li><a href='https://affiliates.mozilla.org/link/banner/40382' target="_blank" class="footer_img"><img src="img/firefox_os_<?=$lang?>.png" alt="Firefox OS" width="125" height="125" /></a></li>
       </ul>
     </div>
     <div id="firefox">
