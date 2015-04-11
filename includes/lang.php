@@ -1,7 +1,10 @@
 <?php
 //Gestion du choix de la langue
-$default_lang = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-$default_lang = strtolower(substr(chop($default_lang[0]), 0, 2));
+$default_lang = 'en';
+if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+  $default_lang = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+  $default_lang = strtolower(substr(chop($default_lang[0]), 0, 2));
+}
 if(isset($_GET['lang']) && $_GET['lang'] == 'fr') {
   $lang = 'fr';
 }

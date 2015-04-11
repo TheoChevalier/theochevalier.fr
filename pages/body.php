@@ -54,7 +54,7 @@
       </div>
       <div class="separateur_header">
         <div class="conteneur_liens_sociaux">
-          <a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr" title="Contact" id="contact"></a>
+          <a class="mailto" data-mailto-user="contact.web" data-mailto-domain="theochevalier.fr" title="Contact" id="contact"></a>
           <a href="https://twitter.com/#!/t_chevalier" title="Twitter" id="twitter"></a>
           <a href="https://www.linkedin.com/in/theochevalier/" title="Linkedin" id="linkedin"></a>
           <a href="https://github.com/TheoChevalier" title="Github" id="github_social"></a>
@@ -70,7 +70,7 @@
         class="header_menu" onClick="menu();"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
 </a></li><li
-        class="header_menu"><a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?> <i class="fa fa-paper-plane-o"></i>
+        class="header_menu"><a class="mailto" data-mailto-user="contact.web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?> <i class="fa fa-paper-plane-o"></i>
 </a></li>
       </ul>
     </section>

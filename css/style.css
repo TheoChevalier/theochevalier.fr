@@ -798,6 +798,12 @@ td { vertical-align: top; }
   z-index: 4;
   text-align: left;
 }
+
+#redpanda {
+  color: #E55525;
+  text-decoration: line-through;
+}
+
 /* ###  HOME_ITEMS  ### */
 .home_icons {
   position: absolute;
