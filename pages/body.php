@@ -45,9 +45,9 @@
         <div class="conteneur_liens_sociaux">
           <a class="mailto" data-mailto-user="contact.web" data-mailto-domain="theochevalier.fr" title="Contact" id="contact"></a>
           <a href="https://twitter.com/#!/t_chevalier" title="Twitter" id="twitter"></a>
-          <a href="https://www.linkedin.com/in/theochevalier/" title="Linkedin" id="linkedin"></a>
+          <a href="https://www.linkedin.com/in/theochevalier/" title="LinkedIn" id="linkedin"></a>
           <a href="https://github.com/TheoChevalier" title="Github" id="github_social"></a>
-          <a href="https://reps.mozilla.org/u/tchevalier/" title="Mozilla Reps" id="mozillans"></a>
+          <a href="https://mozillians.org/u/tchevalier/" title="Mozillians profile" id="mozillans"></a>
         </div>
       </div>
     </header>
