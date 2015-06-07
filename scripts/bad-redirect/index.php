@@ -1,2 +1,2 @@
 <?php
-header("Location: foo.bar");
+header("Location: index2.php");
