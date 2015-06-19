@@ -17,7 +17,7 @@ switch($page)
     include("pages/profil.php");
   break;
   case'5':
-    header('Location: Resume_Theo_Chevalier.pdf');
+    header('Location: Resume_Theo_Chevalier_06-2015.pdf');
   break;
   case'6':
     include("pages/articles.php");
