@@ -2,7 +2,6 @@
   <div id="container">
     <header>
       <div class="header_degrade">
-        <img id="github" src="img/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" usemap="#map" width="149" height="149"/>
         <map name="map">
           <area shape="poly" coords="134,0,0,134,0,0" href="https://github.com/TheoChevalier/theochevalier.fr" target="_blank" alt="Fork me on GitHub" />
         </map>

@@ -254,12 +254,6 @@ td { vertical-align: top; }
 #ie_banner a {
   color: #0a518f;
 }
-#github {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0;
-}
 #choix_langue {
   position: absolute;
   top: 10px;
@@ -1617,7 +1611,6 @@ body{
   background-image: url(../img/bg.jpg);
   background-attachment: scroll;
 }
-#github{width: 10%;height:10%;min-width: 90px;min-height:90px;}
 #menu ul{
   animation-name: none;
   -o-animation-name: none;
@@ -1708,7 +1701,6 @@ footer{max-width:728px;min-width:300px;}
 body{font-size: .8em;}
 /* header */
 
-#github {display: none;}
 .home_image, .home_image img{
   width:130px;
   height: 156px;
