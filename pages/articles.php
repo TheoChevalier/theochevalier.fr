@@ -47,8 +47,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
         <div>
-          <a name="fb_share" type="button" share_url="<?php echo ROOTPATH.str_replace('&', '&amp;', $_SERVER['REQUEST_URI']).'&amp;lang='.$lang; ?>">Partager</a>
-          <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+            <a target="_blank" title="Facebook" href="https://www.facebook.com/sharer.php?u=<?php echo ROOTPATH.str_replace('&', '&amp;', $_SERVER['REQUEST_URI']) ?>&t=<?=utf8_encode($art['titre_'.$lang])?>" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><img src="img/fb.png" alt="Facebook" /></a>
         </div>
       </div>
       <div class="art_date2"><?=$langage['date'][$lang]?> <?php echo utf8_encode(date_heure($art['date'], $lang)); ?></div>
