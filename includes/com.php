@@ -61,7 +61,6 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
         $msg[$i_msg] = "Recaptacha error.";
         $i++;
     }
-  }
   if($i == 0)
   {
     $mail = strtolower(mysql_real_escape_string(utf8_decode($_POST['email'])));
