@@ -118,7 +118,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
           var message = document.getElementById('resultats');
           if (tmp[0] != "") {
             form.reset();
-            Recaptcha.reload();
+            grecaptcha.reset();
             var div = document.createElement('div');
             div.innerHTML = tmp[0];
             com.parentNode.insertBefore(div, com);
