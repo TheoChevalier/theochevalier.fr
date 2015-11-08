@@ -102,7 +102,6 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       var site = form.site.value;
       var message = form.message.value;
       var follow = form.follow;
-      var response = form.recaptcha_response_field.value;
       if(follow.checked)
         var follow = follow.value;
       else
