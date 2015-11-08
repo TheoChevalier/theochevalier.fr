@@ -102,7 +102,6 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       var site = form.site.value;
       var message = form.message.value;
       var follow = form.follow;
-      var challenge = form.recaptcha_challenge_field.value;
       var response = form.recaptcha_response_field.value;
       if(follow.checked)
         var follow = follow.value;
@@ -134,7 +133,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
         }
       };
       requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      var data = "nom="+nom+"&email="+email+"&site="+site+"&article="+article+"&message="+message+"&lang="+lang+"&count_message="+count_message+"&follow="+follow+"&challenge="+challenge+"&response="+response;
+      var data = "nom="+nom+"&email="+email+"&site="+site+"&article="+article+"&message="+message+"&lang="+lang+"&count_message="+count_message+"&follow="+follow+"&g-recaptcha-response=" + grecaptcha.getResponse();
       requete.send(data);
     }
     var RecaptchaOptions = {
