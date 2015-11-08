@@ -151,7 +151,7 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       <div><label for="message"><span class="requis">(*)</span> <?=$langage['message'][$lang]?></label> <textarea id="message" name="message" rows="4" placeholder="<?=$langage['pl_message'][$lang]?>" required="" ></textarea></div>
       <div><input type="checkbox" name="follow" id="follow" checked="" value="follow" /><label for="follow" id="labelBox"><?=$langage['follow'][$lang]?></label></div>
       <div><label for="recaptcha_response_field"><span class="requis">(*)</span> <?=$langage['captcha'][$lang]?></label>
-        <div id="recaptcha_response_field" class="g-recaptcha" data-sitekey="6LcrxdQSAAAAADZjjikt9wnopncgjGQMDSXxp6os"></div>
+        <div id="recaptcha_response_field" class="g-recaptcha" data-sitekey="6LcnhhATAAAAAEiEcjh_OYa3d0URzhcIKtATRmLw"></div>
       </div>
       <button id="bouton_submit" class="submit" onClick="envoi_ajax();document.getElementById('canvasloader-container').style.display = 'block';document.getElementById('bouton_submit').style.display = 'none';"><?=$langage['envoyer'][$lang]?></button>
       </form>
