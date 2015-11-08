@@ -45,21 +45,20 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
       $i++;
     }
   }
-  if($_POST['response'] == "") {
-    $i_msg++;
-    $msg[$i_msg] = $langage['com_captcha_erreur'][$lang];
-    $i++;
-  }
-  else {
-    require_once('recaptchalib.php');
-    $privatekey = PRIVATE_KEY;
-    $resp = recaptcha_check_answer ($privatekey,
-                                  $_SERVER["REMOTE_ADDR"],
-                                  $_POST["challenge"],
-                                  $_POST["response"]);
-    if (!$resp->is_valid) {
+  if(isset($_POST['g-recaptcha-response']))
+    $captcha=$_POST['g-recaptcha-response'];
+
+    if(!$captcha) {
         $i_msg++;
-        $msg[$i_msg] = $resp->error;
+        $msg[$i_msg] = $langage['com_captcha_erreur'][$lang];
+        $i++;
+      exit;
+    }
+    $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . PRIVATE_KEY . "&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
+
+    if($response['success'] == false) {
+        $i_msg++;
+        $msg[$i_msg] = "Recaptacha error.";
         $i++;
     }
   }
