@@ -1165,6 +1165,7 @@ font-size: 1.5em!important;
 .art_images {
   display: inline-block;
   text-align: left;
+  text-indent: 0;
 }
 
 .art_images .art_image {
