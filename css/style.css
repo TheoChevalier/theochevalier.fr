@@ -1057,7 +1057,7 @@ font-size: 1.5em!important;
   text-align: left;
 }
 
-.art_imgs .art_img {
+.art_imgs .art_img img {
   display: inline;
   margin: 0px;
   padding: 0px;
