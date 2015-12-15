@@ -1,4 +1,4 @@
-/* 
+/*
  * Ce fichier est un joyeux bordel, mais je vais essayer de rendre ça plus lisible prochainement...
  * Welcome to the jungle!
  */
@@ -45,7 +45,7 @@ body { margin: 0; font-size: .9em; line-height: 1.231;
   background-image: -webkit-radial-gradient(50% 50%, circle cover, rgba(0,0,0,0) 33%,rgba(0,0,0,0.7) 130%), url(../img/bg_fx.jpg);
   background-attachment: fixed;
  }
- 
+
 
 body, button, input, select, textarea { font-family: OpenSansLight, "PT Serif", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", Arial, sans-serif; color: #333; }
 
@@ -53,7 +53,7 @@ body, button, input, select, textarea { font-family: OpenSansLight, "PT Serif", 
    Links
    ========================================================================== */
 
-a { 
+a {
   text-decoration: none;
   color: #0077de;
   transition-duration: 0.2s;
@@ -74,7 +74,7 @@ a:focus { outline: none; }
 footer a{color: #fff;}
 footer a:hover, .art_all a:hover { text-decoration: none; }
 
-a[hreflang]:after {  
+a[hreflang]:after {
   content : " ["attr(hreflang)"]";
 }
 
@@ -129,13 +129,13 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
- * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
  */
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 /*
- * Correct overflow not hidden in IE9 
+ * Correct overflow not hidden in IE9
  */
 
 svg:not(:root) { overflow: hidden; }
@@ -158,9 +158,9 @@ fieldset { border: 0; margin: 0; padding: 0; }
 /* Indicate that 'label' will shift focus to the associated form element */
 label { cursor: pointer; }
 
-/* 
- * 1. Correct color not inheriting in IE6/7/8/9 
- * 2. Correct alignment displayed oddly in IE6/7 
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
  */
 
 legend { border: 0; *margin-left: -7px; padding: 0; }
@@ -201,20 +201,20 @@ input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
-/* 
- * Remove inner padding and border in FF3/4: h5bp.com/l 
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
  */
 
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-/* 
- * 1. Remove default vertical scrollbar in IE6/7/8/9 
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
  * 2. Allow only vertical resizing
  */
 
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 
-/* Colors for form validity 
+/* Colors for form validity
 input:valid, textarea:valid {  }
 input:invalid, textarea:invalid {}
 */
@@ -293,7 +293,7 @@ td { vertical-align: top; }
   text-align: center;
   margin-bottom: 5px;
   color: #fbfbfb;
-  text-shadow: 
+  text-shadow:
     0px 1px 0px #999,
     0px 2px 0px #888,
     0px 3px 0px #777,
@@ -515,7 +515,7 @@ td { vertical-align: top; }
   -ms-animation-name: lien_social;
   -moz-animation-name: lien_social;
   -webkit-animation-name: lien_social;
-  
+
   transform:rotate(20deg);
   -o-transform:rotate(20deg);
   -ms-transform:rotate(20deg);
@@ -809,8 +809,8 @@ td { vertical-align: top; }
 
 #home_items {
   background-color: #3a74a6;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3); 
-     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3); 
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
       -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
        -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
@@ -1053,6 +1053,15 @@ font-size: 1.5em!important;
   width: 10%;
   margin-right: 15px;
 }
+.art_imgs {
+  text-align: left;
+}
+
+.art_imgs .art_img {
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
 .art_img img{
   width: 50px;
   height: 50px;
@@ -1161,17 +1170,17 @@ font-size: 1.5em!important;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
-.art_text  img:before {  
-    top: 52px;  
-    left: 5px;  
-    transform: rotate(-5deg);  
-    box-shadow: 7px 6px 15px #333;  
-}  
-.art_text  img:after {  
-    top: 52px;  
-    right: 5px;  
-    transform: rotate(5deg);  
-    box-shadow: -7px 6px 15px #333;  
+.art_text  img:before {
+    top: 52px;
+    left: 5px;
+    transform: rotate(-5deg);
+    box-shadow: 7px 6px 15px #333;
+}
+.art_text  img:after {
+    top: 52px;
+    right: 5px;
+    transform: rotate(5deg);
+    box-shadow: -7px 6px 15px #333;
 }
 .art_text h3 {
   font-family: OpenSansLight,"PT Serif","Lucida Sans","Lucida Grande","Lucida Sans Unicode","Luxi Sans",Arial,sans-serif;
@@ -1592,7 +1601,7 @@ footer .dark_shadow {
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/* Contain floats: h5bp.com/q */ 
+/* Contain floats: h5bp.com/q */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
@@ -1634,7 +1643,7 @@ body{
 }
 #titre_site {
   padding: 40px 20px 0 20px;
-  
+
 }
 .sous_titre_site{width:100%;min-width:300px;max-width:728px;font-size:18px;}
 .header_degrade{width:100%;min-width:300px;max-width:768px;padding-bottom:40px;margin-left:auto;margin-right:auto;}
@@ -1755,7 +1764,7 @@ video{max-width: 280px;}
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
- 
+
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a[href]:after { content: " (" attr(href) ")"; }
@@ -1769,4 +1778,3 @@ video{max-width: 280px;}
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
-
