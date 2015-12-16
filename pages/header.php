@@ -13,7 +13,7 @@
   <meta name="medium" content="blog" />
   <link rel="image_src" href="<?=ROOTPATH?>/img/<?php if(isset($page_img)) echo $page_img; else echo "logo.jpg"; ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="alternate" type="application/rss+xml"  href="<?=ROOTPATH.'/'.$lang?>_rss.xml">
+  <link rel="alternate" type="application/rss+xml"  href="<?=ROOTPATH?>fr_rss.xml">
   <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <?php
