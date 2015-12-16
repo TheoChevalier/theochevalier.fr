@@ -935,5 +935,5 @@ FileETag None
 # </IfModule>
 
 
-Redirect 301 http://theochevalier.fr/rss/mozilla_en.xml https://www.theochevalier.fr/rss/mozilla_en.xml
+#Redirect 301 http://theochevalier.fr/rss/mozilla_en.xml https://www.theochevalier.fr/rss/mozilla_en.xml
 AddCharset UTF-8 .xml
