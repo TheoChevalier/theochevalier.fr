@@ -60,7 +60,7 @@ function update_rss($id, $categorie, $lang)
   <feed xmlns="http://www.w3.org/2005/Atom">
    <title>'.NAME.'</title>
    <subtitle>Site personnel de '.NAME.'</subtitle>
-   <link href="'.ROOTPATH.'/'.$lang.'_rss.xml" rel="self" type="application/atom+xml"/>
+   <link href="'.ROOTPATH.'/rss/'.$lang.'_rss.xml" rel="self" type="application/atom+xml"/>
    <updated>'.date(DATE_ATOM, time()).'</updated>
    <author>
      <name>'.NAME.'</name>
@@ -84,7 +84,7 @@ function update_rss($id, $categorie, $lang)
     $description = utf8_encode('<![CDATA[<img src="'.ROOTPATH.'/img/articles_big/'.$news['art_img'].'" alt="" />'.str_replace("<br />", "<br/>", str_replace('src="img/', 'src="'.ROOTPATH.'/img/', $news['texte_'.$lang])).']]>');
     if ($news['date_update_'.$lang] == "") $news['date_update_'.$lang] = $news['date'];
     $items = $items.'
-    
+
       <entry>
         <author>
           <name>'.NAME.'</name>
@@ -113,7 +113,7 @@ $languages = array("fr", "en");
 foreach ($languages as $language)
 {
   $links .= '
-  
+
   <url><loc>
   '.ROOTPATH.'/index.php?lang='.$language.'
   </loc></url>
