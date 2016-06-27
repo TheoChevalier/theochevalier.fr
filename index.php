@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: text/html; charset=UTF-8');
 include("includes/fonctions.php");
-connexionbdd();
+$sql = connexionbdd();
 include("includes/lang.php");
 $ProfileLoaded = false;
 switch($page)
