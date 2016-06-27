@@ -2,8 +2,7 @@
 include("connexion.php");
 function connexionbdd()
 {
-  mysql_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE);
-  mysql_select_db(NOM_BD);
+  mysqli_connect(NOM_SERVEUR, LOGIN, MOT_DE_PASSE, NOM_BD);
 }
 function formater_date($date_bdd)
 {
@@ -69,15 +68,15 @@ function update_rss($id, $categorie, $lang)
    <id>'.ROOTPATH.'/'.$lang.'_rss.xml</id>';
   $fin_fichier = '</feed>';
   if ($categorie != "all")
-    $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
+    $requete = mysqli_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
     WHERE art_id IN (SELECT art_id FROM tc_categorie WHERE categorie = ".$id.") AND published = 1 ORDER BY date DESC");
   else
-     $requete = mysql_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
+     $requete = mysqli_query("SELECT art_id, titre_".$lang.", date, date_update_".$lang.", texte_".$lang.", art_img FROM tc_articles
      WHERE published = 1 ORDER BY date DESC");
 
-  $num = mysql_num_rows($requete);
+  $num = mysqli_num_rows($requete);
   $items ='';
-  while($news = mysql_fetch_array($requete))
+  while($news = mysqli_fetch_array($requete))
   {
     $titre = utf8_encode(str_replace("&", "&amp;", $news['titre_'.$lang]));
     $lien = ROOTPATH.'/index.php?page=6&amp;article='.$news['art_id'].'&amp;lang='.$lang;
@@ -121,8 +120,8 @@ foreach ($languages as $language)
   '.ROOTPATH.'/index.php?page=6&amp;lang='.$language.'
   </loc></url>
   ';
-  $requete_art = mysql_query("SELECT art_id, titre_".$language.", date FROM tc_articles ORDER BY date");
-  while($art = mysql_fetch_array($requete_art))
+  $requete_art = mysqli_query("SELECT art_id, titre_".$language.", date FROM tc_articles ORDER BY date");
+  while($art = mysqli_fetch_array($requete_art))
     $links .= '<url><loc>'.ROOTPATH.'/index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$language.'</loc></url>';
 
   $links .= '

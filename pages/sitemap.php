@@ -19,8 +19,8 @@ else echo "<h1>Pages in english</h1>";
     <li><a href="index.php?page=6&amp;lang=<?=$language?>"><?=$langage['blog'][$language]?></a>
       <ul>
         <?php 
-        $requete_art = mysql_query("SELECT art_id, titre_".$language.", date FROM tc_articles ORDER BY date");
-        while($art = mysql_fetch_array($requete_art))
+        $requete_art = mysqli_query("SELECT art_id, titre_".$language.", date FROM tc_articles ORDER BY date");
+        while($art = mysqli_fetch_array($requete_art))
           echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$language.'">'.utf8_encode($art['titre_'.$language]).'</a></li>';
         ?>
       </ul>

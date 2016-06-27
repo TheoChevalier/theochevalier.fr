@@ -6,7 +6,7 @@ connexionbdd();
 $i=0;
 $i_msg=0;
 $separateur='%☺%';
-$lang = mysql_real_escape_string(utf8_decode($_POST['lang']));
+$lang = mysqli_real_escape_string(utf8_decode($_POST['lang']));
 if($lang == 'fr'){
   setlocale(LC_TIME, 'fr_FR');
   date_default_timezone_set('Europe/Paris');
@@ -63,29 +63,29 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
     }
   if($i == 0)
   {
-    $mail = strtolower(mysql_real_escape_string(utf8_decode($_POST['email'])));
-    $nom = mysql_real_escape_string(utf8_decode($_POST['nom']));
-    $message = utf8_decode(mysql_real_escape_string(stripslashes(nl2br(htmlspecialchars($_POST['message'])))));
-    $follow = mysql_real_escape_string(utf8_decode($_POST['follow']));
+    $mail = strtolower(mysqli_real_escape_string(utf8_decode($_POST['email'])));
+    $nom = mysqli_real_escape_string(utf8_decode($_POST['nom']));
+    $message = utf8_decode(mysqli_real_escape_string(stripslashes(nl2br(htmlspecialchars($_POST['message'])))));
+    $follow = mysqli_real_escape_string(utf8_decode($_POST['follow']));
     $time = time();
     $art = intval($_POST['article']);
-    $site = mysql_real_escape_string(utf8_decode($_POST['site']));
+    $site = mysqli_real_escape_string(utf8_decode($_POST['site']));
     $count_message = intval($_POST['count_message']);
-    mysql_query('INSERT INTO tc_com(com_mail, com_nom, com_msg, com_art, com_date, com_lang)
+    mysqli_query('INSERT INTO tc_com(com_mail, com_nom, com_msg, com_art, com_date, com_lang)
     VALUES("'.$mail.'", "'.$nom.'", "'.$message.'", "'.$art.'", "'.$time.'", "'.$lang.'")');
-    $id = mysql_insert_id();
+    $id = mysqli_insert_id();
     if ($follow == "follow")
       $follow_bool = '1';
     else
       $follow_bool = '0';
 
-    $requete_suivi = mysql_query('SELECT email FROM tc_follow WHERE email = "'.$mail.'" AND article = '.$art);
-    $suivi = mysql_fetch_array($requete_suivi);
+    $requete_suivi = mysqli_query('SELECT email FROM tc_follow WHERE email = "'.$mail.'" AND article = '.$art);
+    $suivi = mysqli_fetch_array($requete_suivi);
     if ($suivi)
-      mysql_query("UPDATE tc_follow SET follow = '".$follow_bool."' WHERE email = '".$mail."' AND article = ".$art);
+      mysqli_query("UPDATE tc_follow SET follow = '".$follow_bool."' WHERE email = '".$mail."' AND article = ".$art);
     else {
-      mysql_query("INSERT INTO tc_follow (follow, email, article) VALUES ('".$follow_bool."', '".$mail."', '".$art."')");
-      $requete_email_exists = mysql_query("SELECT email FROM tc_keys WHERE email = '".$mail."'");
+      mysqli_query("INSERT INTO tc_follow (follow, email, article) VALUES ('".$follow_bool."', '".$mail."', '".$art."')");
+      $requete_email_exists = mysqli_query("SELECT email FROM tc_keys WHERE email = '".$mail."'");
       
       if(!$requete_email_exists) {
         $caracteres = array("a", "b", "c", "d", "e", "f", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
@@ -95,19 +95,19 @@ if(isset($_POST['nom']) && $_POST['nom'] !="" && isset($_POST['email']) && $_POS
         {
           $key .= $caracteres[$n];
         }
-        mysql_query("INSERT INTO tc_keys (email, keygen) VALUES ('".$mail."', '".$key."')");
+        mysqli_query("INSERT INTO tc_keys (email, keygen) VALUES ('".$mail."', '".$key."')");
       }
     }
       
     if(isset($_POST['site']) && $_POST['site'] != "")
-      mysql_query('UPDATE tc_com SET com_site = "'.$site.'" WHERE com_id = '.$id);
+      mysqli_query('UPDATE tc_com SET com_site = "'.$site.'" WHERE com_id = '.$id);
 
-    $req_com = mysql_query('SELECT DISTINCT com_mail, com_lang, keygen FROM tc_com, tc_follow, tc_keys
+    $req_com = mysqli_query('SELECT DISTINCT com_mail, com_lang, keygen FROM tc_com, tc_follow, tc_keys
     WHERE follow = 1 AND article = '.$art.' AND com_mail != "'.$mail.'"
     AND tc_follow.email = com_mail AND tc_follow.email = tc_keys.email');
     if($req_com)
     {
-      while($com = mysql_fetch_array($req_com))
+      while($com = mysqli_fetch_array($req_com))
       {
         $com_lang = $com['com_lang'];
         if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $com['com_mail']))
