@@ -35,7 +35,7 @@
         <?=$langage_index['pub-nightly'][$lang]?>
         <li><a href='<?=$langage_index['pub-nightly-lien'][$lang]?>' class="footer_img"><img src="img/nightly.png" alt="<?=$langage_index['pub-nightly'][$lang]?>" width="139" height="150" /></a></li>
         <br/>
-        <li><a class="footer_img" href='https://affiliates.mozilla.org/link/banner/1287/2/3'><img src="img/firefox_desktop_<?=$lang?>.png" alt='Firefox Download Button' width="125" height="125"/></a></li>
+        <li><a class="footer_img" href='https://www.mozilla.org/firefox'><img src="img/firefox_desktop_<?=$lang?>.png" alt='Firefox Download Button' width="125" height="125"/></a></li>
       </ul>
     </div>
     <div id="firefox">

@@ -33,8 +33,8 @@ $langage_index = array(
 // Footer
 'blogs' => array(
 'fr' => '<li class="footer_title">Blogs/sites recommandés</li>
-         <li><a href="http://www.mozfr.org" target="_blank"><div id="mozfr"></div><div>Communauté Mozilla francophone</div></a></li>
-         <li><a href="http://firefoxos.mozfr.org/" target="_blank"><div id="bonjour"></div><div>Firefox OS en France</div></a></li>
+         <li><a href="https://www.mozfr.org" target="_blank"><div id="mozfr"></div><div>Communauté Mozilla francophone</div></a></li>
+         <li><a href="http://blog.mozfr.org/" target="_blank"><div id="mozfr"></div><div>Blog Mozfr</div></a></li>
          <li><a href="https://support.mozilla.org/" target="_blank"><div id="bonjour"></div><div>Assistance Mozilla</div></a></li>',
 'en' => '<li class="footer_title">Recommended blogs/sites</li>
          <li><a href="http://planet.mozilla.org" target="_blank"><div id="planet"></div><div>Mozilla community news</div></a></li>
