@@ -2,8 +2,8 @@
 if(isset($_POST['mot_de_passe']) && $_POST['mot_de_passe'] == PASSWD_RSS)
 {
   update_sitemap();
-  $req_categories = mysql_query("SELECT categorie_id, libelle, lang FROM tc_categorie_nom");
-  while($categories = mysql_fetch_array($req_categories)) {
+  $req_categories = mysqli_query("SELECT categorie_id, libelle, lang FROM tc_categorie_nom");
+  while($categories = mysqli_fetch_array($req_categories)) {
     update_rss($categories['categorie_id'], $categories['libelle'], $categories['lang']);
   }
   // Defaul RSS containing everything

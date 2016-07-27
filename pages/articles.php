@@ -3,10 +3,10 @@ include("locales/articles.php");
 //Si un numero d'article est présent on récupère toutes les infos
 if(isset($_GET['article'])&& !empty($_GET['article']))
 {
-  $art_id = mysql_real_escape_string($_GET['article']);
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles
+  $art_id = mysqli_real_escape_string($sql, $_GET['article']);
+  $requete_art = mysqli_query($sql, 'SELECT art_id, titre_'.$lang.', keywords, texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM tc_articles
   WHERE art_id = '.$art_id.' AND published = 1');
-  $art = mysql_fetch_array($requete_art);
+  $art = mysqli_fetch_array($requete_art);
   //On prépare les variables pour les afficher dans le header
   $page_titre = utf8_encode($art['titre_'.$lang]);
   $page_img = "articles/".$art['art_img'];
@@ -27,8 +27,8 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
       if (empty($art['texte_'.$lang])) {
         echo '<div class="warning">'.$langage['warning'][$lang].'</div>';
         $lang_alt = ($lang == 'fr') ? 'en' : 'fr';
-        $requete_art_alt = mysql_query('SELECT texte_' . $lang_alt . ' FROM tc_articles WHERE art_id = '.$art_id);
-        $art_alt = mysql_fetch_array($requete_art_alt);
+        $requete_art_alt = mysqli_query($sql, 'SELECT texte_' . $lang_alt . ' FROM tc_articles WHERE art_id = '.$art_id);
+        $art_alt = mysqli_fetch_array($requete_art_alt);
         ?><div class="art_img_big"><img src="img/articles_big/<?=$art['art_img']?>" alt="<?=$art['art_img']?>" /></div><?php
         echo str_replace("'", "’", utf8_encode($art_alt['texte_' . $lang_alt]));
       }
@@ -56,16 +56,16 @@ if(isset($_GET['article'])&& !empty($_GET['article']))
     <?php
     //On affiche les comentaires
     $i=0;
-    $com_requete = mysql_query('SELECT * FROM tc_com WHERE com_art ='.$art['art_id']);
-    $compte = mysql_query('SELECT COUNT(*) AS nb_com FROM tc_com WHERE com_art ='.$art['art_id']);
-    $com_compte = mysql_fetch_array($compte);
+    $com_requete = mysqli_query($sql, 'SELECT * FROM tc_com WHERE com_art ='.$art['art_id']);
+    $compte = mysqli_query($sql, 'SELECT COUNT(*) AS nb_com FROM tc_com WHERE com_art ='.$art['art_id']);
+    $com_compte = mysqli_fetch_array($compte);
     if($com_compte["nb_com"] > 0) {
        if($com_compte["nb_com"] == 1) echo "<h2>".$com_compte["nb_com"]." ".$langage['com'][$lang]."</h2>";
        else echo "<h2>".$com_compte["nb_com"]." ".$langage['coms'][$lang]."</h2>";
     }
     if($com_requete)
     {
-      while($com = mysql_fetch_array($com_requete))
+      while($com = mysqli_fetch_array($com_requete))
       {
         $i++;
         echo add_com($i,$com['com_id'],$com['com_mail'],$com['com_site'],$com['com_nom'],$com['com_date'],$com['com_msg'],$lang);
@@ -185,8 +185,8 @@ else
   //On définit le nombre d'articles par page
   $nombreDeMessagesParPage = 4;
   //on commence par récupérer le nombre total d'articles
-  $retour = mysql_query('SELECT COUNT(*) AS nb_articles FROM tc_articles WHERE published = 1');
-  $donnees = mysql_fetch_array($retour);
+  $retour = mysqli_query($sql, 'SELECT COUNT(*) AS nb_articles FROM tc_articles WHERE published = 1');
+  $donnees = mysqli_fetch_array($retour);
   //ce nombre d'articles sera le total des messages pour l'ensemble des pages
   $totalDesMessages = $donnees['nb_articles'];
   //Si un numéro de page est présent dans l'url, on affichera cette page, sinon on affiche la page 1 par défaut
@@ -209,10 +209,10 @@ else
   <?php
   //On définit le numéro du premier article à afficher en fonction du numéro de la page et du nombre d'articles à afficher par page
   $premierMessageAafficher = ($page - 1) * $nombreDeMessagesParPage;
-  $requete_art = mysql_query('SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM
+  $requete_art = mysqli_query($sql, 'SELECT art_id, titre_'.$lang.', texte_'.$lang.', art_img, date, date_update_'.$lang.' FROM
   tc_articles WHERE published = 1 ORDER BY date DESC LIMIT '.$premierMessageAafficher.', '.$nombreDeMessagesParPage);
   //On affiche les articles
-  while($art = mysql_fetch_array($requete_art))
+  while($art = mysqli_fetch_array($requete_art))
   { ?>
   <a href="index.php?page=6&amp;article=<?=$art['art_id']?>&amp;lang=<?=$lang?>" onClick="menu();">
   <article>
