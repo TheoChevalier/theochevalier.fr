@@ -18,19 +18,19 @@ $langage = array(
 'remo' => array(
 	'fr' => "Je contribue au projet Mozilla,
              écris du code pour Firefox et gère la traduction des logiciels et sites web de Mozilla en français.",
-	'en' => "I communicate about Mozilla’s mission, write code for Firefox,
+	'en' => "I communicate about Mozilla’s mission, contribute to Firefox,
           and lead Mozilla products and websites translation in French."),
 'blog_title' => array(
 	'fr' => "Blogueur",
 	'en' => "Blogger"),
 'blog' => array(
-	'fr' => "Je rédige des billets concernant Mozilla et le Web en général.",
-	'en' => "I mostly write articles about Mozilla and the Web."),
+	'fr' => "Je rédige des billets concernant Mozilla, la traduction et le Web en général.",
+	'en' => "I mostly write articles about Mozilla, localization and the Web."),
 'school_title' => array(
-	'fr' => "Étudiant",
-	'en' => "Student"),
+	'fr' => "Jeune diplômé",
+	'en' => "Young graduate"),
 'school' => array(
-	'fr' => "J’étudie actuellement au sein de la formation MIAGE à Toulouse. Consultez mon CV ! (En anglais)",
-	'en' => "I currently spend a Bachelor’s degree in Computing in the South of France. Check my resume!")
+	'fr' => "Je suis fraîchement diplômé du master MIAGE de Toulouse. Consultez mon CV ! (En anglais)",
+	'en' => "I recently graduated with a Master’s degree in IT Project Management from Toulouse University. Check my resume!")
 );
  ?>
