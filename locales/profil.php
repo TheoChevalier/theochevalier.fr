@@ -13,8 +13,8 @@ $langage = array(
 	'fr' => "Je suis développeur.",
 	'en' => "I’m a developer."),
 'remo_title' => array(
-	'fr' => "Représentant Mozilla",
-	'en' => "Mozilla Representative"),
+	'fr' => "Contributeur Mozilla",
+	'en' => "Mozilla volunteer"),
 'remo' => array(
 	'fr' => "Je contribue au projet Mozilla,
              écris du code pour Firefox et gère la traduction des logiciels et sites web de Mozilla en français.",

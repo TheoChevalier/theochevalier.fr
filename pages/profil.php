@@ -10,7 +10,7 @@ $ProfileLoaded = true; ?>
       <section id="home_items">
         <ul>
           <li>
-            <a id="remo" href="https://reps.mozilla.org/u/tchevalier/">
+            <a id="remo" href="https://mozillians.org/u/tchevalier/">
               <div class="home_icons"></div>
               <h3><?=$langage['remo_title'][$lang]?></h3>
               <p>
