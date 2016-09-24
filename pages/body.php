@@ -54,9 +54,9 @@
     <section class="menu" id="menu">
       <ul>
         <li class="header_menu" onClick="menu();"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li><li
-        class="header_menu" onClick="menu();"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li><li
+        class="header_menu" onClick="menu();"><a href="https://blog.theochevalier.fr"><?=$langage_index['menu_articles'][$lang]?></a></li><li
         class="header_menu" onClick="menu();"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li><li
-        class="header_menu" onClick="menu();"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
+        class="header_menu" onClick="menu();"><a href="/cv"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
 </a></li><li
         class="header_menu"><a class="mailto" data-mailto-user="contact.web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?> <i class="fa fa-paper-plane-o"></i>
 </a></li>

@@ -1,10 +1,14 @@
 <?php
 session_start();
 header('Content-Type: text/html; charset=UTF-8');
-include("includes/fonctions.php");
-$sql = connexionbdd();
+include("includes/connexion.php");
 include("includes/lang.php");
 $ProfileLoaded = false;
+
+if ($page == '5' || $_SERVER['REQUEST_URI'] == '/cv') {
+  header('Location: Resume-Theo-Chevalier-07-2016.pdf');
+}
+
 switch($page)
 {
   case'2':
@@ -15,12 +19,6 @@ switch($page)
   break;
   case'4':
     include("pages/profil.php");
-  break;
-  case'5':
-    header('Location: Resume-Theo-Chevalier-07-2016.pdf');
-  break;
-  case'6':
-    include("pages/articles.php");
   break;
   default;
     if(is_file("pages/".$page.".php"))

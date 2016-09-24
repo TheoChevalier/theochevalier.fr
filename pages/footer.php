@@ -4,9 +4,9 @@
     <section class="menu">
       <ul>
         <li class="footer_menu"><a href="index.php?lang=<?=$lang?>"><?=$langage_index['menu_accueil'][$lang]?></a></li>
-        <li class="footer_menu"><a href="index.php?page=6&amp;lang=<?=$lang?>"><?=$langage_index['menu_articles'][$lang]?></a></li>
+        <li class="footer_menu"><a href="https://blog.theochevalier.fr"><?=$langage_index['menu_articles'][$lang]?></a></li>
         <li class="footer_menu"><a href="index.php?page=2&amp;lang=<?=$lang?>"><?=$langage_index['menu_projet'][$lang]?></a></li>
-        <li class="footer_menu"><a href="index.php?page=5&amp;lang=<?=$lang?>"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
+        <li class="footer_menu"><a href="/cv"><?=$langage_index['menu_cv'][$lang]?> <i class="fa fa-file-pdf-o"></i>
 </a></li>
         <li class="footer_menu"><a class="mailto" data-mailto-user="contact-web" data-mailto-domain="theochevalier.fr"><?=$langage_index['menu_contact'][$lang]?> <i class="fa fa-paper-plane-o"></i></a></li>
         <li class="footer_menu"><a href="<?=$url_fr?>" class="lang_footer"><div class="fr"></div></a></li>
@@ -14,14 +14,6 @@
       </ul>
     </section>
     <div id="footer">
-      <ul>
-        <li class="footer_title"><?=$langage_index['articles'][$lang]?></li>
-        <?php 
-        $requete_art = mysqli_query($sql, "SELECT art_id, titre_".$lang.", date FROM tc_articles ORDER BY date DESC LIMIT 6");
-        while($art = mysqli_fetch_array($requete_art))
-          echo '<li><a href="index.php?page=6&amp;article='.$art['art_id'].'&amp;lang='.$lang.'">'.utf8_encode($art['titre_'.$lang]).'</a></li>';
-        ?>
-      </ul>
       <ul id="sites">
         <?=$langage_index['blogs'][$lang]?>
       </ul>
