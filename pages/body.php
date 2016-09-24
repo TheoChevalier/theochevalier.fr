@@ -37,7 +37,7 @@
         </div>
         <div id="titre_site">
           <span class="titre_site"><a class="unstyled_link" href="<?=ROOTPATH?>" onClick="menu();"><?=NAME?></a></span>
-          <div class="sous_titre_site"><?=$langage_index['ss_titre1'][$lang]?> <div class="star"><i class="fa fa-plus"></i></div> <?=$langage_index['ss_titre2'][$lang]?></div>
+          <div class="sous_titre_site"><!--<?=$langage_index['ss_titre1'][$lang]?> <div class="star"><i class="fa fa-plus"></i></div>--> <?=$langage_index['ss_titre2'][$lang]?></div>
         </div>
       </div>
       <div class="separateur_header">
