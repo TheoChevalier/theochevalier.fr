@@ -19,7 +19,7 @@ $ProfileLoaded = true; ?>
             </a>
           </li>
           <li>
-            <a id="blog" href="index.php?page=6&amp;lang=<?=$lang?>">
+            <a id="blog" href="https://blog.theochevalier.fr">
               <div class="home_icons"></div>
               <h3><?=$langage['blog_title'][$lang]?></h3>
               <p>
@@ -28,7 +28,7 @@ $ProfileLoaded = true; ?>
             </a>
           </li>
           <li>
-            <a id="school" href="index.php?page=5&amp;lang=<?=$lang?>">
+            <a id="school" href="/cv">
               <div class="home_icons"></div>
               <h3><?=$langage['school_title'][$lang]?></h3>
               <p>

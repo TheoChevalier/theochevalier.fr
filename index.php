@@ -20,6 +20,11 @@ switch($page)
   case'4':
     include("pages/profil.php");
   break;
+
+  // Redirect old links
+  case'6':
+      header('Location: https://blog.theochevalier.fr');
+  break;
   default;
     if(is_file("pages/".$page.".php"))
       include("pages/".$page.".php");

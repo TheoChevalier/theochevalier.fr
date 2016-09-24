@@ -34,7 +34,7 @@
       <?=$langage_index['credit'][$lang]?><?php
       $date_footer = getdate();
       $annee = $date_footer['year'];
-      echo $annee; ?> &middot; <a href="index.php?page=sitemap" class="lien">Sitemap</a>
+      echo $annee; ?>
     </div>
   </footer>
 </div> <!--! end of #container -->
