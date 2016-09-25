@@ -661,7 +661,7 @@ AddDefaultCharset utf-8
 #
 # https://httpd.apache.org/docs/current/mod/core.html#servertokens
 
-ServerTokens Prod
+# ServerTokens Prod
 
 
 # ######################################################################
